@@ -1,136 +1,440 @@
+<meta charset="UTF-8">
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>少海汇行业资讯日报 | 2026年8月18日</title>
+<title>每日行业快报 | 2026年08月18日</title>
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif; background: #f5f7fa; color: #333; line-height: 1.6; }
-.container { max-width: 800px; margin: 0 auto; padding: 20px; }
-.header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px 30px; border-radius: 16px; margin-bottom: 24px; text-align: center; }
-.header h1 { font-size: 28px; margin-bottom: 8px; }
-.header .date { font-size: 16px; opacity: 0.9; }
-.section { background: white; border-radius: 12px; padding: 24px; margin-bottom: 16px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
-.section-title { font-size: 20px; font-weight: 700; margin-bottom: 16px; padding-bottom: 10px; border-bottom: 2px solid #667eea; display: flex; align-items: center; gap: 8px; }
-.news-item { margin-bottom: 16px; padding-left: 16px; border-left: 3px solid #e8ecf1; }
-.news-item:last-child { margin-bottom: 0; }
-.news-item h3 { font-size: 15px; font-weight: 600; color: #2d3748; margin-bottom: 4px; }
-.news-item p { font-size: 14px; color: #4a5568; }
-.news-item .source { font-size: 12px; color: #a0aec0; margin-top: 4px; }
-.news-item a { color: #667eea; text-decoration: none; }
-.news-item a:hover { text-decoration: underline; }
-.footer { text-align: center; padding: 20px; color: #a0aec0; font-size: 13px; }
-.tag { display: inline-block; background: #edf2f7; color: #4a5568; padding: 2px 8px; border-radius: 4px; font-size: 12px; margin-right: 6px; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.6;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 48px 24px 40px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 6px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -20px auto 40px;
+    padding: 0 20px;
+  }
+  .category-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+  }
+  .category-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 3px solid transparent;
+    border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .category-title .emoji { font-size: 1.5rem; }
+  .news-list { display: flex; flex-direction: column; gap: 14px; }
+  .news-card {
+    display: flex;
+    align-items: stretch;
+    background: #f9fafb;
+    border-radius: 12px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.25s ease;
+    border: 1px solid #e5e7eb;
+    position: relative;
+  }
+  .news-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+    border-color: #c7d2fe;
+    background: #fff;
+  }
+  .news-index {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 14px;
+    margin-top: 2px;
+  }
+  .news-content { flex: 1; min-width: 0; }
+  .news-title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 6px;
+    line-height: 1.45;
+  }
+  .news-card:hover .news-title { color: #5b21b6; }
+  .news-summary {
+    font-size: 0.875rem;
+    color: #4a5568;
+    line-height: 1.55;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .news-meta {
+    display: flex;
+    gap: 16px;
+    font-size: 0.8rem;
+    color: #a0aec0;
+  }
+  .news-source {
+    background: #edf2f7;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  .news-arrow {
+    flex-shrink: 0;
+    align-self: center;
+    font-size: 1.2rem;
+    color: #cbd5e0;
+    margin-left: 10px;
+    transition: all 0.25s ease;
+  }
+  .news-card:hover .news-arrow {
+    color: #667eea;
+    transform: translateX(3px);
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 20px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 36px 16px 32px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .category-section { padding: 20px 16px; }
+    .category-title { font-size: 1.15rem; }
+    .news-card { padding: 12px 14px; }
+    .news-index { width: 28px; height: 28px; font-size: 0.8rem; margin-right: 10px; }
+    .news-title { font-size: 0.95rem; }
+    .news-summary { font-size: 0.82rem; }
+  }
 </style>
 </head>
 <body>
-<div class="container">
-<div class="header">
-<h1>☀️ 少海汇行业资讯日报</h1>
-<div class="date">2026年8月18日 星期二</div>
-</div>
+  <div class="header">
+    <h1>📰 每日行业快报</h1>
+    <div class="date">2026年08月18日 · 星期二</div>
+    <div class="subtitle">建筑节能 · 成品家具 · 定制家居 · 发热新材料</div>
+  </div>
+  <div class="container">
 
-<div class="section">
-<div class="section-title">🏠 建筑节能 & 门窗</div>
-<div class="news-item">
-<h3>断桥铝门窗行业迎标准升级，壁厚1.8mm成新底线</h3>
-<p>2026年8月市场数据显示，国标GB/T 8478-2020要求外窗主型材受力部位壁厚不低于1.8mm，1.4mm老规格型材正被加速淘汰。玻璃配置占整窗成本30%-45%，双银Low-E中空玻璃成为性能型标配。系统门窗（1.8mm以上+双银Low-E+夹胶）落地价约1500-2500元/㎡。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674890023342178867/" target="_blank">良木道门窗</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>全球低碳建材市场增长34%，绿色混凝土与再生钢引领革命</h3>
-<p>据全球建筑商会数据，"低碳建材"市场过去一年增长34%。新型水泥可吸收CO2，菌丝体隔热材料在北欧流行。欧盟2027年将执行最严格能效标准，要求企业认证每吨砾石和钢材的来源与可持续性。</p>
-<div class="source">来源：<a href="https://www.prensa-latina.cu/2026/08/17/apuntan-revolucion-de-materiales-de-la-construccion/" target="_blank">Prensa Latina</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>门窗工程优良评定标准趋严，节能与气密性双达标成硬门槛</h3>
-<p>按GB 55015-2021《建筑节能与可再生能源利用通用规范》，公共建筑外窗气密性不应低于6级，K值超标属否决性问题。中国建筑金属结构协会数据显示，工程类门窗质量投诉中安装与密封类问题占比超60%。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674446600969650714/" target="_blank">今日头条</a> | 2026-08-16</div>
-</div>
-</div>
+        <section class="category-section">
+          <h2 class="category-title">
+            <span class="emoji">🏗️</span> 建筑节能 / 门窗
+          </h2>
+          <div class="news-list">
 
-<div class="section">
-<div class="section-title">🛋️ 成品家具 & 胡桃木供应链</div>
-<div class="news-item">
-<h3>源氏木语发布"黑标"高端系列，重构高端实木价值公式</h3>
-<p>源氏木语推出"黑标"品质高锚点产品线，坚持100%纯实木、0贴皮，每4-5块FAS级板材仅精选1块用于可视面。隐蔽部位全面采用主材级山毛榉、南洋金檀木。作为天猫家装赛道TOP1，源氏木语连续十多年领跑纯实木家具类目，全国门店突破1000家。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674842635684594214/" target="_blank">家居产业前瞻</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>新版《木家具通用技术条件》实施，环保标准收严至E0.5级</h3>
-<p>2026年8月起，GB/T 3324-2026及首部《定制衣柜安装验收规范》正式应用。甲醛释放量限值由E1级收严至E0.5级（≤0.05mg/m3），TVOC新增"使用状态下动态释放率"要求。静载荷变形量首次列为出厂必检项。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674757559630283314/" target="_blank">今日头条</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>亿迈跨境发布《2026年家具工厂出海指南》</h3>
-<p>报告梳理客厅、卧室、厨餐、户外四大品类国内产业带分布。2026年客厅家具全球收入预计达2234亿美元，卧室家具以3.45%复合年增长率领跑，户外家具达513.9亿美元为潜力最强新兴赛道。</p>
-<div class="source">来源：<a href="https://www.xhby.net/content/s6a82cd4fe4b03b461cd04f91.html" target="_blank">交汇点新闻</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>建霖家居海外产能新进展：墨西哥工厂就绪，泰国三期Q4投产</h3>
-<p>建霖家居泰国基地三期预计9月落成、Q4投产，可覆盖北美市场三分之二订单需求；墨西哥工厂建设已就绪。国内厦门大健康产业园已投产，聚焦康养卫浴及健康环境产品。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674865804030116352/" target="_blank">环球家居周报</a> | 2026-08-17</div>
-</div>
-</div>
+              <a class="news-card" href="https://m.11467.com/product/d54819946.htm" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">1</div>
+                <div class="news-content">
+                  <h3 class="news-title">绿色建材认证，铝合金窗企业的“入场券”还是“加分项”？</h3>
+                  <p class="news-summary">绿色建材认证，铝合金窗企业的“入场券”还是“加分项”？ 2026年，门窗行业的游戏规则变了。 新修订的《绿色建材评价 建筑门窗及配件》标准（T/CECS10026-2025）已于2026年2月1日正式施行，新版国标GB/T8478-2026同步落地。政府投资工程、保障房等重点项目更是明确了 “无绿色认证不采购” 的硬性规则。 绿色建材认证，已经从可选项变成了必选项。 01 政策在变： 认证从“加分...</p>
+                  <div class="news-meta">
+                    <span class="news-source">11467.com</span>
+                    <span class="news-date">2026-08-17 10:52</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
 
-<div class="section">
-<div class="section-title">🏡 定制家居 & 智能家居</div>
-<div class="news-item">
-<h3>欧派推出子品牌OPPLAT，正式进军定制厨电领域</h3>
-<p>欧派家居发布全新子品牌OPPLAT，产品涵盖烟机、灶具、蒸烤箱、洗碗机等，由米兰设计院参与设计，依托五大生产基地及全球8000余家门店渠道，旨在实现橱柜与厨电一体化设计、生产与交付。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674864077784482340/" target="_blank">环球网</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>松下中国新战略：两年内全屋智能业务占比超30%</h3>
-<p>松下在成都发布全屋智能方案，宣布EW电气工程株式会社成立。方案围绕"零"与"舒"理念，涵盖舒光、舒风、舒安三大维度。面对建材市场单价下滑，松下提出从单品销售向综合解决方案转型。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674864077784482340/" target="_blank">环球网</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>好莱客、好太太、蜂助手合资品牌"合觅"发布全屋智能方案</h3>
-<p>合觅推出以自研Ho-mesh技术为核心的"1+3+N"零折腾全域智能方案，搭载本地互联底层协议实现本地化智能联动。联合好莱客打造高端定制AI智能家全案设计中心，全国多城线下实景展厅已开放。</p>
-<div class="source">来源：<a href="http://m.toutiao.com/group/7674864077784482340/" target="_blank">环球网</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>索菲亚上半年净利润同比下降78%-85%，行业竞争加剧</h3>
-<p>索菲亚公告预计2026年上半年归母净利润4790万-7024万元，同比下降78%-85%。主因宏观经济环境、房地产周期及消费信心因素影响，定制家居行业竞争加剧，固定成本未充分摊薄。</p>
-<div class="source">来源：<a href="https://gmteight.com/flash/detail/1470578" target="_blank">GMT研究</a> | 2026-08-18</div>
-</div>
-<div class="news-item">
-<h3>"人宠理想家"改写家居产业用户模型，宠物家居成高溢价增量</h3>
-<p>据艾瑞白皮书，宠物家居线上占比15.9%、同比+9.1%，22.6%宠主增加支出。索菲亚米兰纳发布悦宠系列，顾家推出人宠快乐屋，我乐以斯德哥尔摩PRO系列切入，欧派以模块化嵌入柜体布局。</p>
-<div class="source">来源：<a href="https://36kr.com/p/3944672940856964" target="_blank">36氪</a> | 2026-08-18</div>
-</div>
-</div>
 
-<div class="section">
-<div class="section-title">🔥 发热新材料</div>
-<div class="news-item">
-<h3>中际旭创砸17亿入股散热龙头中石科技，布局石墨烯导热垫片</h3>
-<p>中石科技推出适用于AI芯片的垂直取向石墨烯导热垫片，具备超高热导率、低热阻及优异可靠性，可满足高功率先进封装芯片散热需求。公司以全新技术路线推进下一代石墨烯导热垫片技术创新。</p>
-<div class="source">来源：<a href="http://www.graphene.tv/special/tim/" target="_blank">石墨烯网</a> | 2026-08-14</div>
-</div>
-<div class="news-item">
-<h3>山东稀有科技推进石墨烯、气凝胶及AI融合领域创新</h3>
-<p>省工信厅调研组赴山东稀有科技调研前沿新材料产业化情况，肯定其在石墨烯、气凝胶及AI融合领域的创新成果。公司热湃气凝胶超羽棉实现薄款抗-30度低温，启脉石墨烯超导纤维实现长效远红外发射。</p>
-<div class="source">来源：<a href="https://xiyougaoke.com/" target="_blank">山东稀有科技</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>宝泰隆持续围绕高导热石墨烯新材料开展技术研发</h3>
-<p>垂直取向石墨烯导热膜、导热垫片属于高价值导热材料赛道。宝泰隆依托自有石墨烯核心技术体系持续开展前瞻性技术研究，将结合行业发展态势、客户合作模式统筹推进产品布局。</p>
-<div class="source">来源：<a href="http://www.graphene.tv/special/tim/" target="_blank">石墨烯网</a> | 2026-08-17</div>
-</div>
-<div class="news-item">
-<h3>北京化工大学研发垂直石墨烯纤维弹性TIM，导热达160.2 W/mK</h3>
-<p>卢咏来研究员团队开发基于玻璃化聚合物的贯穿厚度方向垂直排列石墨烯纤维弹性体热界面材料，突破传统导热与贴合不可兼得难题，芯片降温达20.8度。</p>
-<div class="source">来源：<a href="http://www.graphene.tv/special/tim/" target="_blank">石墨烯网</a> | 2026-07-30</div>
-</div>
-</div>
+              <a class="news-card" href="http://m.toutiao.com/group/7675141595909407275/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">2</div>
+                <div class="news-content">
+                  <h3 class="news-title">房子“会呼吸” 节能超九成_纵览新闻</h3>
+                  <p class="news-summary">8月14日，在中规低碳(张家口)建筑技术有限公司的样板房外，工作人员向客商介绍被动式超低能耗建筑的优势。河北日报记者 郭晓通摄 窗外是交通主干道，样板房门窗紧闭，记者在室内听不到车辆驶过的声音，也感觉不到憋闷。从外表看，样板房与一般建筑差别不大，特别之处在于不依赖空调和暖气，室内温度可常年稳定在20至26摄氏度。 “被动式超低能耗建筑就像保温瓶，夏天隔热、冬天保温，比传统建筑节能90%以上。”该公...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-18 07:09</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
 
-<div class="footer">
-<p>少海汇行业资讯日报 · 每日自动更新</p>
-<p>数据来源：公开新闻搜索 · 仅供参考</p>
-</div>
-</div>
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674957355808850458/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">3</div>
+                <div class="news-content">
+                  <h3 class="news-title">报废五条生产线攻坚新产品，威宝节能三次转型向新行——一块板材 “闯” 进光伏新赛道_泰山晚报</h3>
+                  <p class="news-summary">在山东威宝节能科技集团板材生产车间内，3条BIPV建筑光伏一体化生产线正试运行。不久后，搭载企业自研芯材的建筑光伏一体化BIPV板材将从这里下线，发往江苏地区。 这块板材的背后有着一段鲜活的“进化史”，它的前身原本是建筑外墙保温材料，如今在产线上与光伏组件深度融合，从“保温板”变身“发电板”，迈进了建筑光伏一体化的全新赛道。一块板材身份跃迁背后，是这家企业十余年间三次涅槃突围战略转型历程。近日，记...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 19:14</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674558490181894708/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">4</div>
+                <div class="news-content">
+                  <h3 class="news-title">丽岛科技低碳装配式幕墙及节能门窗智造基地项目落地新洲_极目新闻</h3>
+                  <p class="news-summary">极目新闻通讯员 蔡芷萱 徐峥 8月13日，武汉市新洲区人民政府与武汉丽岛科技有限公司签署投资合作协议，在汪集街工业园区建设低碳装配式幕墙及节能门窗智造基地。 ![](https://sf3-ttcdn-tos.pstatp.com/img/tos-cn-i-tjoges91tu/b486c5397e71631f5717b7a2536ec729~cs.jpeg) 此次签约项目将建设铝合金门窗、塑钢门...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-16 17:26</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+          </div>
+        </section>
+
+
+        <section class="category-section">
+          <h2 class="category-title">
+            <span class="emoji">🪑</span> 成品家具 / 胡桃木
+          </h2>
+          <div class="news-list">
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674466704595878443/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">1</div>
+                <div class="news-content">
+                  <h3 class="news-title">家居行业大洗牌:有人卖壳离场，有人跨界，还有人逆势加注_上游财经</h3>
+                  <p class="news-summary">家居行业正在经历一场前所未有的分化。 截至2026年8月，至少10家上市家居企业寻求控制权变更，做集成灶的浙江美大(002677.SZ)被跨境电商拿下，高端家居龙头ST美克(600337.SH)被通信行业资本看上。家居企业的“壳”，正成为科技与产业资本争夺的标的。 与此同时，做PVC地板的爱丽家居(603221.SH)宣布收购半导体测试公司，股价连拿10个涨停;帝欧家居(002798.SZ)掏出5...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 09:20</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674864077784482340/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">2</div>
+                <div class="news-content">
+                  <h3 class="news-title">环球家居周报:7月BHI指数小幅回落，欧派推子品牌入局定制厨电，爱空间回应质疑……_环球网</h3>
+                  <p class="news-summary">·1-7月我国家具及其零件累计出口2713.6亿元 ·全国建材家居卖场7月销售额为1135.9... 1-7月我国家具及其零件累计出口2713.6亿元 8月7日，海关总署发布数据显示，其中，家具及其零件7月出口金额370.2亿元;1-7月累计出口2713.6亿元。家用电器7月出口金额603.8亿元;1-7月累计出口4213.0亿元，同比增长2.3%。灯具、照明装置及其零件7月出口创收234.7亿元...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 13:12</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674809248999621130/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">3</div>
+                <div class="news-content">
+                  <h3 class="news-title">家居行业，正在经历一场产品革命_大材研究</h3>
+                  <p class="news-summary">大材研究，主笔分析师:邓超明，泛家居建装产业老板经营决策参考，经理人每日读物，一线人员的生意参谋，打造有影响力的研究机构变、专业评价与传播中心。 近年来，大材研究注意到一个主流的产品发力方向，就是以场景化、生活化为核心推出家居产品方案，赢得企业端与消费端的认可。 这种做法，已不单是家居行业的加分项，而且是存量竞争阶段里挖掘增量需求、抢占份额的一种选择，是家居行业正在经历的一场产品革命。 从消费端看...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 09:40</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674842635684594214/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">4</div>
+                <div class="news-content">
+                  <h3 class="news-title">国民实木家具销量第一后，下一步如何?源氏木语给出“黑标”应答_家居产业前瞻</h3>
+                  <p class="news-summary">8月7日，天津。 在家居行业普遍感受到存量博弈寒意的当下，源氏木语在向下扎根的同时，以一场“新实木主义——黑标生活提案”发布会，落下了品牌进一步承接消费者更高需求的关键一子。 ![](https://sf3-ttcdn-tos.pstatp.com/img/tos-cn-i-6w9my0ksvp/91581d60b2cc43809d27fe9642fc5e61~cs.jpeg) 作为长期聚焦大家居...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 11:52</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+          </div>
+        </section>
+
+
+        <section class="category-section">
+          <h2 class="category-title">
+            <span class="emoji">🏠</span> 定制家居 / 智能家居
+          </h2>
+          <div class="news-list">
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674915056903062062/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">1</div>
+                <div class="news-content">
+                  <h3 class="news-title">海尔智家牵手华中科技大学，聚焦AI时代智能家居产业升级_商界速递</h3>
+                  <p class="news-summary">随着AI浪潮席卷实体经济，产学研深度融合、校企协同创新，已成为发展新质生产力、推动产业升级的核心路径。8月14日，2026华中科技大学产学研大会暨智能家电产业专场对接会在青岛举办。本次大会由华中科技大学校友总会主办，华中科技大学青岛校友会、海尔智家承办，汇聚了科研院所、龙头企业、产业链上下游等多方力量，围绕智能家电材料、智能制造、人工智能等核心方向展开深度探讨。 ![](https://sf3-t...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 16:34</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674937173644149257/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">2</div>
+                <div class="news-content">
+                  <h3 class="news-title">索菲亚NFC防伪重构信任体系，开启定制家居全链路透明化新时代_周忠侃家居</h3>
+                  <p class="news-summary">新房市场深度调整，定制家居行业全面驶入存量博弈的深水区。当399元/㎡的低价套餐席卷终端，当“ENF级”标识可以随意喷印，当品牌板材被暗中掉包成为行业潜规则，透支的不只是消费者的信任，更是整个行业的长期增长底盘。 当流量红利褪去，价格战的边际效益持续递减，一股向“确定性”回归的力量正在显现:消费者从追逐低价转向追求安心，品牌从规模扩张转向深耕价值。对当下的定制家居行业而言，看得见、可验证、能落地的...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 17:56</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="https://www.pitchengine.com.au/news/media-outreach-english/41898-at-the-137th-canton-fair-suofeiya-expands-global-reach-with-innovative-design-quality-intelligent-manufacturing" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">3</div>
+                <div class="news-content">
+                  <h3 class="news-title">At the 137th Canton Fair: Suofeiya Expands Global Reach with Innovative Design Quality Intelligent Manufacturing</h3>
+                  <p class="news-summary">GUANGZHOU, CHINA- Media OutReach Newswire - 29 April 2025 - Amidst a profound reshuffling of the global manufacturing landscape, China's manufacturing is marching towards "intelligent manufacturing in...</p>
+                  <div class="news-meta">
+                    <span class="news-source">pitchengine.com.au</span>
+                    <span class="news-date">2026-08-18 01:41</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674957697615282742/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">4</div>
+                <div class="news-content">
+                  <h3 class="news-title">中淘家居年产50万套板式家具项目一期投产_北京商报</h3>
+                  <p class="news-summary">北京商报讯(记者 翟枫瑞)8月17日，费县发布公众号发布内容称，山东省临沂市费县下辖薛庄镇中淘家居年产50万套高档板式家具项目一期6条生产线已全部投产，配套数控电子锯、封边机、数控钻等设备。项目总投资10.5亿元，占地100亩，配置12条自动化智能化家具生产线。从板材裁切、封边、打孔到家具成型实现一体化智能作业，减少人为干预，板材利用率可达95%以上。 据了解，项目完整打通“板材生产—贴面加工—定...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 19:15</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+          </div>
+        </section>
+
+
+        <section class="category-section">
+          <h2 class="category-title">
+            <span class="emoji">🔥</span> 发热新材料
+          </h2>
+          <div class="news-list">
+
+              <a class="news-card" href="https://mip.b2b168.com/wvs322100321.html" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">1</div>
+                <div class="news-content">
+                  <h3 class="news-title">2026年正规的石墨烯地暖安装/旧房改造安装生产厂家行业现状与选择指南 - 八方资源网</h3>
+                  <p class="news-summary">2026年正规的石墨烯地暖安装/旧房改造安装生产厂家行业现状与选择指南 ![](https://l.b2b168.com/2026/06/06/05/202606060537460049994.png) 产品介绍 开篇引言 石墨烯地暖作为新型采暖技术，凭借高电热转换效率、**薄安装结构、智能分区温控等核心优势，正逐步替代传统水地暖与电热缆地暖，成为新房装修与旧房采暖改造的主流选择。2026年，随着...</p>
+                  <div class="news-meta">
+                    <span class="news-source">mip.b2b168.com</span>
+                    <span class="news-date">2026-08-17 12:10</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="https://m.sohu.com/a/1064139209_122474846/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">2</div>
+                <div class="news-content">
+                  <h3 class="news-title">哪些因素 影响不同场景下石墨烯电地暖价格_施工_生产_定价</h3>
+                  <p class="news-summary">随着国内采暖需求的多元化发展，无集中供暖地区家庭、新旧房改造用户、商业及公共场所运营方对电采暖类产品的需求持续上升，对应产品的定价逻辑成为多数消费者关注的核心问题。 电采暖类产品的通用定价维度 当前市场中电采暖类产品的价格差异较大，核心影响因素可分为几个层面。一是材料成本，发热核心模组的技术等级、配套温控系统的精度、保温层的材质等级都会直接影响基础成本；二是施工成本，不同场地的面积、户型结构、地面...</p>
+                  <div class="news-meta">
+                    <span class="news-source">sohu.com</span>
+                    <span class="news-date">2026-08-18 01:35</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://www.xzk-graphene.com/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">3</div>
+                <div class="news-content">
+                  <h3 class="news-title">石墨烯地暖|封装电热膜-烯泽韩力石墨烯应用科技(无锡)有限公司</h3>
+                  <p class="news-summary">烯泽韩力石墨烯应用科技（无锡）有限公司 烯泽韩力石墨烯应用科技（无锡）有限公司：研发生产石墨烯 PTC 电热膜、发热电缆、地暖电热器材，承接地暖工程设计施工，销售石墨烯采暖设备、家居采暖垫，提供石墨烯应用技术咨询。 石墨烯PTC电热膜与传统发热电缆的能效对比分析 在电采暖系统选型中，发热电缆与石墨烯PTC电热膜的能效之争，本质上是**面状发热与线状发热**的物理博弈。作为深耕电热器材研发的烯泽韩力...</p>
+                  <div class="news-meta">
+                    <span class="news-source">xzk-graphene.com</span>
+                    <span class="news-date">2026-08-18 00:00</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+
+              <a class="news-card" href="http://m.toutiao.com/group/7674830874843578916/" target="_blank" rel="noopener noreferrer">
+                <div class="news-index">4</div>
+                <div class="news-content">
+                  <h3 class="news-title">2026年恩施暖码士石墨烯电地暖:口碑背后的故事_暖玛士石墨烯电采暖(湖北恩施店)</h3>
+                  <p class="news-summary">随着科技的不断进步，越来越多的家庭开始关注采暖方式的革新。在恩施这片多山之地，冬季湿冷的气候给居民带来了诸多不便。然而，近年来，一种新型的采暖方式——石墨烯电地暖逐渐走进了人们的视野，并赢得了广泛的好评。本文将通过具体数据和案例，探讨暖玛士石墨烯电地暖为何能在恩施地区获得如此高的口碑。 一、制热高效迅速，舒适健康采暖 数据支撑 根据国家权威机构测试，石墨烯材料的导热性能是铜的10倍，导电性能是银的...</p>
+                  <div class="news-meta">
+                    <span class="news-source">toutiao.com</span>
+                    <span class="news-date">2026-08-17 11:04</span>
+                  </div>
+                </div>
+                <div class="news-arrow">→</div>
+              </a>
+
+          </div>
+        </section>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-08-18 16:39:02</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
 </body>
 </html>

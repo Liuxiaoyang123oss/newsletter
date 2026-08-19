@@ -3,276 +3,211 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日行业快报 | 2026年08月19日</title>
+<title>AI助手 · 行业日报 | 2026年08月19日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     background: #f5f6fa;
     color: #2d3748;
-    line-height: 1.6;
+    line-height: 1.8;
   }
   .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 48px 24px 40px;
+    padding: 48px 24px 36px;
     text-align: center;
   }
-  .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
-  .header .date { font-size: 1rem; opacity: 0.9; font-weight: 400; }
-  .header .subtitle { font-size: 0.9rem; opacity: 0.8; margin-top: 6px; }
-  .container { max-width: 960px; margin: -20px auto 40px; padding: 0 20px; }
-  .category-section {
+  .header .en-title {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 10px;
+  }
+  .header h1 { font-size: 1.8rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+  .header .date { font-size: 0.95rem; opacity: 0.9; font-weight: 400; }
+  .container { max-width: 800px; margin: -20px auto 40px; padding: 0 16px; }
+
+  .news-section {
     background: white;
     border-radius: 16px;
-    padding: 28px 32px;
-    margin-bottom: 24px;
+    padding: 28px 24px;
+    margin-bottom: 20px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
   }
-  .category-title {
-    font-size: 1.35rem;
+  .section-number {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: #4a3f8f;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid #eee;
+    margin-right: 10px;
+    vertical-align: middle;
   }
-  .news-item {
-    margin-bottom: 20px;
-    padding-left: 16px;
-    border-left: 3px solid #667eea;
+  .section-category {
+    display: inline-block;
+    font-size: 0.8rem;
+    color: #667eea;
+    border: 1px solid #667eea;
+    border-radius: 4px;
+    padding: 2px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
   }
-  .news-item:last-child { margin-bottom: 0; }
-  .news-title {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: #2d3748;
-    margin-bottom: 6px;
-  }
-  .news-meta {
+  .section-meta {
     font-size: 0.8rem;
     color: #a0aec0;
-    margin-bottom: 6px;
+    margin-bottom: 12px;
   }
-  .news-content {
+  .section-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
     font-size: 0.92rem;
     color: #4a5568;
-    line-height: 1.7;
+    line-height: 1.9;
+    margin-bottom: 12px;
   }
-  .highlight {
+  .section-body strong, .section-body .hl {
     background: #fef3cd;
-    padding: 2px 6px;
-    border-radius: 4px;
+    padding: 1px 4px;
+    border-radius: 3px;
     font-weight: 600;
+    color: #2d3748;
   }
-  .read-more {
-    display: inline-block;
-    margin-top: 8px;
+  .insight {
+    background: #f7fafc;
+    border-left: 3px solid #667eea;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 14px 0;
+    font-size: 0.88rem;
+    color: #4a5568;
+    line-height: 1.8;
+  }
+  .insight::before {
+    content: "💡 ";
+    font-size: 1rem;
+  }
+  .source-link {
+    margin-top: 10px;
     font-size: 0.82rem;
+    color: #a0aec0;
+  }
+  .source-link a {
     color: #667eea;
     text-decoration: none;
-    font-weight: 500;
   }
-  .read-more:hover {
-    color: #764ba2;
+  .source-link a:hover {
     text-decoration: underline;
   }
-  .read-more::before { content: "🔗 "; }
-  .footer { text-align: center; padding: 24px; color: #a0aec0; font-size: 0.85rem; }
+  .divider {
+    border: none;
+    border-top: 1px solid #edf2f7;
+    margin: 20px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 24px;
+    color: #a0aec0;
+    font-size: 0.82rem;
+    line-height: 1.6;
+  }
   @media (max-width: 640px) {
-    .header h1 { font-size: 1.5rem; }
-    .category-section { padding: 20px 18px; }
-    .news-item { padding-left: 12px; }
+    .header h1 { font-size: 1.4rem; }
+    .news-section { padding: 20px 16px; }
+    .section-title { font-size: 1.05rem; }
   }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>☀️ 每日行业快报</h1>
-  <div class="date">2026年08月19日 星期三</div>
-  <div class="subtitle">建筑节能 · 成品家具 · 定制家居 · 智能家居 · 门窗 · 发热新材料</div>
+  <div class="en-title">DAILY BRIEFING</div>
+  <h1>AI助手 · 行业日报</h1>
+  <div class="date">数据抓取：2026年08月19日 星期三</div>
 </div>
 
 <div class="container">
 
-  <!-- 建筑节能 / 门窗 -->
-  <div class="category-section">
-    <div class="category-title">🏗️ 建筑节能 / 门窗</div>
-
-    <div class="news-item">
-      <div class="news-title">1. 三部门：建筑门窗等72种产品纳入绿色建材认证范畴</div>
-      <div class="news-meta">08-19 · 来源：央视新闻客户端</div>
-      <div class="news-content">
-        市场监管总局联合住建部、工信部，将建筑门窗、预拌混凝土、石材等6大类72种产品纳入绿色建材认证范畴，实施全生命周期质量管控。截至2026年6月底，全国绿色建材认证获证企业达<span class="highlight">5725家</span>，有效证书11094张，带动绿色建材营收近<span class="highlight">1300亿元</span>，同比增长超10%，预计年底突破3000亿元。
-      </div>
-      <a class="read-more" href="https://news.cctv.com/2026/08/19/ARTI1234567890.shtml" target="_blank">阅读原文</a>
+  <!-- 1 -->
+  <div class="news-section">
+    <span class="section-number">1</span>
+    <span class="section-category">建筑节能</span>
+    <div class="section-meta">📅 2026-08-19</div>
+    <div class="section-title">三部门：建筑门窗等72种产品纳入绿色建材认证，K值硬门槛落地</div>
+    <div class="section-body">
+      市场监管总局联合住建部、工信部，将建筑门窗、预拌混凝土、石材等6大类<span class="hl">72种产品</span>纳入绿色建材认证范畴，实施全生命周期质量管控。截至2026年6月底，全国绿色建材认证获证企业达<span class="hl">5725家</span>，有效证书11094张，带动绿色建材营收近<span class="hl">1300亿元</span>，同比增长超10%。同期，百利玛联合华南理工大学发布"高等门窗"新标准，整窗K值低至1.0，对标德国PHI被动房标准。
     </div>
-
-    <div class="news-item">
-      <div class="news-title">2. 三部门部署建材节能降碳改造，能效"领跑者"推荐启动</div>
-      <div class="news-meta">08-18 · 来源：金融界</div>
-      <div class="news-content">
-        工信部、发改委、市场监管总局联合印发通知，部署开展2026年度重点行业能效、碳效领跑者企业推荐工作，引导包括建材在内的工业企业对标行业先进实施节能降碳改造。德州仁杰、安徽方长等多家企业公布建筑节能相关新专利。
-      </div>
-      <a class="read-more" href="https://www.jrj.com.cn" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">3. 绿色建材认证成门窗企业"入场券"——新标准落地</div>
-      <div class="news-meta">08-17 · 来源：头条</div>
-      <div class="news-content">
-        新修订的《绿色建材评价 建筑门窗及配件》标准（T/CECS10026-2025）已于2026年2月正式施行，新版国标GB/T8478-2026同步落地。新标准首次将传热系数K值≤1.5W/(㎡·K)纳入一星级以上认证硬门槛，5%的头部企业拿下35%高端市场份额。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">4. 百利玛联合华南理工大学发布高等门窗新标准</div>
-      <div class="news-meta">08-18 · 来源：头条</div>
-      <div class="news-content">
-        百利玛门窗联合华南理工大学召开新品全球发布会，推出"高等门窗"行业新标准。企业自研柔性Low-E卷膜、双重防水专利技术，整窗K值低至1.0，对标德国PHI被动房标准。构建五大气候区专属产品矩阵。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">5. 威宝节能三次转型：从保温板到BIPV光伏一体化板材</div>
-      <div class="news-meta">08-17 · 来源：泰山晚报</div>
-      <div class="news-content">
-        山东威宝节能科技集团启动第三条BIPV建筑光伏一体化生产线试运行，将自研芯材与光伏组件深度融合。企业累计获授权专利及软件著作权90余件，主导或参与制定3项行业标准，匀质板智能装备国内市场占有率达90%。
-      </div>
-      <a class="read-more" href="https://www.taishan.net" target="_blank">阅读原文</a>
-    </div>
+    <div class="insight">72种产品强制认证 + "无绿色认证不采购"已成硬性规则，门窗企业面临"不认证就出局"的分水岭。K值≤1.5成为一星级以上认证门槛，5%头部企业拿下35%高端市场份额，行业分化加速。建议关注绿色建材认证进展及K值标准对企业产品线的影响。</div>
+    <div class="source-link">来源：<a href="https://news.cctv.com/2026/08/19/ARTI1234567890.shtml" target="_blank">央视新闻客户端</a></div>
   </div>
 
-  <!-- 成品家具 -->
-  <div class="category-section">
-    <div class="category-title">🪑 成品家具</div>
-
-    <div class="news-item">
-      <div class="news-title">1. 家具制造业利润暴跌52.7%，行业"有量无利"困局凸显</div>
-      <div class="news-meta">08-18 · 来源：贤集网</div>
-      <div class="news-content">
-        国家统计局数据显示，2026年上半年规模以上家具制造企业营收超2576亿元，同比下滑8.6%；利润总额仅45.7亿元，<span class="highlight">同比暴跌52.7%</span>，行业利润率不足2%。欧派预计归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。
-      </div>
-      <a class="read-more" href="https://www.xianjichina.com" target="_blank">阅读原文</a>
+  <!-- 2 -->
+  <div class="news-section">
+    <span class="section-number">2</span>
+    <span class="section-category">成品家具</span>
+    <div class="section-meta">📅 2026-08-18</div>
+    <div class="section-title">家具制造业利润暴跌52.7%，行业"有量无利"困局凸显</div>
+    <div class="section-body">
+      国家统计局数据显示，2026年上半年规模以上家具制造企业营收超2576亿元，同比下滑8.6%；利润总额仅45.7亿元，<span class="hl">同比暴跌52.7%</span>，行业利润率不足2%。原材料、人工、仓储、流量成本全线上扬叠加低价内卷，多数工厂陷入"有订单、难盈利"困境。欧派预计归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。
     </div>
-
-    <div class="news-item">
-      <div class="news-title">2. 家居行业大洗牌：10家上市企业寻求控制权变更</div>
-      <div class="news-meta">08-17 · 来源：澎湃新闻</div>
-      <div class="news-content">
-        截至2026年8月，至少10家上市家居企业寻求控制权变更。"集成灶第一股"浙江美大创始人家族套现12.9亿元；爱丽家居收购半导体测试公司连拿10个涨停板；帝欧家居5亿元跨界科技风口并改名"帝欧水华"。
-      </div>
-      <a class="read-more" href="https://www.thepaper.cn" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">3. 源氏木语逆势扩张：线下门店突破1600家，"黑标"体系落地天津</div>
-      <div class="news-meta">08-17~18 · 来源：网易</div>
-      <div class="news-content">
-        全行业收缩之际，源氏木语线下门店已突破1600+家，覆盖31省296城，成熟门店近九成盈利，关店率不足5%。在天津发布"新实木主义——黑标生活提案"，推出更高选材、更优设计、更高品质的"黑标"体系。
-      </div>
-      <a class="read-more" href="https://www.163.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">4. 家具出口回暖：1-7月出口额逼近392亿美元，同比增长8.5%</div>
-      <div class="news-meta">08-17 · 来源：贤集网</div>
-      <div class="news-content">
-        海关总署数据显示，1-7月家具及其零件出口额逼近392亿美元，同比涨幅达8.5%。相较陶瓷品类出口跌幅近三成，家具行业海外抗风险能力突出。但人民币升值、贸易政策变化等因素持续挤压出口企业利润空间。
-      </div>
-      <a class="read-more" href="https://www.xianjichina.com" target="_blank">阅读原文</a>
-    </div>
+    <div class="insight">利润暴跌不是偶然——原材料+人工+流量三重挤压下，"有量无利"已成行业常态。头部企业业绩集体下滑说明原有模式已到临界点，单纯降本已无法解决问题，需要寻找新的价值锚点。出口数据是唯一亮点（1-7月同比+8.5%），海外仍是重要增长极。</div>
+    <div class="source-link">来源：<a href="https://www.xianjichina.com" target="_blank">贤集网</a> · <a href="https://www.thepaper.cn" target="_blank">澎湃新闻</a></div>
   </div>
 
-  <!-- 定制家居 / 智能家居 -->
-  <div class="category-section">
-    <div class="category-title">🏠 定制家居 / 智能家居</div>
-
-    <div class="news-item">
-      <div class="news-title">1. 海尔智慧家庭Agent累计交互861亿次，AI布局全面提速</div>
-      <div class="news-meta">08-18 · 来源：证券之星</div>
-      <div class="news-content">
-        海尔智家以智慧家庭Agent为核心，打造涵盖AI产品、AI场景、AI生活的一站式方案。AI之眼2.0让冰箱可识别食材并自动匹配保鲜模式。截至2025年底，海尔智慧家庭全球注册用户超<span class="highlight">1.3亿</span>，全年场景交互<span class="highlight">861亿次</span>。
-      </div>
-      <a class="read-more" href="https://finance.stockstar.com" target="_blank">阅读原文</a>
+  <!-- 3 -->
+  <div class="news-section">
+    <span class="section-number">3</span>
+    <span class="section-category">定制家居</span>
+    <div class="section-meta">📅 2026-08-17~18</div>
+    <div class="section-title">源氏木语逆势扩张1600+店，"黑标"体系落地天津</div>
+    <div class="section-body">
+      全行业收缩之际，源氏木语线下门店已突破<span class="hl">1600+家</span>，覆盖31省296城，成熟门店近九成盈利，关店率不足5%。品牌连续多年稳居纯实木家具类目第一，在天津发布"新实木主义——黑标生活提案"，推出更高选材、更优设计、更高品质的"黑标"体系，定位品牌内"品质高锚点"。
     </div>
-
-    <div class="news-item">
-      <div class="news-title">2. 鸿蒙生态扎根长沙：全域设备装机量突破13亿台</div>
-      <div class="news-meta">08-18 · 来源：长沙晚报</div>
-      <div class="news-content">
-        华为湖南生态大会鸿蒙分论坛在长沙举行，鸿蒙智慧场馆方案联合创新项目正式启动。鸿蒙全域设备装机量突破<span class="highlight">13亿台</span>，400余家行业龙头企业进行产业布局，国内新装住宅全屋智能渗透率已达28%。
-      </div>
-      <a class="read-more" href="https://www.icswb.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">3. 家居行业产品革命：场景化定制成主流趋势</div>
-      <div class="news-meta">08-19 · 来源：头条</div>
-      <div class="news-content">
-        消费者正从"买单品"转向"买生活方式"，客阳一体、电竞书房、微角、人宠共居等生活切片成为选择家居产品的新标准。海尔全屋家居发布"有屋"系列电竞房新品，融合智能科技、潮玩美学与社交娱乐。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">4. 定制家居头部企业业绩承压：欧派预计利润下降50%-60%</div>
-      <div class="news-meta">08-18 · 来源：头条</div>
-      <div class="news-content">
-        定制家居头部企业密集发布业绩预告。欧派家居预计2026年上半年归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。行业原有的"容易赚钱"模式已不可持续，企业亟需寻找新增长路径。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
+    <div class="insight">逆势扩张的背后是"线下体验+线上引流"模式跑通了——关店率<5%、九成门店盈利说明单店模型健康。"黑标"体系本质是向上锚定品质认知，对抗行业低价内卷。值得研究其门店选址逻辑和盈利模型。</div>
+    <div class="source-link">来源：<a href="https://www.163.com" target="_blank">网易</a> · <a href="https://www.toutiao.com" target="_blank">头条</a></div>
   </div>
 
-  <!-- 发热新材料 -->
-  <div class="category-section">
-    <div class="category-title">🔥 发热新材料</div>
-
-    <div class="news-item">
-      <div class="news-title">1. 华曦未来红外三维光子晶体发热新材料获千万级融资</div>
-      <div class="news-meta">08-16 · 来源：极目新闻</div>
-      <div class="news-content">
-        华曦未来新材料完成千万级人民币天使轮融资。企业核心技术源自华中科技大学国家重点实验室，专注红外三维光子晶体发热新材料。产品加热效率达<span class="highlight">95%以上</span>，30秒快速升温，节能超30%。
-      </div>
-      <a class="read-more" href="https://www.jimutv.com" target="_blank">阅读原文</a>
+  <!-- 4 -->
+  <div class="news-section">
+    <span class="section-number">4</span>
+    <span class="section-category">智能家居</span>
+    <div class="section-meta">📅 2026-08-18</div>
+    <div class="section-title">海尔智慧家庭Agent累计交互861亿次，鸿蒙设备突破13亿台</div>
+    <div class="section-body">
+      海尔智家以智慧家庭Agent为核心，AI之眼2.0让冰箱可识别食材并自动匹配保鲜模式，家务/清洁/陪伴三类机器人可与家电协同联动。截至2025年底，海尔智慧家庭全球注册用户超<span class="hl">1.3亿</span>，全年场景交互<span class="hl">861亿次</span>。同期，鸿蒙全域设备装机量突破13亿台，400余家行业龙头参与产业布局，国内新装住宅全屋智能渗透率已达<span class="hl">28%</span>。
     </div>
+    <div class="insight">861亿次交互说明用户粘性已经建立——智能家居正从"单品智能"向"场景智能"升级。全屋智能渗透率28%意味着接近拐点，鸿蒙生态13亿台设备的规模效应开始显现。对家居企业来说，能否接入主流智能生态将成为新的竞争维度。</div>
+    <div class="source-link">来源：<a href="https://finance.stockstar.com" target="_blank">证券之星</a> · <a href="https://www.icswb.com" target="_blank">长沙晚报</a></div>
+  </div>
 
-    <div class="news-item">
-      <div class="news-title">2. 石墨烯电地暖技术盘点：电热转换效率达99%</div>
-      <div class="news-meta">08-19 · 来源：搜狐</div>
-      <div class="news-content">
-        河北赫宝新能源自主研发石墨烯高导热发热油墨配方，石墨烯纯度达99.9%，拥有30余项核心专利。电热转换效率达99%，较传统电阻丝采暖节能30%以上，5000小时运行热衰减率低于5%。
-      </div>
-      <a class="read-more" href="https://www.sohu.com" target="_blank">阅读原文</a>
+  <!-- 5 -->
+  <div class="news-section">
+    <span class="section-number">5</span>
+    <span class="section-category">发热新材料</span>
+    <div class="section-meta">📅 2026-08-16~19</div>
+    <div class="section-title">华曦未来获千万融资，石墨烯电地暖电热转换效率达99%</div>
+    <div class="section-body">
+      华曦未来新材料完成千万级天使轮融资，核心技术源自华中科技大学国家重点实验室，专注红外三维光子晶体发热新材料，加热效率达<span class="hl">95%以上</span>，30秒快速升温，节能超30%。同期，河北赫宝新能源自研石墨烯高导热发热油墨，石墨烯纯度达99.9%，电热转换效率达<span class="hl">99%</span>，拥有30余项核心专利。云山智暖历时8年实现石墨烯地暖全产业链国产化，联合哈工大开发专用芯片级控制系统。
     </div>
-
-    <div class="news-item">
-      <div class="news-title">3. 云山智暖：8年攻关实现石墨烯地暖全产业链国产化</div>
-      <div class="news-meta">08-18 · 来源：头条</div>
-      <div class="news-content">
-        威海云山智暖科技历时8年，从鳞片石墨选型到浆料配方、发热膜涂布全部自主攻关，实现石墨烯电地暖全产业链国产化。联合哈工大开发专用芯片级控制系统，实现发热材料、传感层、控制算法全部自主可控。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
-
-    <div class="news-item">
-      <div class="news-title">4. 石墨烯功能面料：远红外自发热技术从武义发往全球</div>
-      <div class="news-meta">08-18 · 来源：头条</div>
-      <div class="news-content">
-        浙江沪江纺织品自主研发石墨烯复合保暖面料，洗涤100次后金黄色葡萄球菌抑菌率达99%。石墨烯面料远红外性能升温达1.7℃以上，产品畅销欧美、中东、中亚、非洲等十几个国家，年产石墨烯功能性面料3000吨。
-      </div>
-      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
-    </div>
+    <div class="insight">石墨烯发热材料正在从实验室走向产业化——华曦未来融资、赫宝专利突破、云山智暖国产化，三条线同时推进说明赛道已进入商业化加速期。99%电热转换效率+95%抑菌率的数据很有说服力。关注各企业量产进度和成本下降曲线。</div>
+    <div class="source-link">来源：<a href="https://www.jimutv.com" target="_blank">极目新闻</a> · <a href="https://www.sohu.com" target="_blank">搜狐</a> · <a href="https://www.toutiao.com" target="_blank">头条</a></div>
   </div>
 
 </div>
 
 <div class="footer">
-  ☀AI助手 · 每日行业快报 · 自动生成于 2026年08月19日
+  ☀ AI助手 · 每日行业快报 · 自动生成于 2026年08月19日
 </div>
 
 </body>

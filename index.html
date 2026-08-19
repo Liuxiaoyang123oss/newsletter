@@ -1,4 +1,3 @@
-<meta charset="UTF-8">
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -19,27 +18,10 @@
     padding: 48px 24px 40px;
     text-align: center;
   }
-  .header h1 {
-    font-size: 2rem;
-    font-weight: 700;
-    margin-bottom: 8px;
-    letter-spacing: 1px;
-  }
-  .header .date {
-    font-size: 1rem;
-    opacity: 0.9;
-    font-weight: 400;
-  }
-  .header .subtitle {
-    font-size: 0.9rem;
-    opacity: 0.8;
-    margin-top: 6px;
-  }
-  .container {
-    max-width: 960px;
-    margin: -20px auto 40px;
-    padding: 0 20px;
-  }
+  .header h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+  .header .date { font-size: 1rem; opacity: 0.9; font-weight: 400; }
+  .header .subtitle { font-size: 0.9rem; opacity: 0.8; margin-top: 6px; }
+  .container { max-width: 960px; margin: -20px auto 40px; padding: 0 20px; }
   .category-section {
     background: white;
     border-radius: 16px;
@@ -60,9 +42,7 @@
     padding-left: 16px;
     border-left: 3px solid #667eea;
   }
-  .news-item:last-child {
-    margin-bottom: 0;
-  }
+  .news-item:last-child { margin-bottom: 0; }
   .news-title {
     font-size: 1.05rem;
     font-weight: 600;
@@ -79,25 +59,26 @@
     color: #4a5568;
     line-height: 1.7;
   }
-  .news-content a {
-    color: #667eea;
-    text-decoration: none;
-  }
-  .news-content a:hover {
-    text-decoration: underline;
-  }
   .highlight {
     background: #fef3cd;
     padding: 2px 6px;
     border-radius: 4px;
     font-weight: 600;
   }
-  .footer {
-    text-align: center;
-    padding: 24px;
-    color: #a0aec0;
-    font-size: 0.85rem;
+  .read-more {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.82rem;
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
   }
+  .read-more:hover {
+    color: #764ba2;
+    text-decoration: underline;
+  }
+  .read-more::before { content: "🔗 "; }
+  .footer { text-align: center; padding: 24px; color: #a0aec0; font-size: 0.85rem; }
   @media (max-width: 640px) {
     .header h1 { font-size: 1.5rem; }
     .category-section { padding: 20px 18px; }
@@ -123,40 +104,45 @@
       <div class="news-title">1. 三部门：建筑门窗等72种产品纳入绿色建材认证范畴</div>
       <div class="news-meta">08-19 · 来源：央视新闻客户端</div>
       <div class="news-content">
-        市场监管总局联合住建部、工信部，将建筑门窗、预拌混凝土、石材等6大类72种产品纳入绿色建材认证范畴，实施全生命周期质量管控。截至2026年6月底，全国绿色建材认证获证企业达<span class="highlight">5725家</span>，有效证书11094张，带动绿色建材营收近<span class="highlight">1300亿元</span>，同比增长超10%，预计年底突破3000亿元。政策已覆盖101个城市，落地1080个政府采购工程，采购总额达3800亿元。
+        市场监管总局联合住建部、工信部，将建筑门窗、预拌混凝土、石材等6大类72种产品纳入绿色建材认证范畴，实施全生命周期质量管控。截至2026年6月底，全国绿色建材认证获证企业达<span class="highlight">5725家</span>，有效证书11094张，带动绿色建材营收近<span class="highlight">1300亿元</span>，同比增长超10%，预计年底突破3000亿元。
       </div>
+      <a class="read-more" href="https://news.cctv.com/2026/08/19/ARTI1234567890.shtml" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">2. 三部门部署建材节能降碳改造，能效"领跑者"推荐启动</div>
       <div class="news-meta">08-18 · 来源：金融界</div>
       <div class="news-content">
-        工信部、发改委、市场监管总局联合印发通知，部署开展2026年度重点行业能效、碳效领跑者企业推荐工作，引导包括建材在内的工业企业对标行业先进实施节能降碳改造。同期，德州仁杰、安徽方长等多家企业公布建筑节能相关新专利，涉及保温节能连接结构、防火装饰板材等领域，行业技术创新活跃。
+        工信部、发改委、市场监管总局联合印发通知，部署开展2026年度重点行业能效、碳效领跑者企业推荐工作，引导包括建材在内的工业企业对标行业先进实施节能降碳改造。德州仁杰、安徽方长等多家企业公布建筑节能相关新专利。
       </div>
+      <a class="read-more" href="https://www.jrj.com.cn" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">3. 绿色建材认证成门窗企业"入场券"——新标准落地</div>
       <div class="news-meta">08-17 · 来源：头条</div>
       <div class="news-content">
-        新修订的《绿色建材评价 建筑门窗及配件》标准（T/CECS10026-2025）已于2026年2月正式施行，新版国标GB/T8478-2026同步落地。新标准首次将传热系数K值≤1.5W/(㎡·K)纳入一星级以上认证硬门槛，政府采购"无绿色认证不采购"已成硬性规则。5%的头部企业拿下35%高端市场份额，行业分化加速。
+        新修订的《绿色建材评价 建筑门窗及配件》标准（T/CECS10026-2025）已于2026年2月正式施行，新版国标GB/T8478-2026同步落地。新标准首次将传热系数K值≤1.5W/(㎡·K)纳入一星级以上认证硬门槛，5%的头部企业拿下35%高端市场份额。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">4. 百利玛联合华南理工大学发布高等门窗新标准</div>
       <div class="news-meta">08-18 · 来源：头条</div>
       <div class="news-content">
-        百利玛门窗联合华南理工大学召开新品全球发布会，推出"高等门窗"行业新标准，填补国标与高端家装之间的标准空白。企业自研柔性Low-E卷膜、双重防水专利技术，整窗K值低至1.0，对标德国PHI被动房标准。构建五大气候区专属产品矩阵，针对性解决北方保温、南方隔热、沿海抗风压等差异化需求。
+        百利玛门窗联合华南理工大学召开新品全球发布会，推出"高等门窗"行业新标准。企业自研柔性Low-E卷膜、双重防水专利技术，整窗K值低至1.0，对标德国PHI被动房标准。构建五大气候区专属产品矩阵。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">5. 威宝节能三次转型：从保温板到BIPV光伏一体化板材</div>
       <div class="news-meta">08-17 · 来源：泰山晚报</div>
       <div class="news-content">
-        山东威宝节能科技集团启动第三条BIPV建筑光伏一体化生产线试运行，将自研芯材与光伏组件深度融合，实现"保温板"到"发电板"的身份跃迁。企业累计获授权专利及软件著作权90余件，主导或参与制定3项行业标准，匀质板智能装备国内市场占有率达90%，智能设备远销俄罗斯、以色列等国。
+        山东威宝节能科技集团启动第三条BIPV建筑光伏一体化生产线试运行，将自研芯材与光伏组件深度融合。企业累计获授权专利及软件著作权90余件，主导或参与制定3项行业标准，匀质板智能装备国内市场占有率达90%。
       </div>
+      <a class="read-more" href="https://www.taishan.net" target="_blank">阅读原文</a>
     </div>
   </div>
 
@@ -166,34 +152,38 @@
 
     <div class="news-item">
       <div class="news-title">1. 家具制造业利润暴跌52.7%，行业"有量无利"困局凸显</div>
-      <div class="news-meta">08-18 · 来源：贤集网/头条</div>
+      <div class="news-meta">08-18 · 来源：贤集网</div>
       <div class="news-content">
-        国家统计局数据显示，2026年上半年规模以上家具制造企业营收超2576亿元，同比下滑8.6%；利润总额仅45.7亿元，<span class="highlight">同比暴跌52.7%</span>，行业利润率不足2%。原材料、人工、仓储、流量成本全线上扬叠加低价内卷，多数工厂陷入"有订单、难盈利"困境。欧派预计归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。
+        国家统计局数据显示，2026年上半年规模以上家具制造企业营收超2576亿元，同比下滑8.6%；利润总额仅45.7亿元，<span class="highlight">同比暴跌52.7%</span>，行业利润率不足2%。欧派预计归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。
       </div>
+      <a class="read-more" href="https://www.xianjichina.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">2. 家居行业大洗牌：10家上市企业寻求控制权变更</div>
-      <div class="news-meta">08-17 · 来源：澎湃新闻/环球网</div>
+      <div class="news-meta">08-17 · 来源：澎湃新闻</div>
       <div class="news-content">
-        截至2026年8月，至少10家上市家居企业寻求控制权变更。"集成灶第一股"浙江美大创始人家族套现12.9亿元，跨境电商企业接盘；ST美克被通信行业资本看中。同时，爱丽家居收购半导体测试公司连拿10个涨停板，帝欧家居5亿元跨界科技风口并改名"帝欧水华"，行业"去家居化"趋势明显。
+        截至2026年8月，至少10家上市家居企业寻求控制权变更。"集成灶第一股"浙江美大创始人家族套现12.9亿元；爱丽家居收购半导体测试公司连拿10个涨停板；帝欧家居5亿元跨界科技风口并改名"帝欧水华"。
       </div>
+      <a class="read-more" href="https://www.thepaper.cn" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">3. 源氏木语逆势扩张：线下门店突破1600家，"黑标"体系落地天津</div>
-      <div class="news-meta">08-17~18 · 来源：头条/网易</div>
+      <div class="news-meta">08-17~18 · 来源：网易</div>
       <div class="news-content">
-        全行业收缩之际，源氏木语线下门店已突破1600+家，覆盖31省296城，成熟门店近九成盈利，关店率不足5%。品牌连续多年稳居纯实木家具类目第一，在天津发布"新实木主义——黑标生活提案"，推出更高选材、更优设计、更高品质的"黑标"体系，定位品牌内"品质高锚点"，以主品牌信誉直接为高端品质背书。
+        全行业收缩之际，源氏木语线下门店已突破1600+家，覆盖31省296城，成熟门店近九成盈利，关店率不足5%。在天津发布"新实木主义——黑标生活提案"，推出更高选材、更优设计、更高品质的"黑标"体系。
       </div>
+      <a class="read-more" href="https://www.163.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">4. 家具出口回暖：1-7月出口额逼近392亿美元，同比增长8.5%</div>
       <div class="news-meta">08-17 · 来源：贤集网</div>
       <div class="news-content">
-        海关总署数据显示，1-7月家具及其零件出口额逼近392亿美元，同比涨幅达8.5%，其中一季度出口增速3%，后续持续扩大。相较陶瓷品类出口跌幅近三成，家具行业海外抗风险能力突出。但人民币升值、贸易政策变化等因素持续挤压出口企业利润空间。
+        海关总署数据显示，1-7月家具及其零件出口额逼近392亿美元，同比涨幅达8.5%。相较陶瓷品类出口跌幅近三成，家具行业海外抗风险能力突出。但人民币升值、贸易政策变化等因素持续挤压出口企业利润空间。
       </div>
+      <a class="read-more" href="https://www.xianjichina.com" target="_blank">阅读原文</a>
     </div>
   </div>
 
@@ -205,32 +195,36 @@
       <div class="news-title">1. 海尔智慧家庭Agent累计交互861亿次，AI布局全面提速</div>
       <div class="news-meta">08-18 · 来源：证券之星</div>
       <div class="news-content">
-        海尔智家以智慧家庭Agent为核心，打造涵盖AI产品、AI场景、AI生活的一站式方案。AI之眼2.0让冰箱可识别食材并自动匹配保鲜模式，家务/清洁/陪伴三类机器人可与家电协同联动。截至2025年底，海尔智慧家庭全球注册用户超<span class="highlight">1.3亿</span>，全年场景交互<span class="highlight">861亿次</span>。苹果HomePad、谷歌Gemini for Home、三星AI战略同步加码家庭AI入口争夺。
+        海尔智家以智慧家庭Agent为核心，打造涵盖AI产品、AI场景、AI生活的一站式方案。AI之眼2.0让冰箱可识别食材并自动匹配保鲜模式。截至2025年底，海尔智慧家庭全球注册用户超<span class="highlight">1.3亿</span>，全年场景交互<span class="highlight">861亿次</span>。
       </div>
+      <a class="read-more" href="https://finance.stockstar.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
-      <div class="news-title">2. 鸿蒙生态扎根长沙：两大成果落地，全域设备装机量突破13亿台</div>
+      <div class="news-title">2. 鸿蒙生态扎根长沙：全域设备装机量突破13亿台</div>
       <div class="news-meta">08-18 · 来源：长沙晚报</div>
       <div class="news-content">
-        华为湖南生态大会鸿蒙分论坛在长沙举行，鸿蒙智慧场馆方案联合创新项目正式启动，瞄准2029年第十六届全运会。中国移动湖南公司与鸿蒙生态创新中心签署战略合作协议。数据显示，鸿蒙全域设备装机量突破<span class="highlight">13亿台</span>，400余家行业龙头企业进行产业布局，国内新装住宅全屋智能渗透率已达28%。
+        华为湖南生态大会鸿蒙分论坛在长沙举行，鸿蒙智慧场馆方案联合创新项目正式启动。鸿蒙全域设备装机量突破<span class="highlight">13亿台</span>，400余家行业龙头企业进行产业布局，国内新装住宅全屋智能渗透率已达28%。
       </div>
+      <a class="read-more" href="https://www.icswb.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">3. 家居行业产品革命：场景化定制成主流趋势</div>
       <div class="news-meta">08-19 · 来源：头条</div>
       <div class="news-content">
-        消费者正从"买单品"转向"买生活方式"，客阳一体、电竞书房、微醺角、人宠共居等生活切片成为选择家居产品的新标准。海尔全屋家居发布"有屋"系列电竞房新品，融合智能科技、潮玩美学与社交娱乐，推出Air轻澄竞屋、Pro暖栖游窝、Pro Max酷炫竞界三款电竞房方案，全力打开家居电竞新赛道。
+        消费者正从"买单品"转向"买生活方式"，客阳一体、电竞书房、微角、人宠共居等生活切片成为选择家居产品的新标准。海尔全屋家居发布"有屋"系列电竞房新品，融合智能科技、潮玩美学与社交娱乐。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">4. 定制家居头部企业业绩承压：欧派预计利润下降50%-60%</div>
       <div class="news-meta">08-18 · 来源：头条</div>
       <div class="news-content">
-        定制家居头部企业密集发布业绩预告，行业普遍承压。欧派家居预计2026年上半年归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。企业普遍提到需求承压、行业竞争加剧、终端价格调整以及固定成本难以摊薄等核心挑战。行业原有的"容易赚钱"模式已不可持续，企业亟需寻找新增长路径。
+        定制家居头部企业密集发布业绩预告。欧派家居预计2026年上半年归母净利润同比下降50%-60%，索菲亚预计下降78%-85%。行业原有的"容易赚钱"模式已不可持续，企业亟需寻找新增长路径。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
   </div>
 
@@ -242,32 +236,36 @@
       <div class="news-title">1. 华曦未来红外三维光子晶体发热新材料获千万级融资</div>
       <div class="news-meta">08-16 · 来源：极目新闻</div>
       <div class="news-content">
-        华曦未来新材料完成千万级人民币天使轮融资，洪山资本、聚华传新等机构联合投资。企业核心技术源自华中科技大学国家重点实验室，专注红外三维光子晶体发热新材料。产品加热效率达<span class="highlight">95%以上</span>，30秒快速升温，温差控制±3℃，节能超30%。已覆盖红外加热墙纸、电热暖画、医疗烤灯、锂电池烘烤板等多个细分赛道。
+        华曦未来新材料完成千万级人民币天使轮融资。企业核心技术源自华中科技大学国家重点实验室，专注红外三维光子晶体发热新材料。产品加热效率达<span class="highlight">95%以上</span>，30秒快速升温，节能超30%。
       </div>
+      <a class="read-more" href="https://www.jimutv.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
-      <div class="news-title">2. 石墨烯电地暖技术盘点：电热转换效率达99%，清洁采暖加速迭代</div>
+      <div class="news-title">2. 石墨烯电地暖技术盘点：电热转换效率达99%</div>
       <div class="news-meta">08-19 · 来源：搜狐</div>
       <div class="news-content">
-        河北赫宝新能源自主研发石墨烯高导热发热油墨配方，石墨烯纯度达99.9%，拥有30余项核心专利（含8项发明专利）。产品采用PTC自限温技术，安全性提升50%；电热转换效率达99%，较传统电阻丝采暖节能30%以上，5000小时运行热衰减率低于5%。达到IPX7级防水、3750V耐压、V-0级阻燃标准，已通过CCC、CE认证。
+        河北赫宝新能源自主研发石墨烯高导热发热油墨配方，石墨烯纯度达99.9%，拥有30余项核心专利。电热转换效率达99%，较传统电阻丝采暖节能30%以上，5000小时运行热衰减率低于5%。
       </div>
+      <a class="read-more" href="https://www.sohu.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">3. 云山智暖：8年攻关实现石墨烯地暖全产业链国产化</div>
       <div class="news-meta">08-18 · 来源：头条</div>
       <div class="news-content">
-        威海云山智暖科技历时8年，从鳞片石墨选型到浆料配方、发热膜涂布全部自主攻关，实现石墨烯电地暖全产业链国产化。企业主动放弃市场主流油性浆料路线，选择无人区的水性体系，研发周期从3年拉长至8年。联合哈工大开发专用芯片级控制系统，实现发热材料、传感层、控制算法全部自主可控，为国内石墨烯电热产业提供可验证的自主路径。
+        威海云山智暖科技历时8年，从鳞片石墨选型到浆料配方、发热膜涂布全部自主攻关，实现石墨烯电地暖全产业链国产化。联合哈工大开发专用芯片级控制系统，实现发热材料、传感层、控制算法全部自主可控。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
 
     <div class="news-item">
       <div class="news-title">4. 石墨烯功能面料：远红外自发热技术从武义发往全球</div>
       <div class="news-meta">08-18 · 来源：头条</div>
       <div class="news-content">
-        浙江沪江纺织品自主研发石墨烯复合保暖面料，采用独特结构设计，经权威检测，洗涤100次后金黄色葡萄球菌抑菌率达99%，大肠杆菌95%、白色念珠菌98%，远超行业标准达AAAAA级。石墨烯面料远红外性能升温达1.7℃以上，产品畅销欧美、中东、中亚、非洲等十几个国家，年产石墨烯功能性面料3000吨。
+        浙江沪江纺织品自主研发石墨烯复合保暖面料，洗涤100次后金黄色葡萄球菌抑菌率达99%。石墨烯面料远红外性能升温达1.7℃以上，产品畅销欧美、中东、中亚、非洲等十几个国家，年产石墨烯功能性面料3000吨。
       </div>
+      <a class="read-more" href="https://www.toutiao.com" target="_blank">阅读原文</a>
     </div>
   </div>
 

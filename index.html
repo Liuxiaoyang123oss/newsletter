@@ -1,85 +1,55 @@
-<meta charset="UTF-8">
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>每日行业快报 | 2026年08月19日</title>
+<title>每日行业快报 | 2026年08月20日</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
     background: #f5f6fa;
     color: #2d3748;
-    line-height: 1.6;
+    line-height: 1.7;
   }
   .header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
-    padding: 48px 24px 40px;
+    padding: 52px 24px 44px;
     text-align: center;
   }
   .header h1 {
     font-size: 2rem;
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     letter-spacing: 1px;
   }
   .header .date {
     font-size: 1rem;
-    opacity: 0.9;
+    opacity: 0.92;
     font-weight: 400;
   }
   .header .subtitle {
     font-size: 0.9rem;
     opacity: 0.8;
-    margin-top: 6px;
+    margin-top: 8px;
   }
   .container {
     max-width: 960px;
-    margin: -20px auto 40px;
+    margin: -24px auto 48px;
     padding: 0 20px;
   }
-  .category-section {
+  .news-section {
     background: white;
     border-radius: 16px;
-    padding: 28px 32px;
-    margin-bottom: 24px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  }
-  .category-title {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #2d3748;
+    padding: 28px 32px 24px;
     margin-bottom: 20px;
-    padding-bottom: 12px;
-    border-bottom: 3px solid transparent;
-    border-image: linear-gradient(90deg, #667eea, #764ba2) 1;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .category-title .emoji { font-size: 1.5rem; }
-  .news-list { display: flex; flex-direction: column; gap: 14px; }
-  .news-card {
-    display: flex;
-    align-items: stretch;
-    background: #f9fafb;
-    border-radius: 12px;
-    padding: 16px 18px;
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.25s ease;
-    border: 1px solid #e5e7eb;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
     position: relative;
+    overflow: hidden;
   }
-  .news-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
-    border-color: #c7d2fe;
-    background: #fff;
-  }
-  .news-index {
-    flex-shrink: 0;
+  .section-number {
+    display: inline-block;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -87,352 +57,205 @@
     color: white;
     font-size: 0.85rem;
     font-weight: 700;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 14px;
-    margin-top: 2px;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
   }
-  .news-content { flex: 1; min-width: 0; }
-  .news-title {
+  .section-category {
+    display: inline-block;
     font-size: 1rem;
     font-weight: 600;
-    color: #1a202c;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
     margin-bottom: 6px;
-    line-height: 1.45;
   }
-  .news-card:hover .news-title { color: #5b21b6; }
-  .news-summary {
-    font-size: 0.875rem;
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
     color: #4a5568;
-    line-height: 1.55;
-    margin-bottom: 8px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    line-height: 1.8;
+    margin-bottom: 14px;
   }
-  .news-meta {
-    display: flex;
-    gap: 16px;
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
     font-size: 0.8rem;
     color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
   }
-  .news-source {
-    background: #edf2f7;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-weight: 500;
-    color: #4a5568;
-  }
-  .news-arrow {
-    flex-shrink: 0;
-    align-self: center;
-    font-size: 1.2rem;
-    color: #cbd5e0;
-    margin-left: 10px;
-    transition: all 0.25s ease;
-  }
-  .news-card:hover .news-arrow {
+  .source-link a {
     color: #667eea;
-    transform: translateX(3px);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
   }
   .empty-tip {
     color: #a0aec0;
     font-size: 0.9rem;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
   }
   .footer {
     text-align: center;
-    padding: 24px 20px 40px;
+    padding: 28px 20px 48px;
     color: #a0aec0;
     font-size: 0.85rem;
   }
   .footer a { color: #667eea; text-decoration: none; }
   @media (max-width: 640px) {
-    .header { padding: 36px 16px 32px; }
+    .header { padding: 40px 16px 36px; }
     .header h1 { font-size: 1.5rem; }
     .container { padding: 0 12px; }
-    .category-section { padding: 20px 16px; }
-    .category-title { font-size: 1.15rem; }
-    .news-card { padding: 12px 14px; }
-    .news-index { width: 28px; height: 28px; font-size: 0.8rem; margin-right: 10px; }
-    .news-title { font-size: 0.95rem; }
-    .news-summary { font-size: 0.82rem; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.85rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
   }
 </style>
 </head>
 <body>
   <div class="header">
     <h1>📰 每日行业快报</h1>
-    <div class="date">2026年08月19日 · 星期三</div>
+    <div class="date">2026年08月20日 · 星期四</div>
     <div class="subtitle">建筑节能 · 成品家具 · 定制家居 · 发热新材料</div>
   </div>
   <div class="container">
 
-        <section class="category-section">
-          <h2 class="category-title">
-            <span class="emoji">🏗️</span> 建筑节能 / 门窗
-          </h2>
-          <div class="news-list">
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675385736962540042/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">1</div>
-                <div class="news-content">
-                  <h3 class="news-title">我国已将建筑门窗等72种产品纳入绿色建材认证范畴_北京日报</h3>
-                  <p class="news-summary">记者今天了解到，市场监管总局联合住房和城乡建设部、工业和信息化部，逐步将建筑门窗、预拌混凝土、石材等6大类72种产品纳入绿色建材认证范畴，实施覆盖原材料开采、生产制造、使用流通至回收处置的全生命周期质量管控，从源头筑牢建材质量安全防线，提升产品绿色低碳属性。截至2026年6月底，全国绿色建材认证获证企业达5725家，有效证书11094张，带动全国绿色建材营收近1300亿元、比上年同期增长超过10%...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 22:56</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">建筑节能 / 门窗</span>
+              <div class="section-meta">📅 2026-08-18 11:30</div>
+              <div class="section-title">三部门部署建材节能降碳改造，行业技术创新催化不断，建材ETF易方达(159787)绿色转型动能积聚_金融界</div>
+              <div class="section-body">8月18日，工信部、国家发改委、市场监管总局联合印发通知，部署开展<span class="hl">2026年度</span>重点行业能效、碳效领跑者企业推荐工作。该政策旨在引导包括建材在内的工业企业对标行业先进实施节能降碳改造，支撑能耗双控逐步向碳排放双控转变，催化建材行业绿色转型与技术创新。</div>
+              <div class="insight">三部门联合发文标志着建材行业节能降碳从倡导走向实质性考核与领跑者示范阶段。这将加速落后产能出清，具备低碳技术优势的门窗及建材企业将获得更多政策红利与市场先机。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675208959443190323/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="http://m.toutiao.com/group/7675208959443190323/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">2</div>
-                <div class="news-content">
-                  <h3 class="news-title">三部门部署建材节能降碳改造，行业技术创新催化不断，建材ETF易方达(159787)绿色转型动能积聚_金融界</h3>
-                  <p class="news-summary">8月18日，截至11:12，建筑材料指数下跌0.28%。个股方面，东方雨虹涨超1%，北新建材、三棵树等上涨。 消息面上，8月18日，工业和信息化部、国家发展改革委、市场监管总局联合印发《关于组织开展2026年度重点行业能效、碳效领跑者企业推荐工作的通知》，部署开展能效、碳效领跑者企业推荐工作，引导包括建材在内的工业企业对标行业先进实施节能降碳改造，支撑能耗双控逐步向碳排放双控转变;同日，德州仁杰建...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 11:30</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">建筑节能 / 门窗</span>
+              <div class="section-meta">📅 2026-08-18 15:56</div>
+              <div class="section-title">剑指9000亿元!福建“十五五”重点发展这些新材料→_中国石油和化工</div>
+              <div class="section-body">福建省发布“十五五”新材料发展规划，剑指<span class="hl">9000亿元</span>产业规模。规划重点围绕先进装备制造等产业，加快发展聚碳酸酯、特种聚酰胺等特种工程塑料，并推进MDI扩建等项目，布局生物基聚醚等前沿聚氨酯材料，推动区域建筑节能与新材料产业协同升级。</div>
+              <div class="insight">省级“十五五”规划为新材料产业定下千亿级目标，明确了聚氨酯、工程塑料等节能保温核心材料的发展路径。这将直接带动上下游产业链投资，为建筑节能门窗及保温材料提供强大的底层材料支撑。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675276510520951331/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="https://m.11467.com/product/d54820576.htm" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">3</div>
-                <div class="news-content">
-                  <h3 class="news-title">【政策倒计时】建筑门窗企业必看!绿色建材认证再不做，这些机会全错失</h3>
-                  <p class="news-summary">建筑门窗企业必看！绿色建材认证再不做，这些机会全错失 各位门窗及配件企业负责人注意了！2026年绿色建材行业迎来政策密集落地期：1月1日《好材料选材通则》正式实施，2月1日新版《绿色建材评价建筑门窗及配件》标准即将生效，政fu采购绿色建材政策范围进一步扩大……一系列新规正在重塑行业格局，绿色建材认证已从“加分项”变成“准入证”。 作为深度参与绿色建材标准研讨、对接住建部/工信部认证体系的机构，今天...</p>
-                  <div class="news-meta">
-                    <span class="news-source">11467.com</span>
-                    <span class="news-date">2026-08-18 10:53</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">建筑节能 / 门窗</span>
+              <div class="section-meta">📅 2026-08-19 09:45</div>
+              <div class="section-title">报废五条生产线攻坚新产品，威宝节能三次转型向新行——一块板材 “闯” 进光伏新赛道_中华泰山网</div>
+              <div class="section-body">威宝节能历经<span class="hl">三年</span>绝境式研发，累计投入近<span class="hl">2000万元</span>，先后报废<span class="hl">五条</span>完整生产线，最终攻克八大技术难点。2025年底，其匀质彩钢夹心板生产线实现规模化投产，企业成功完成第二次战略转型，并凭借产品实力“闯”入光伏新赛道，实现技术突破。</div>
+              <div class="insight">传统建材企业通过“破釜沉舟”式的研发投入实现技术突围，并成功跨界光伏赛道，展现了建筑节能材料向新能源领域延伸的趋势。这种向新而行的转型模式为行业内中小企业摆脱同质化竞争提供了参考。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675552798486643250/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="http://m.toutiao.com/group/7675141595909407275/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">4</div>
-                <div class="news-content">
-                  <h3 class="news-title">房子“会呼吸” 节能超九成_纵览新闻</h3>
-                  <p class="news-summary">8月14日，在中规低碳(张家口)建筑技术有限公司的样板房外，工作人员向客商介绍被动式超低能耗建筑的优势。河北日报记者 郭晓通摄 窗外是交通主干道，样板房门窗紧闭，记者在室内听不到车辆驶过的声音，也感觉不到憋闷。从外表看，样板房与一般建筑差别不大，特别之处在于不依赖空调和暖气，室内温度可常年稳定在20至26摄氏度。 “被动式超低能耗建筑就像保温瓶，夏天隔热、冬天保温，比传统建筑节能90%以上。”该公...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 07:09</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-          </div>
-        </section>
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">建筑节能 / 门窗</span>
+              <div class="section-meta">📅 2026-08-19 17:19</div>
+              <div class="section-title">精工科技2026年1-6月归母净利润为1.24亿元，较去年同期增长9.31%_金融界</div>
+              <div class="section-body">精工科技发布<span class="hl">2026年</span>半年报，1-6月实现营业总收入<span class="hl">10.05亿元</span>，同比下滑<span class="hl">5.26%</span>；但归母净利润达<span class="hl">1.24亿元</span>，逆势增长<span class="hl">9.31%</span>，销售毛利率提升至<span class="hl">27.66%</span>。公司深耕碳纤维高端装备及新型建筑节能装备等领域，展现出较强的盈利韧性与产品结构优化成效。</div>
+              <div class="insight">在营收微降的背景下实现净利润逆势增长，反映出企业通过高附加值产品（如新型建筑节能装备）优化利润结构的有效性。这表明在行业存量博弈期，掌握核心高端装备技术的企业更具抗风险能力。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675669989260526123/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-        <section class="category-section">
-          <h2 class="category-title">
-            <span class="emoji">🪑</span> 成品家具 / 胡桃木
-          </h2>
-          <div class="news-list">
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675340997236163087/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">1</div>
-                <div class="news-content">
-                  <h3 class="news-title">专访红星美凯龙执行总裁朱家桂:减少对房地产的依赖，重构双向一体化零售逻辑_每日经济新闻</h3>
-                  <p class="news-summary">近年来，红星美凯龙在渠道端进行了一系列结构性调整，优化部分低效商场，对新零售家具、电器业务加速拓店布局。 近日，红星美凯龙家居集团执行总裁朱家桂接受《每日经济新闻》记者(以下简称NBD)专访时，回应了市场关切的近期公司业务调整与重构问题，也谈及了他对家居行业如何穿越周期的深层思考。 我们的结构性调整，是把原来的家居建材经营面积从100%压缩到60%，电器面积调到15%，设计中心面积15%，留下10...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 20:03</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">成品家具 / 胡桃木</span>
+              <div class="section-meta">📅 2026-08-19 08:00</div>
+              <div class="section-title">东莞家具展27年首次停办，家居行业的人去哪了?_细节人生</div>
+              <div class="section-body">运营<span class="hl">27年</span>的东莞家具展（第56届秋季展）宣布暂缓举办并调整至2027年3月，这是中国家具行业首次暂停传统秋展。此举反映出传统展会模式面临严峻挑战，“不参展后悔，参展更后悔”成为行业共识。这并非单一展会的停办，而是标志着过去<span class="hl">20多年</span>依赖展会驱动的增长逻辑正在发生根本性转变，行业亟需寻找新的发展动能与商业模式。</div>
+              <div class="insight">东莞家具展停办是家具行业进入深度调整期的标志性事件。它宣告了传统展会招商模式的失效，倒逼企业从粗放式规模扩张向精细化运营转型，行业洗牌将进一步加速。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675280005210833452/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="http://m.toutiao.com/group/7675394047468372480/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">2</div>
-                <div class="news-content">
-                  <h3 class="news-title">家具制造业利润暴跌52.7%:家具厂难熬，板材商更要警惕_每天十分钟畅晓天下事</h3>
-                  <p class="news-summary">[{"UploadId":"v02a62g10003da27kdq7dld3ht49kfpg","Duration":388.181,"SourceProvider":"readtt","ContentType":1,"Extra":{"audio_text":"今天咱们要聊的是，家具建材行业在市场需求疲软，和竞争不断加剧的这样的一个情况下。整个行业，从收入到利润，都面临着巨大的压力没错。以及，大...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 23:28</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">成品家具 / 胡桃木</span>
+              <div class="section-meta">📅 2026-08-18 23:28</div>
+              <div class="section-title">家具制造业利润暴跌52.7%:家具厂难熬，板材商更要警惕_每天十分钟畅晓天下事</div>
+              <div class="section-body">在市场需求疲软与竞争加剧的双重挤压下，家具建材行业面临巨大生存压力。数据显示，家具制造业利润出现<span class="hl">暴跌52.7%</span>的严峻状况。这一核心财务数据不仅揭示了制造端利润空间的极度压缩，也向上游板材等供应链传递出强烈的风险预警信号。行业整体从增量时代的增收增利正式转入存量博弈下的增收不增利甚至营收利润双降的寒冬期。</div>
+              <div class="insight">利润腰斩的数据直观反映了行业内卷的惨烈程度及终端消费需求的疲软。这将加速落后产能出清，促使企业必须通过降本增效、产品差异化及供应链优化来穿越周期。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675394047468372480/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="http://m.toutiao.com/group/7675172952664539654/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">3</div>
-                <div class="news-content">
-                  <h3 class="news-title">不等命运眷顾，这些品牌凭什么在寒冬持续壮大?_浪潮新消费</h3>
-                  <p class="news-summary">比如在房地产下行周期，源氏木语持续增长做出破200亿营收，超过宜家中国;新中式烘焙热潮退去后，依靠经典桃酥和家庭日常点心起家的泸溪河，却开始走向全国;起源于小众军迷社区的战术服装品牌龙牙，通过人群破圈和线下体验，去年业绩翻番营收近20亿元。 创业、资本注意力的离场，反衬的... 浪潮新消费:源氏木语是家居行业少有的逆势增长案例，几年时间低调地从十几亿做到超200亿营收，几乎被很多一线基金集体错过，...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 09:12</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">成品家具 / 胡桃木</span>
+              <div class="section-meta">📅 2026-08-19 18:34</div>
+              <div class="section-title">“广货行天下”家电家具专场佛山启幕 广东泛家居万亿集群瞄准六大新赛道_新快报</div>
+              <div class="section-body">“广货行天下”家电家具专场在佛山启幕，依托顺德超<span class="hl">3000家</span>家电配套企业与数千家家具制造企业的产业集聚优势，构建千亿级连片产业格局。广东泛家居产业正加快向智能化、融合化、高端化迈进，从单品制造向万亿级集群生态升级，并明确瞄准六大新赛道。活动通过搭建产销对接与供需匹配平台，助力企业拓市场、稳订单，推动产业能级持续提升。</div>
+              <div class="insight">广东泛家居产业正从传统的制造基地向万亿级生态集群跃升。家电与家具的深度融合及智能化转型，代表了行业未来的核心增长极，区域产业集群的协同效应将成为应对市场风险的关键护城河。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675689258463560192/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
 
-              <a class="news-card" href="http://m.toutiao.com/group/7675362578473681446/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">4</div>
-                <div class="news-content">
-                  <h3 class="news-title">2026浦东家具家居双展9月启幕:3200余个品牌汇聚，双馆联动拓展消费新场景_随申Hi-新闻晨报</h3>
-                  <p class="news-summary">九月的上海浦东之约已近在眼前。 备受全球家居行业瞩目的2026浦东家具家居双展(第三十一届中国国际家具展览会Furniture China & 2026 Maison Shanghai 摩登上海设计周 )，将于9月7日至11日在上海浦东双馆举办，预计迎来超过3,200+参展品牌、覆盖350,000平方米展览面积、吸引逾200,000名海内外专业观众到场。 步入第三十一年，本届双展以“大格局、大阵容...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 21:27</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-          </div>
-        </section>
-
-
-        <section class="category-section">
-          <h2 class="category-title">
-            <span class="emoji">🏠</span> 定制家居 / 智能家居
-          </h2>
-          <div class="news-list">
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675243048737014291/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">1</div>
-                <div class="news-content">
-                  <h3 class="news-title">巨头抢滩AI家庭入口，海尔智慧家庭Agent已达861亿交互_证券之星</h3>
-                  <p class="news-summary">最近，苹果智能家居中枢HomePad的细节被曝光，预计会随iOS 27在今年秋天亮相。这标志着苹果正式下场加入“家庭AI入口”的争夺战。 当下，智能家居的竞争逻辑已经发生改变:谷歌用Gemini for Home重构生态，三星放出AI Transformation战略，打算年内让8亿台设备具备AI能力。巨头们为什么这么拼?说到底，大家盯上的都是家庭场景这个终极流量入口。 从投资的角度看，这个入口意...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 13:43</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="https://m.sohu.com/a/1064511266_122965585/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">2</div>
-                <div class="news-content">
-                  <h3 class="news-title">2026年家装市场风向变了:全屋定制渗透率突破65%，环保标准成决胜点_品牌_消费者_模式</h3>
-                  <p class="news-summary">2026年家装市场风向变了：全屋定制渗透率突破65%，环保标准成决胜点 乐毅装饰 2026-08-18 20:05 入秋前的家装市场，正在经历一场悄无声息的洗牌。 据行业研究机构最新数据，2026年上半年全屋定制在家装市场的渗透率已突破65%，较去年同期增长近8个百分点。这意味着，每10户装修家庭中，超过6户选择了全屋定制而非传统木工打柜。 数据背后，是消费观念的深层转变。 环保标准：从E1到EN...</p>
-                  <div class="news-meta">
-                    <span class="news-source">sohu.com</span>
-                    <span class="news-date">2026-08-18 20:05</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675191663517631012/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">3</div>
-                <div class="news-content">
-                  <h3 class="news-title">亚宠展“人宠理想家”，正在改写家居产业的用户模型!_家居新范式</h3>
-                  <p class="news-summary">宠物家居已成定制家居存量战场下的高溢价增量。一边整家套餐毛利被压到个位数，另一边“宠主”们却愿为“隐形融合”和“空间效率”多付20%以上。这不是加个猫柜SKU的事，是全屋定制用户模型被重写。柜体结构、板材标准、五金选型、交付链路全要重来，谁先定标谁拿壁垒。 这些判断，即将写在后天开幕的第28届亚洲宠物展(Pet Fair Asia 2026，简称“亚宠展”)上。 场馆里的信号:跨品类巨头反切家居 ...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 15:31</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675383548655845951/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">4</div>
-                <div class="news-content">
-                  <h3 class="news-title">公允价值拖累利润!兔宝宝上半年增收不增利，定制家居收入“失速”跌超两成_读创新闻</h3>
-                  <p class="news-summary">8月18日晚，兔宝宝(002043)发布2026年半年报，上半年公司实现营业收入42.67亿元，同比增加17.40%;归母净利润为2.47亿元，同比减少7.67%;扣非归母净利润为2.61亿元，同比增加9.67%。公司拟每10股派发现金红利1.2元(含税)。 财报显示公司营收与扣非净利润双增，归母净利润却逆势下滑，这种”背离“源于一笔非经常性损益，即子公司参股公司悍高集团股份有限公司公允价值减少所...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 22:48</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-          </div>
-        </section>
-
-
-        <section class="category-section">
-          <h2 class="category-title">
-            <span class="emoji">🔥</span> 发热新材料
-          </h2>
-          <div class="news-list">
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675347853266666007/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">1</div>
-                <div class="news-content">
-                  <h3 class="news-title">AI芯片迎来退烧药!碳化硅基板传来大消息_好运</h3>
-                  <p class="news-summary">![](https://sf3-ttcdn-tos.pstatp.com/img/tos-cn-i-6w9my0ksvp/b398b1f54e0444abb6e293b7f8feb0cd~cs.jpeg) 8月17日，美国Coherent公司放出行业重磅消息，自家300毫米碳化硅基板，已经正式送给全球各大AI芯片巨头做样品测试。 很多人觉得不就是一块基板吗，没什么了不起。但搞AI硬件的都懂，现在A...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 20:31</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="http://m.toutiao.com/group/7675269729077953068/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">2</div>
-                <div class="news-content">
-                  <h3 class="news-title">八年“破壁”:云山智暖石墨烯地暖的国产化之路_威海云山智暖科技有限公司</h3>
-                  <p class="news-summary">一、被忽视的“卡脖子”环节 当行业热议石墨烯电池、散热膜时，建筑供暖领域的石墨烯电热材料同样暗藏隐忧:高端功能性浆料及成膜工艺，长期被日韩、欧美企业把持。国内多数厂商或直接进口成品浆料，或外购核心原料简单复配，表面是“石墨烯地暖”，实则核心材料受制于人，成本高、批次不稳，更谈不上底层技术创新。 ![](https://sf3-ttcdn-tos.pstatp.com/img/tos-cn-i-6w...</p>
-                  <div class="news-meta">
-                    <span class="news-source">toutiao.com</span>
-                    <span class="news-date">2026-08-18 15:28</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="https://m.sohu.com/a/1064593885_122904341/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">3</div>
-                <div class="news-content">
-                  <h3 class="news-title">冬季采暖怎么选 石墨烯电地暖技术盘点_产品_场景_传统</h3>
-                  <p class="news-summary">核心技术参数与性能表现 河北赫宝新能源科技有限公司 作为河北本土的节能采暖生产企业，掌握核心材料制备技术，自主研发石墨烯高导热发热油墨配方，石墨烯纯度达99.9%，远超90%的行业国标要求。目前企业拥有30余项核心专利，其中包含8项发明专利，覆盖发热芯片、封装工艺、智能温控系统等全生产链条。其生产的石墨烯电地暖产品采用行业创新PTC自限温技术，温度升高时可自动降低功率，杜绝过热风险，较传统电采暖产...</p>
-                  <div class="news-meta">
-                    <span class="news-source">sohu.com</span>
-                    <span class="news-date">2026-08-19 01:28</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-
-              <a class="news-card" href="https://m.sohu.com/a/1064612454_122474846/" target="_blank" rel="noopener noreferrer">
-                <div class="news-index">4</div>
-                <div class="news-content">
-                  <h3 class="news-title">石墨烯电地暖适配哪些采暖场景_服务_产品_生产</h3>
-                  <p class="news-summary">石墨烯电地暖适配哪些采暖场景 电采暖行业发展现状 作为电采暖体系的重要分支，新型采暖产品近年来市场规模增长迅速。据公开数据资料显示，2023年中国相关采暖产品市场规模已达68.5亿元，同比增长28.3%，预计到2028年将突破220亿元，年均复合增长率保持在较高水平。这类产品以电能为能源，通过远红外辐射的方式实现热量传递，相较于传统采暖方式，在空间占用、温控灵活性、运行洁净度等方面具备明显特点，能...</p>
-                  <div class="news-meta">
-                    <span class="news-source">sohu.com</span>
-                    <span class="news-date">2026-08-19 02:59</span>
-                  </div>
-                </div>
-                <div class="news-arrow">→</div>
-              </a>
-
-          </div>
-        </section>
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">成品家具 / 胡桃木</span>
+              <div class="section-meta">📅 2026-08-18 21:27</div>
+              <div class="section-title">2026浦东家具家居双展9月启幕:3200余个品牌汇聚，双馆联动拓展消费新场景_随申Hi-新闻晨报</div>
+              <div class="section-body">2026浦东家具家居双展将于9月在上海浦东举办，本届双展规模宏大，预计吸引超<span class="hl">3200个</span>参展品牌，展览面积达<span class="hl">350,000平方米</span>，并将迎来逾<span class="hl">200,000名</span>海内外专业观众。作为全球家居行业瞩目的盛会，本届展会以“大格局、大阵容”为特色，通过双馆联动模式，重点拓展消费新场景与设计创新，全面展示行业最新趋势与前沿产品，为国内外客商提供高效的商贸对接平台。</div>
+              <div class="insight">浦东双展的超大规模与双馆联动，彰显了国内家具市场在结构性调整中依然具备强大的韧性与活力。展会不仅是商贸对接的窗口，更是洞察消费新场景、设计新趋势及行业复苏风向的核心标尺。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7675362578473681446/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
 
   </div>
   <div class="footer">
-    <p>由 AI 自动生成 · 更新于 2026-08-19 10:46:26</p>
+    <p>由 AI 自动生成 · 更新于 2026-08-20 09:23:53</p>
     <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
   </div>
 </body>

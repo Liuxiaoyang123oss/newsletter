@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月18日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月18日 · 星期五</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-16 10:02</div>
+              <div class="section-title">北京商业9月大爆发，6个新商场扎堆开业</div>
+              <div class="section-body">据赢商大数据，北京9月迎来<span class="hl">6个</span>新商场扎堆开业。其中<span class="hl">西兴隆街</span>改造逻辑独特，由<span class="hl">7位</span>设计师领衔，总建筑面积约<span class="hl">1.46万</span>平方米。其核心在于运营前置，在设计阶段即引入运营团队规划业态，涵盖香氛、家居、精品咖啡等，打破传统先建后招商模式。</div>
+              <div class="insight">💡线下商业正从空间租赁向内容运营转型。运营前置与业态前置成为新趋势，定制家居品牌需紧跟商业体策展型零售变革，探索沉浸式场景体验新渠道。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/p/3985440279591681" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-17 00:00</div>
+              <div class="section-title">整木全案设计是什么意思?整木行业专业解析|中华整木网</div>
+              <div class="section-body">整木全案设计是整木定制行业的核心前端服务，覆盖全屋木作空间规划到交付运维的全流程。国内整木行业正从单品化向全案化、高端化升级，历经萌芽期（<span class="hl">2010-2015年</span>）等三个核心阶段。全案设计不仅是1:1完美落地的保障，更成为整木品牌构建核心竞争力的关键。</div>
+              <div class="insight">💡从单品到全案是定制家居向高净值市场渗透的必经之路。企业需从卖产品转向卖生活方式，强化前端设计与后端交付的闭环能力，以全案服务建立品牌护城河。</div>
+              <div class="source-link">来源：<a href="https://cnzhengmu.com/dictionary/%E6%95%B4%E6%9C%A8%E5%85%A8%E6%A1%88%E8%AE%BE%E8%AE%A1" target="_blank" rel="noopener noreferrer">cnzhengmu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-16 01:02</div>
+              <div class="section-title">2026年中杭州轻高定全屋定制怎么选?本地工厂直供的优米全屋定制深度解析-杭州轻高定全屋业内推荐推荐优米全屋定制</div>
+              <div class="section-body">“轻高定”成为杭州家居市场热词，其定位介于传统成品定制与高定之间，核心在于门墙柜一体化的和谐共处。它强调设计感、环保性与性价比的平衡，满足追求品质生活但不愿承担过高品牌溢价的业主需求，要求服务商懂设计、重工艺且价格透明，成为市场新风口。</div>
+              <div class="insight">💡“轻高定”精准切中中产阶层消费升级与理性回归的矛盾。这启示品牌需在高定美学与大众价格间寻找平衡点，通过供应链优化实现高质价比，抢占改善型需求大盘。</div>
+              <div class="source-link">来源：<a href="http://www.jdz-news.com.cn/hyzx/article-zgwe-6502322.html" target="_blank" rel="noopener noreferrer">jdz-news.com.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-17 11:37</div>
+              <div class="section-title">2026杭州全屋定制怎么选?从防潮工艺到落地服务，三大品牌横向解析 - 新闻中心 - 九正建材网</div>
+              <div class="section-body">科凡高定定位高坪效、柜墙门弧一体化高定全案定制品牌。品牌创立于<span class="hl">2006年</span>，深耕行业二十余年，拥有广东佛山、安徽六安两大自有智能化智造基地，总占地面积超<span class="hl">24万</span>㎡。通过全链路自主生产保障产能稳定，提供情绪空间设计与美学高定生活方式服务。</div>
+              <div class="insight">💡科凡通过超24万㎡双基地布局夯实智造底盘，以柜墙门弧一体化拉升客单价与空间美学。这表明二线头部正通过高定化转型与重资产智造投入，构筑规模与品质的双重壁垒。</div>
+              <div class="source-link">来源：<a href="https://www.jc001.cn/article/979983.html" target="_blank" rel="noopener noreferrer">jc001.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-16 16:48</div>
+              <div class="section-title">轻高定全屋定制先看设计和服务落地，劳卡整家定制品牌值得参考_生产_标准化_七星</div>
+              <div class="section-body">劳卡整家定制聚焦轻高定全屋定制赛道，强调从图纸到实景的落地能力。品牌认为轻高定落地需跨越设计与服务两道关口，通过标准化工艺与七星服务落地体系，确保整家风格、配色、收纳逻辑的精准兑现，解决效果图与实景脱节的行业痛点，提升终端交付满意度。</div>
+              <div class="insight">💡劳卡将战略重心锚定轻高定与交付落地，直击定制行业所见非所得的顽疾。以标准化服务体系保障高定效果兑现，是品牌在存量博弈中提升口碑与复购率的关键抓手。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1076867320_122933693/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-17 16:12</div>
+              <div class="section-title">上海陟高高端定制|企业简介_生产_油漆_全屋</div>
+              <div class="section-body">陟高全屋定制是国内少数同时具备免漆自动化生产体系与全系油漆类工艺体系的企业。公司建有独立免漆板式车间与恒温恒湿无尘油漆涂装车间，双工艺产线并行，实现板式免漆、木皮油漆、实木油漆全品类自主生产，无需外发代工，从根源解决跨品类交付难题。</div>
+              <div class="insight">💡陟高免漆加油漆双工艺产线并行的重资产模式，打破了高定木作依赖外协代工的瓶颈。这种全品类自主生产能力，是保障高定项目色彩统一与交付周期的核心壁垒。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1077351738_122998522/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-16 01:19</div>
+              <div class="section-title">如何选择沈阳适老改造对应的家具定制服务商_认证_产品_环保性</div>
+              <div class="section-body">沈阳家居定制市场需求呈现多元分层：新房刚需侧重空间规整；改善型业主偏好模块化系统柜，追求灵活布局；老旧小区业主则催生适老改造需求。市场针对不同户型与年龄段，提供从基础储物到适老化、模块化定制的差异化解决方案，细分赛道潜力巨大。</div>
+              <div class="insight">💡老龄化加速与改善型需求叠加，催生适老定制与模块化系统柜两大蓝海。品牌需针对银发经济开发防滑、无障碍等适老产品线，以细分场景挖掘存量房改造的新增长极。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1076527706_122966952/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-17 12:00</div>
+              <div class="section-title">别墅装修踩坑无数，广东高端木作全案定制，为什么越来越多业主选择一站式落地_科技_品牌_柜体</div>
+              <div class="section-body">针对别墅大宅装修，高端木作体系划分为<span class="hl">六大</span>完整系统：厨房系统（中西厨/岛台）、起居系统（背景柜/酒柜）、门墙系统（隐形门/护墙板）、衣帽系统（步入式衣帽间/铝木收纳）、卫浴系统等，全面覆盖大宅空间定制需求，兼顾收纳与展示，提升全案价值。</div>
+              <div class="insight">💡大宅全案木作正从单品拼凑走向六大系统深度融合。铝木收纳、中西厨岛台等细分系统的专业化，为高定品牌提供了提升客单价与差异化竞争的突破口。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1074771551_122969089/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-17 00:57</div>
+              <div class="section-title">东莞豪宅全屋家具定制:如何选出真正配得上大宅的顶奢之选?-东莞豪宅全屋家具厂家推荐欧极家家具</div>
+              <div class="section-body">卡缤家具依托品牌直营与渠道合作体系，服务网络触达国内<span class="hl">30多座</span>核心城市。在华南核心腹地，依托东莞总部优势，在广深都市圈保持极高响应速度，深度覆盖侨鑫汇悦台、深圳湾一号等顶奢豪宅项目，为高净值业主提供统一标准的高端全案定制体验。</div>
+              <div class="insight">💡顶奢豪宅定制正呈现头部集中与全国化布局特征。卡缤通过直营体系深度绑定核心城市顶豪楼盘，表明高定品牌需以标杆项目打透高净值圈层，建立高端服务口碑。</div>
+              <div class="source-link">来源：<a href="http://www.jdz-news.com.cn/hyzx/article-jnkv-6670828.html" target="_blank" rel="noopener noreferrer">jdz-news.com.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-16 18:01</div>
+              <div class="section-title">全屋家居定制有什么功能?产品、流程与场景解析 - 咸宁新闻网</div>
+              <div class="section-body">门墙柜一体化方案将定制木门、护墙板和柜体纳入统一设计，通过统一材质、色彩与工艺标准提升空间整体性。同时，环保基材与工艺选择成为核心功能，板材环保等级、胶黏剂、涂装及封边工艺直接决定居住健康，适配大平层及高端整家项目落地，是品质升级关键。</div>
+              <div class="insight">💡门墙柜一体化与环保工艺是高端整家的两大基石。启示企业必须在视觉统一与健康环保上双管齐下，将封边、涂装等隐性工艺显性化，转化为品牌的核心卖点。</div>
+              <div class="source-link">来源：<a href="http://news.xnnews.com.cn/tyxw_2109/202609/t20260916_5446581.shtml" target="_blank" rel="noopener noreferrer">xnnews.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-15 21:05</div>
+              <div class="section-title">2026年轻高定全屋定制:木作一体化落地的核心选择逻辑-2026年轻高定全屋定制:木作一体化落地的核心选择逻辑推荐MWH曼好家</div>
+              <div class="section-body">MWH曼好家提供真正意义上高定木作一站式解决方案，主打门墙柜一体化设计。通过将护墙板、室内门、衣帽间、酒柜、橱柜在风格、材质、色彩上高度统一，实现木作一站式方案所追求的整体性，重点服务别墅、大平层业主及高端家装从业者，解决空间割裂痛点。</div>
+              <div class="insight">💡一站式高定木作是解决大宅装修碎片化痛点的终极方案。品牌需从单一柜体制造商向空间木作系统服务商转型，以全案思维整合供应链，提升整体交付溢价。</div>
+              <div class="source-link">来源：<a href="http://www.pszx.com/fl/article-mpxc-894313.html" target="_blank" rel="noopener noreferrer">pszx.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-16 01:36</div>
+              <div class="section-title">哪些维度可评判意式整家定制品牌实力_产品_高定_体系</div>
+              <div class="section-body">国内高端家居定制赛道持续扩容，意式极简风格高定品牌受青睐。头部意式高定品牌普遍拥有<span class="hl">十余年</span>以上行业深耕经验，搭建起集原创设计、自主研发、智能制造、终端销售、全案落地于一体的完整运营体系，手握多项自主知识产权构建技术壁垒，引领行业升级。</div>
+              <div class="insight">💡意式极简的爆火背后是头部品牌十余年体系化建设的厚积薄发。启示行业：风格只是表象，原创设计、智能制造与全案落地的三位一体运营体系，才是高定品牌长红的底层逻辑。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1076534323_122945677/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-18 09:20:20</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

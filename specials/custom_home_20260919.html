@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月19日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月19日 · 星期六</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-18 21:15</div>
+              <div class="section-title">AI风口下，上海蜂窝连接芯片龙头赴港IPO，阿里巴巴入股</div>
+              <div class="section-body"><p>随着AI从云端延伸至端侧、车辆、机器人等物理世界应用，日益需要连接与计算的紧密协同，这也为连接芯片、智能SoC及ASIC定制解决方案带来增长机遇，最近就有该领域的公司冲击港股IPO。<p>翱捷科技（688220）是一家平台型无晶圆厂半导体公司，致力为横跨端侧、边缘及云端的广泛AI应用赋能。<p>2023年、2024年、2025年、2026年1-6月（简称“报告期”），翱捷科技<strong>...</div>
+              
+              <div class="source-link">来源：<a href="https://36kr.com/p/3988684304005895" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-18 19:52</div>
+              <div class="section-title">AI补上了建模短板，消费级3D打印来到爆发前夜</div>
+              <div class="section-body"><p>知名3D打印领域市场研究机构3D打印资源库创始人谭文杰告诉经济观察报记者，全球消费... <p>国家统计局数据显示，2026年上半年，国内3D打印设备产量同比增长48.5%，增速在主要工业产品中排名第一。海关数据显示，同期我国累计出口3D打印机362万台，同比增长90.2%。<p>成都一家3D打印企业的负责人杨磊告诉经济观察报记者，消费级3D打印行业当前所处的阶段与2020年前后的民用无人机...</div>
+              
+              <div class="source-link">来源：<a href="https://36kr.com/p/3988742919355141" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-18 15:38</div>
+              <div class="section-title">好莱客 10.89(0.37%)_个股资讯_新浪财经_新浪网</div>
+              <div class="section-body">好莱客 (603898.SH) 0.04 +0.37% 10.89 涨停：11.94 跌停：9.77 停牌 2026-09-18 15:00:05 临时停牌 | 今 开： | 10.90 | 成交量： | 1.77万手 | 振 幅： | 1.57% | | --- | --- | --- | --- | --- | --- | | 最 高： | 11.00 | 成交额： | 1932.63万元 |...</div>
+              
+              <div class="source-link">来源：<a href="http://vip.stock.finance.sina.com.cn/corp/go.php/vCB_AllNewsStock/symbol/sh603898.phtml" target="_blank" rel="noopener noreferrer">vip.stock.finance.sina.com.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-18 14:28</div>
+              <div class="section-title">【百得胜全屋定制·衣柜加盟】-百得胜橱柜加盟费多少钱-加盟电话-代理条件</div>
+              <div class="section-body">百得胜全屋定制·衣柜 广州百得胜家居有限公司 门店数量 1000-3000家 加盟预算 10万-30万 主营产品 整体衣柜 百得胜，成立于2001年... 2012年，百得胜将无醛添加板材引入定制行业，不断迭代升级。2021，全线产品全面升级6面环保；2022年，开启水漆整家定制，3底2面72道纯水漆工艺，没有8大重金属伤害，实现全水漆工艺多材质互转定制。 百得胜在全国拥有“华南（广州·东莞·惠州...</div>
+              
+              <div class="source-link">来源：<a href="https://m.chinachugui.com/br/co-baidesheng/" target="_blank" rel="noopener noreferrer">chinachugui.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-18 11:08</div>
+              <div class="section-title">全屋定制十大品牌怎么选?2026年全屋定制华腾杯影响力榜单出炉加盟知识-建材网</div>
+              <div class="section-body">全屋定制十大品牌怎么选？2026年全屋定制华腾杯影响力榜单出炉 整家定制、柜墙门一体化、轻高定等概念正成为家居行业的重要发展趋势。然而，市场上全屋定制品牌 数量众多，各品牌侧重点各异：部分聚焦于柜体系统，部分强调空间整体解决方案，另有品牌主推水性漆等环保工艺。这种差异化定位虽丰富了市场供给，却也增加了消费者在品牌甄别与需求匹配上的决策难度。为提升选择效率，降低信息不对称带来的决策风险，本次筛选依托...</div>
+              
+              <div class="source-link">来源：<a href="https://zhaoshang.chinabm.cn/2059810.html" target="_blank" rel="noopener noreferrer">zhaoshang.chinabm.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-18 11:03</div>
+              <div class="section-title">都说遇上最差暑假，三亚酒店反倒赚麻了</div>
+              <div class="section-body"><p>对酒店人而言，暑假一直是传统“旺季”。</p> <p>这里面的核心思路可以分成两层，一层是先把客源的基础盘子做大，把淡旺季带来的波动压平，另一层是再靠产品体验去挖出更多消费价值，把房价稳住。</p> <p>解决人来的问题后，当地紧接着推出了一系列配套举措，想办法让客人留下来、多消费，其中动作最多、落地最细的，就是酒店行业。<p>主要策略是在体验经济上做增量，摆脱单一客房售卖模式，推出“住宿+...</div>
+              
+              <div class="source-link">来源：<a href="https://36kr.com/p/3988332340951809" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-18 09:21</div>
+              <div class="section-title">面向智能体时代的营销组织，长什么样？</div>
+              <div class="section-body">真正解法不是继续加工具，而是搭建智能体营销组织，依靠品牌代码重构工作流，让人和AI协同，跳出不停救火的循环。但我们也观察到，一些成功企业采取了截然不同的做法：<strong>它们并非简单把AI叠加进现有流程，而是搭建一套面向人与智能体协同的全新模式，将自主工作流与统一的智能底层结合。我们将这套组织形态称为智能体营销组织。<p>这套模式的核心是品牌代码：一套机器可读的知识库。品牌战略、产品体验、客户...</div>
+              
+              <div class="source-link">来源：<a href="https://36kr.com/p/3988162820799232" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-18 00:00</div>
+              <div class="section-title">2026全屋整装定制十大品牌排行榜_全屋整装定制品牌前十名-品牌网</div>
+              <div class="section-body">全屋整装定制十大品牌排行榜 2026全屋整装定制行业十大品牌排行榜 更新时间:2026年9月18日 (每月更新) 品牌网依托全网大数据，经专业的评测选出了2026年全屋整装定制十大品牌排行榜，全屋整装定制十大品牌前十名分别是：科凡KEFAN、索菲亚家居SOGAL、欧派OPPEIN、好莱客Holike、卡诺亚Knoya、德维尔DEWEIER、客来福全屋定制、全友全屋定制、艾依格AIEGLE、简·爱保...</div>
+              
+              <div class="source-link">来源：<a href="https://m.chinapp.com/best/qwzzdz" target="_blank" rel="noopener noreferrer">chinapp.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-18 00:00</div>
+              <div class="section-title">금 색 Hpl - Page 5 | Alibaba.com</div>
+              <div class="section-body">최종 업데이트: 2026-09-18 무료 3D 레이아웃 아메리칸 쉐이커 맞춤형 MDF/합판 캐비닛 골드 하드웨어 & 와인 쿨러 대리석 랩 아일랜드 주방 캐비닛 AIGE 고급 모던 주... 조지 그룹 원목 모듈식 주방 캐비닛 디자인 클래식 골드 화이트 대리석 조리대 아크릴 수전 힌지 서랍 바스켓 골드탑 신제품 모던 높은 캐비닛 럭셔리 맞춤형 주방 및 거실 가...</div>
+              
+              <div class="source-link">来源：<a href="https://korean.alibaba.com/g/gold-color-hpl_5.html?intention_id=d48b477665284908b1eb41b7d8a6edf2" target="_blank" rel="noopener noreferrer">korean.alibaba.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-18 00:00</div>
+              <div class="section-title">家居业的营销策略:设计、套餐、服务_数据情报_视频_DESTOON</div>
+              <div class="section-body">据观察，经过几年的市场积累，一些以前觉得比较新鲜的营销策略，现在已经满大街了，成为家居厂家与经销商的标配，比如门店提供的效果图设计、套餐促销、免费服务等。 三维家声称提供“3D云设计+场景营销+一键下单拆单+柔性生产+精细化管理”一体化解决方案，积累了500多万户型图，2000多万设计师方案，100多万设计师。 三维家官网公开的客户名单里出现了：欧派、曲美、我乐、玛格、百得胜、科凡、箭牌、金牌卫浴...</div>
+              
+              <div class="source-link">来源：<a href="http://dt02.mb69.cn:38080/mobile/video/show.php?itemid=42" target="_blank" rel="noopener noreferrer">dt02.mb69.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-18 00:00</div>
+              <div class="section-title">Golden 싱크 캐비닛 - Page 3 | Alibaba.com</div>
+              <div class="section-body">최종 업데이트: 2026-09-18 Golden 싱크 캐비닛 (609+개 제품 제공) ![](https://s.alicdn.com/@img/imgextra/i1/O1CN01H0fqnK1Gpp8Bpra4W_!!6000000000672-55-tps-20-21.svg) ![](https://s.alicdn.com/@sc04/kf/Hca97283eae4a41728...</div>
+              
+              <div class="source-link">来源：<a href="https://korean.alibaba.com/g/golden-sink-cabinet_3.html?intention_id=df7b7b2e44f849589b5326940997ea2c" target="_blank" rel="noopener noreferrer">korean.alibaba.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-17 23:56</div>
+              <div class="section-title">家居江湖</div>
+              <div class="section-body">家居江湖 4枚勋章 重庆家居邦信息技术有限公司 面对CBD Fair“出海”的3个维度、7个问题，22家媒体的不同观点集锦。 1... 强强联合！爱洛克携手全球顶尖产业链品牌，共筑德系定制家 2026-09-15 又有新店丨玛格·极、木里木外、图森、乔金斯、本来之间、关亨、束木、左尚明舍等新店合辑。 2026-09-04 从创意到协同，设计师、装饰公司、定制品牌与供应链如何共同进化？ 2026-0...</div>
+              
+              <div class="source-link">来源：<a href="http://m.163.com/news/sub/T1476169797747.html" target="_blank" rel="noopener noreferrer">163.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-19 09:16:09</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

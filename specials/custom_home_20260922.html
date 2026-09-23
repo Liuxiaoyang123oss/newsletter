@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月22日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月22日 · 星期二</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-21 16:48</div>
+              <div class="section-title">“存量时代”来了，普通人该怎么买房?_销售_房地产_现房</div>
+              <div class="section-body">9月18日国新办发布会明确，我国房地产已进入<span class="hl">存量时代</span>，供求关系发生重大变化。多部委联合发布涉房地产文件，核心信号包括：新出让土地项目优先<span class="hl">现房销售</span>；继续预售的项目需<span class="hl">主体结构封顶</span>后才能销售；个人住房贷款延后至项目交付。这标志着行业从增量开发向存量运营的根本性转变。</div>
+              <div class="insight">💡房地产底层逻辑重构，家居企业必须彻底抛弃“等靠要”的新房红利思维，将战略重心全面转向存量房的局改、焕新与深度运营。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079067100_557202/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-21 15:49</div>
+              <div class="section-title">2026年评**的全屋定制源头厂家质量参考 - 八方资源网</div>
+              <div class="section-body">全屋定制行业经历十余年扩张后，已从粗放增长进入<span class="hl">精细化竞争阶段</span>。2026年，消费者对环保等级、板材工艺、设计审美及交付周期要求愈发严苛。整屋定制不再仅是柜体拼装，而是涵盖<span class="hl">空间规划、功能动线、材料搭配与落地安装</span>的系统性工程，工厂产能规模与供应链整合能力直接决定终端交付品质。</div>
+              <div class="insight">💡行业洗牌加速，单纯的价格战和营销战已失效，未来竞争的核心在于“系统性交付能力”与“供应链深度整合”。</div>
+              <div class="source-link">来源：<a href="https://mip.b2b168.com/wvs322369522.html" target="_blank" rel="noopener noreferrer">mip.b2b168.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-22 00:15</div>
+              <div class="section-title">2025广州定制家居展暨轻高定展超全逛展指南来了!风口解码・抢滩先机...3月必看大展，</div>
+              <div class="section-body">2025广州定制家居展暨轻高定展以“定制+”为主题，围绕<span class="hl">轻高定、旧改、整家、整装</span>四大核心风口展开。展会全面解码行业抢滩先机方向，反映出定制家居企业正加速从单一柜类定制向门墙柜一体化、全屋整装及存量房局部改造等全案服务模式演进，抢占下一个增长周期。</div>
+              <div class="insight">💡“轻高定”与“旧改”成为双引擎，企业需在“高颜值设计”与“高性价比落地”之间找到平衡，构建全案交付闭环。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d37917641.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-21 22:43</div>
+              <div class="section-title">百亿巨头董事长:我错了_中国新闻周刊</div>
+              <div class="section-body">欧派家居董事长姚良松在近期业绩发布会上直言“面对惊涛骇浪，欧派100%会死”，释放强烈危机感。资本市场反应剧烈，Wind数据显示，今年以来欧派家居<span class="hl">股价跌幅已超过41%</span>，总市值回落至约<span class="hl">175亿元</span>。尽管官方随后澄清“倒闭”传言，但业绩承压与市值缩水折射出头部企业在行业周期的真实生存状况。</div>
+              <div class="insight">💡龙头的“危机感”是全行业的缩影，粗放扩张时代终结，头部品牌正经历从“规模导向”向“利润与现金流导向”的痛苦蜕变。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7687971305886450211/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-21 15:34</div>
+              <div class="section-title">AI+家电家装一体化 以旧换新撬动金秋消费——山东苏宁易购2026双节消费季济南启动_闪电新闻</div>
+              <div class="section-body">9月21日，山东苏宁易购启动“2026金秋双节家电家装消费季”，以“<span class="hl">AI+家电家装一体化</span>”为主线。活动紧扣双节与以旧换新节点，联合政府、协会及供应链伙伴，推出覆盖<span class="hl">补贴、场景、服务全链路</span>的焕新行动，为旧房改造与家电换新家庭提供一站式解决方案，打造全年黄金窗口的消费盛宴。</div>
+              <div class="insight">💡头部零售平台正通过“AI赋能+家装家电融合”重塑消费场景，家居企业需积极拥抱渠道变革，借力平台资源实现流量与转化双增。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7687888663866262031/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-21 14:34</div>
+              <div class="section-title">2026华腾杯全屋定制十大品牌榜单揭发布，该怎么选十大品牌呢?加盟知识-建材网</div>
+              <div class="section-body">2026年度全屋定制“华腾杯”十大品牌榜单正式发布。此次评价体系发生重大转变，<span class="hl">摒弃单一广告曝光度考量</span>，转而综合评估企业的<span class="hl">生产制造能力、产品结构完整性、环保性能达标情况、终端渠道覆盖质量及加盟商支持体系</span>等多维度表现，全面反映头部阵营的真实竞争力与行业健康发展导向。</div>
+              <div class="insight">💡品牌评价标准从“营销驱动”转向“内功驱动”，制造、环保与渠道下沉能力成为衡量头部品牌核心壁垒的新标尺。</div>
+              <div class="source-link">来源：<a href="https://zhaoshang.chinabm.cn/2059928.html" target="_blank" rel="noopener noreferrer">zhaoshang.chinabm.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-21 21:15</div>
+              <div class="section-title">跨境电商争夺内贸商家，淘宝双11挖掘海外“确定性增量”_新浪财经</div>
+              <div class="section-body">淘宝公布今年双11海外玩法，超<span class="hl">120万</span>淘宝天猫商家参与出海，覆盖超20个行业。在轻小件之外，<span class="hl">家具、家装建材等中大件商品</span>得益于跨境物流优化升级，成为新的增长点。平台通过流量、物流（<span class="hl">13个国家和地区包邮</span>）和经营能力升级，帮助内销商家低成本试水海外，挖掘“确定性增量”。</div>
+              <div class="insight">💡中大件家居出海迎来基础设施红利期，具备供应链优势与柔性生产能力的企业，应果断布局跨境电商，开辟第二增长曲线。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7687976515253928476/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 08:18</div>
+              <div class="section-title">中央部委一份文件，老破小身价要变天，万个老旧小区被点名，这种房子先别卖_改造_原建_城市核心</div>
+              <div class="section-body">9月18日国新办发布会释放重磅信号，中央多部委联合点名<span class="hl">万个老旧小区</span>，存量房产价值将被重新兑现。过去被视为“老破小”的设施旧、户型烂房产，在“十五五”住建规划下迎来改造红利。政策潜台词明确：存量房改造与城市更新将成为房地产与家居行业下一阶段的核心价值兑现区。</div>
+              <div class="insight">💡“老破小”变身“香饽饽”，局改、微改、适老化改造市场爆发，针对存量房痛点研发“快装、环保、高性价比”产品是制胜关键。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079282912_122436458/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 00:00</div>
+              <div class="section-title">全屋装饰建材马来西亚整柜海运双清包税吉隆坡槟城一站式</div>
+              <div class="section-body">2024年第二季度，马来西亚建筑竣工面积<span class="hl">同比增长11.3%</span>，其中吉隆坡都市圈与槟城州分别贡献全国住宅新开工量的<span class="hl">37%</span>和<span class="hl">22%</span>。这一显著增长背后，是中资装饰建材企业加速出海东南亚的缩影。依托跨境供应链服务与整柜海运双清包税等物流优势，中资企业正快速抢占区域市场红利。</div>
+              <div class="insight">💡东南亚基建与地产红利外溢，家居建材企业出海需从“产品出口”升级为“供应链+服务”的整体出海，深耕高增长区域。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/16584448.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-22 01:22</div>
+              <div class="section-title">静电喷涂是什么 家装环保柜体工艺参考_全屋_定制_产品</div>
+              <div class="section-body">当前家装市场，环保属性已成核心考量。数据显示，2023年国内定制家居市场中，主打高环保属性的产品<span class="hl">销量占比已超过60%</span>，其中<span class="hl">ENF级</span>板材增速最为明显。2021年实施的《人造板甲醛释放量分级》标准，带动了静电喷涂等环保表面处理工艺的普及，环保已从加分项变为必选项。</div>
+              <div class="insight">💡环保不再是营销噱头，而是底层生存线。企业必须将ENF级环保标准内化为供应链与制造工艺的硬性底座，构建技术壁垒。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079200737_122740584/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-21 17:16</div>
+              <div class="section-title">改造老旧卫生间，华耐安家的解法是......_服务_焕新_家居</div>
+              <div class="section-body">商务部等13部门及国务院相继印发促家居消费与<span class="hl">以旧换新</span>行动方案，为存量房改造拉开序幕。针对老卫生间改造中搬家、漫长工期、施工杂乱等痛点，行业解法正从单纯卖产品转向<span class="hl">服务一体化</span>。企业需提供涵盖设计、拆旧、施工、售后的一站式闭环服务，降低消费者决策与执行门槛。</div>
+              <div class="insight">💡存量市场的竞争本质是“服务竞争”，谁能解决“最后一公里”的施工与交付痛点，谁就能吃透以旧换新的政策红利。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079059626_120783634/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-21 14:51</div>
+              <div class="section-title">摆脱人工依赖!高端整木定制靠数字化实现产能效率双突破_生产_品牌_晨丰</div>
+              <div class="section-body">在高端家居整木整装赛道，工艺与设计是基础，而效率与交付是规模化核心。当下不少高端整木品牌被<span class="hl">人工化运营模式</span>拖累，面临产能无法释放、交付受限、成本居高不下的痛点。行业破局的核心路径在于<span class="hl">数字化智能化升级</span>，通过打通设计、生产、安装全链路，摆脱人工依赖，实现产能与效率的双突破。</div>
+              <div class="insight">💡高端定制不等于“手工作坊”，唯有通过数字化打通前后端，才能在保证个性化品质的同时，实现规模化的高效交付。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1078992387_122790831/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-22 09:17:00</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

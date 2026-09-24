@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月23日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月23日 · 星期三</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-22 17:43</div>
+              <div class="section-title">老破小正式迎来春天!国家连放2大招，如今卖掉等于白白送人钱_电梯_业主_小区</div>
+              <div class="section-body">国务院印发《城市更新“十五五”规划》，今年中央预算内投资<span class="hl">970亿</span>元，加上超长期特别国债<span class="hl">1600亿</span>元，合计<span class="hl">2570亿</span>元投向城市更新，预计惠及约<span class="hl">800万</span>户居民。政策聚焦配套不全小区的整治提升，通过装电梯、换管网等改造，直接激发“老破小”存量房的局改与家居焕新需求。</div>
+              <div class="insight">💡<span class="hl">2570亿</span>真金白银砸向城市更新，标志着存量房改造成为家居行业最大的政策红利。企业需针对“老破小”痛点，研发适老化、快装快改的局部焕新产品包。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079536349_122540326/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-22 15:32</div>
+              <div class="section-title">湖北出台二十条举措 进一步满足群众刚性和改善性住房需求--湖北省住房和城乡建设厅</div>
+              <div class="section-body">湖北省住建厅等多部门联合印发《湖北省进一步满足刚性和改善性住房需求的若干措施》，推出<span class="hl">20条</span>务实举措。其中核心看点是大力推进住房“以旧换新”，并明确换购新房可退还卖旧房的个人所得税，切实打通居民换房置业堵点，进一步释放改善性住房消费潜力。</div>
+              <div class="insight">💡湖北出台<span class="hl">20条</span>新政并首创“换房退个税”，为地方政府刺激住房消费提供了新范本。家居企业应密切关注各地跟进政策，提前布局“收旧换新”一站式服务闭环。</div>
+              <div class="source-link">来源：<a href="http://zjt.hubei.gov.cn/bmdt/dtyw/gzdt/202609/t20260922_6020406.shtml" target="_blank" rel="noopener noreferrer">zjt.hubei.gov.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-22 08:04</div>
+              <div class="section-title">住房“以旧换新”能激活多大需求?-福建省房地产业协会</div>
+              <div class="section-body">中指研究院监测数据显示，2023年以来，已有超过<span class="hl">30个</span>城市表态支持住房市场的“以旧换新”并出台细则。整体来看，该政策已从过去的“试点+自发”性质，逐渐转变为有系统谋划、配套政策更多、覆盖面更广的支持性政策，正持续激活改善性需求。</div>
+              <div class="insight">💡超<span class="hl">30城</span>跟进“以旧换新”，标志着该政策已从局部试点走向全国系统性铺开。家居行业需顺应“先卖后买”或“直接置换”的新消费链路，优化交付与售后流程。</div>
+              <div class="source-link">来源：<a href="http://fjsfx.com/view/id/1961" target="_blank" rel="noopener noreferrer">fjsfx.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-22 23:58</div>
+              <div class="section-title">At the 137th Canton Fair: Suofeiya Expands Global Reach with Innovative Design Quality Intelligent Manufacturing</div>
+              <div class="section-body">索菲亚在第137届广交会上全面展示全球化布局，其2025年全球首发的Alpha Pro系列、Fayven Master系列和Riemann系列惊艳亮相。凭借创新设计、优质智造与智能家居体验，索菲亚正加速拓展海外市场，向世界输出中国定制家居的“高定”标准与智造实力。</div>
+              <div class="insight">💡索菲亚携三大新品矩阵亮相广交会，标志着头部品牌出海已从“产品代工”迈向“品牌与标准输出”。高颜值与智能化是征服海外高端市场的核心利器。</div>
+              <div class="source-link">来源：<a href="https://pitchengine.com.au/news/media-outreach-english/41898-at-the-137th-canton-fair-suofeiya-expands-global-reach-with-innovative-design-quality-intelligent-manufacturing" target="_blank" rel="noopener noreferrer">pitchengine.com.au</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-22 01:17</div>
+              <div class="section-title">家私家具产业ai智能体系统</div>
+              <div class="section-body">家私家具产业加速拥抱AI智能体系统。金牌厨柜依托三维家5.0系统实现全屋AI智能设计，导购与设计师仅需<span class="hl">4步</span>即可生成全屋效果图并一键替换材质，使整案设计效率提升近<span class="hl">3倍</span>。AI技术正深度重塑家居营销与设计环节，大幅降低前端沟通成本并提升成单转化率。</div>
+              <div class="insight">💡金牌厨柜引入AI设计使效率提升<span class="hl">3倍</span>，印证了AI已从概念走向核心业务流。前端设计与营销的AI化是降本增效的关键，企业需加速布局AI智能体以构建效率壁垒。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d39196828.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-22 14:11</div>
+              <div class="section-title">恒洁"焕新中国行"再启金秋行动，智焕新居筑造品质生活_手机新浪网</div>
+              <div class="section-body">恒洁再度开展“焕新中国行·乐动此间”金秋行动，以“金秋筑家·智焕新居”为主题，精准承接国家以旧换新政策红利。活动聚焦绿色、智能、品质化消费趋势，通过终端门店升级与惠民补贴，为消费者提供一站式卫浴空间焕新方案，进一步巩固其在智能卫浴市场的头部领先地位。</div>
+              <div class="insight">💡恒洁借势“以旧换新”政策开展全国大促，展现了头部品牌敏锐的政策嗅觉与强大的终端执行力。卫浴空间局部焕新正成为高频消费场景，企业需强化“快装快换”服务能力。</div>
+              <div class="source-link">来源：<a href="https://news.sina.cn/sx/2026-09-22/detail-inisspzm2171883.d.html" target="_blank" rel="noopener noreferrer">sina.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 21:38</div>
+              <div class="section-title">“崇州造”家居入驻京东 产业带大店+出海通道同步开启_锦观新闻</div>
+              <div class="section-body">京东与天府美好家携手开启川派家居产业带大店，并签署供应链战略合作协议。同时，意大利东方桥梁商会与天府美好家签约，“崇州造”家居由此打通直达全国的线上渠道和一条出海新通道。此举标志着家居产业带正通过“电商平台+源头工厂+跨境出海”模式实现渠道深度变革。</div>
+              <div class="insight">💡产业带大店模式打破了传统经销层级，实现“源头直供+出海”双轮驱动。中小工厂应积极拥抱产业带IP，借助平台流量与跨境基建，实现从代工向品牌出海的跃升。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7688353518356349487/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 16:00</div>
+              <div class="section-title">霸州家居中亚展销中心项目签约落地_廊坊日报全媒体</div>
+              <div class="section-body">霸州家居中亚展销中心推介会举行，<span class="hl">34家</span>商户签约入驻。霸州城投集团携手新疆华凌集团，旨在破解本土家居企业外销渠道窄、出海成本高等痛点。此举标志着北方核心家居产业集聚地正通过“抱团出海”模式，抢抓共建“一带一路”机遇，推动产业向中亚等新兴市场实现外向型经济升级。</div>
+              <div class="insight">💡<span class="hl">34家</span>商户抱团入驻中亚展销中心，揭示了“集群出海”是破解中小企业出海痛点的有效路径。中亚等新兴市场基建与地产需求旺盛，是家居出海的蓝海赛道。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7688266172269167145/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 00:00</div>
+              <div class="section-title">深圳蛇口整体衣柜橱柜成套家具出口马尼拉 整柜海运双清含税本地家具批发仓</div>
+              <div class="section-body">菲律宾海关总署发布新规，对进口家具实施更严格的检疫与标签核查。同期，马尼拉大都会区新建住宅交付量同比上升<span class="hl">23%</span>，其中帕西格市等核心区域需求旺盛。在合规门槛提高的背景下，具备完善供应链、能快速响应整柜海运双清含税及本地交付的中国家具企业，将迎来巨大的增量空间。</div>
+              <div class="insight">💡菲律宾新建住宅交付量激增<span class="hl">23%</span>，叠加合规门槛提升，正加速淘汰劣质出海企业。具备“合规认证+整柜海运+本地仓配”全链路能力的企业将独享这波红利。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/17729216.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-23 09:09</div>
+              <div class="section-title">推动人工智能与制造业深度融合 塑造发展新优势-新华网</div>
+              <div class="section-body">新华网发文指出，人工智能正深刻重塑全球生产制造模式。加快推动AI技术与制造业深度融合，是提升产业链供应链韧性与安全水平的现实需要。我国在AI核心技术与关键支撑能力方面已取得显著进展，“人工智能+制造”具备扎实基础，正成为塑造产业发展新优势的战略抉择。</div>
+              <div class="insight">💡国家层面定调“AI+制造”，意味着家居行业的数智化转型已从“企业自发”上升为“国家战略”。打通设计、生产、供应链的AI全链路，是未来十年的核心护城河。</div>
+              <div class="source-link">来源：<a href="http://www.xinhuanet.com/tech/20260923/aaaed618042148d98398d62ef2243c82/c.html" target="_blank" rel="noopener noreferrer">xinhuanet.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-22 00:15</div>
+              <div class="section-title">2025广州定制家居展暨轻高定展超全逛展指南来了!风口解码・抢滩先机...3月必看大展，</div>
+              <div class="section-body">2025广州定制家居展暨轻高定展将打造【珍珠链】主题展，聚焦从供应链整合到全链价值协同。当前整家定制普遍面临供应链同质化、协同机制薄弱等痛点，展会集结了家具、软体、涂料、地毯等全产业链品牌，旨在开启整家新模式，推动产业链资源配置优化与跨界融合创新。</div>
+              <div class="insight">💡展会主题直击“供应链同质化”痛点，预示着行业竞争已从“前端设计”转向“后端供应链协同”。构建开放、柔性的泛家居供应链生态，是破局整家定制内卷的关键。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d37917641.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-22 22:32</div>
+              <div class="section-title">给AI造一片土壤，广州怎么做?|记者观察_广州日报</div>
+              <div class="section-body">第二届广东省人工智能应用对接大会在广州举行，聚焦AI“应用对接”。广州企业的实践表明，AI落地需“先找真实场景，再把AI放进去”。无论是算力卫星还是大模型守护食堂，AI正从概念走向日常。这对家居行业的启示是，AI应用必须扎根于设计、生产、营销的真实痛点场景。</div>
+              <div class="insight">💡“先找真实场景，再放AI”是技术落地的黄金法则。家居企业切忌盲目跟风大模型，应聚焦“一键效果图”、“智能排产”等高频痛点，用AI解决具体业务问题。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7688367367927104029/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-23 09:22:23</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

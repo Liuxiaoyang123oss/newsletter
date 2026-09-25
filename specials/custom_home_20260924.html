@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月24日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月24日 · 星期四</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-23 18:57</div>
+              <div class="section-title">北京：实施“人工智能+”行动，加快推进制造业数字化转型</div>
+              <div class="section-body">北京市委常委会指出实施“人工智能+”行动，加快推进制造业数字化转型。会议明确促进先进制造业与现代服务业融合，支持企业拓展柔性化定制、产品服务等新业态，并加快绿色技术装备创新，推动重点领域节能降碳，支持领军企业发挥“链主”作用。</div>
+              <div class="insight">💡政策端明确将AI与柔性化定制作为制造业转型抓手，家居企业应加速布局智能制造与绿色低碳技术，以顺应政策导向。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/newsflashes/3995878451138434" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-24 08:59</div>
+              <div class="section-title">京东京喜发布家具建材TOP100好物榜:0加价、不踩坑、省心买_star星视频</div>
+              <div class="section-body">针对家具建材市场同质化严重、材质以次充好及价格不清晰等乱象，京东京喜发布首批“京喜甄选家具建材TOP100产业带好物榜”。该榜单从全国百余重点产业带中精选<span class="hl">100款</span>商品，以真实用户好评、品类销量及采销评估为参考，助力消费者省心购买。</div>
+              <div class="insight">💡电商平台通过建立严选榜单与产业带直连模式，正重塑家居建材渠道生态，倒逼供应链提升透明度与产品性价比。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7688900003914236416/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-24 08:59</div>
+              <div class="section-title">从经验生产到数据智造:高端全屋定制行业转型新思路_标准化_高定</div>
+              <div class="section-body">高端全屋定制行业正面临从“人工经验式”向“数据智造”的转型。行业转型核心在于用数字化标准替代人工经验，用数据流程规避人为误差。以拥有<span class="hl">三十年</span>积淀的西安振驰家俱等企业为代表，正通过完善实木产品体系与制造工艺，结合数字化前后端打通，适配个性化整装需求。</div>
+              <div class="insight">💡高定市场的竞争已从单纯的设计与材质，升级为后端数字化智造能力的比拼，标准化与数据化是破局关键。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1079444873_122790831/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-22 23:58</div>
+              <div class="section-title">At the 137th Canton Fair: Suofeiya Expands Global Reach with Innovative Design Quality Intelligent Manufacturing</div>
+              <div class="section-body">在第<span class="hl">137届</span>广交会上，索菲亚（Suofeiya）面向全球首发Alpha Pro系列、Fayven Master系列及Riemann系列等智能家居新品。凭借创新设计与高质量智能制造实力，索菲亚正积极拓展全球市场，向海外买家展示中国定制家居的前沿美学与尖端技术。</div>
+              <div class="insight">💡头部品牌加速出海战略，通过高颜值与智能化新品矩阵抢占国际展会流量，提升中国定制家居的全球品牌势能。</div>
+              <div class="source-link">来源：<a href="https://pitchengine.com.au/news/media-outreach-english/41898-at-the-137th-canton-fair-suofeiya-expands-global-reach-with-innovative-design-quality-intelligent-manufacturing" target="_blank" rel="noopener noreferrer">pitchengine.com.au</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-23 00:00</div>
+              <div class="section-title">金牌厨柜家居科技股份有限公司经营信息 - 企查查</div>
+              <div class="section-body">企查查数据显示，金牌厨柜家居科技股份有限公司（603180.SH）当前注册资本约<span class="hl">1.54亿</span>元，员工人数达<span class="hl">5714人</span>（2025年数据）。公司经营信息显示，其营业收入达到<span class="hl">33.01亿</span>元，作为拥有高新技术与绿色制造认证的大型企业，持续保持稳健的规模化运营。</div>
+              <div class="insight">💡金牌厨柜凭借超33亿营收与近6000人团队，展现出头部上市企业在复杂环境下的规模韧性与绿色智造底蕴。</div>
+              <div class="source-link">来源：<a href="https://www.qcc.com/crun/ffea9d307471c77140e6ae95502fc14d.html" target="_blank" rel="noopener noreferrer">qcc.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-24 00:00</div>
+              <div class="section-title">广州好莱客创意家居股份有限公司经营风险 - 企查查</div>
+              <div class="section-body">广州好莱客创意家居股份有限公司（603898.SH）最新经营数据显示，公司注册资本约<span class="hl">3.00亿</span>元，2025年相关财务指标达<span class="hl">16.65亿</span>元。作为A股上市企业，好莱客坚持“定制家居大师”定位，专注全屋定制领域，并以“原态”环保理念为核心竞争力，持续深耕市场。</div>
+              <div class="insight">💡好莱客依托16.65亿元的资产/营收规模与环保差异化定位，在头部阵营中稳固基本盘，环保原态仍是核心护城河。</div>
+              <div class="source-link">来源：<a href="https://www.qcc.com/cfengxian/6d383bf4f1b8053fd980e0f783c2819a.html" target="_blank" rel="noopener noreferrer">qcc.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-23 00:00</div>
+              <div class="section-title">全屋装饰建材马来西亚整柜海运双清包税吉隆坡槟城一站式</div>
+              <div class="section-body">东南亚建材出口迎来增长契机，马来西亚建筑竣工面积同比增长<span class="hl">11.3%</span>。其中，吉隆坡都市圈与槟城州分别贡献了全国住宅项目新开工量的<span class="hl">37%</span>和<span class="hl">22%</span>。这一数据背后，是中资装饰企业与全屋定制品牌加速布局马来西亚核心城市，跨境供应链服务需求激增。</div>
+              <div class="insight">💡马来西亚核心城市住宅新开工量集中爆发，为国内全屋定制及建材企业出海东南亚提供了高确定性的增量市场。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/16584448.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-23 00:00</div>
+              <div class="section-title">布艺沙发床垫家私出口新加坡专线 全屋家具分批次双清全境配送</div>
+              <div class="section-body">新加坡本地租赁市场占比高达<span class="hl">87%</span>，建屋发展局（HDB）修订《组屋家居适配指引》，首次将非标尺寸软体家具通关合规性等纳入监管。针对此政策转向，国内物流开通全屋家具分批次双清专线，时效压缩至<span class="hl">22-28天</span>，填补了跨境合规配送的结构性空白。</div>
+              <div class="insight">💡新加坡庞大的租赁市场与组屋政策催生非标家具需求，具备合规清关与高效配送能力的跨境供应链将成为出海新蓝海。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/17414852.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-22 21:38</div>
+              <div class="section-title">“崇州造”家居入驻京东 产业带大店+出海通道同步开启_锦观新闻</div>
+              <div class="section-body">京东与天府美好家携手开启川派家居产业带大店，并签署供应链战略合作协议。同时，意大利东方桥梁商会与天府美好家签约，“崇州造”家居不仅打通了直达全国的线上产业带渠道，还同步开启出海新通道，实现“产业带大店+出海”双轮驱动。</div>
+              <div class="insight">💡区域产业带依托电商巨头与跨境商会资源，正从单一制造向“国内线上直连+品牌出海”的双循环模式跃升。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7688353518356349487/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-23 18:10</div>
+              <div class="section-title">中国工厂生死分野：AI点燃的无声暴裂</div>
+              <div class="section-body">中国制造业正经历AI驱动的深刻变革，越来越多工厂开始使用AI进行接单、测款与排产。从义乌、永康到柯桥的调研显示，B2B模式正加速演变为A2A（AI to AI）模式。在惨烈的竞争下，利用AI实现供需精准匹配与生产效率跃升，成为工厂生死分野的关键。</div>
+              <div class="insight">💡AI已从概念走向车间实战，B2B向A2A的演进提示家居企业必须将AI深度融入接单与排产环节，以效率换取生存权。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/p/3995798657306760" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-23 14:26</div>
+              <div class="section-title">nobilia and Coohom Forge Strategic Global Partnership to Redefine the Future of Kitchen Planning with Spatial Intelligence</div>
+              <div class="section-body">全球厨房规划领域迎来标志性合作，德国顶级橱柜品牌nobilia与空间智能平台Coohom达成全球战略合作。双方将结合nobilia的制造巅峰与Coohom的空间智能（Spatial Intelligence）技术，重新定义厨房规划的未来，为全球家居行业引入AI驱动的设计新范式。</div>
+              <div class="insight">💡国际巨头联手布局空间智能，表明AI设计不仅是国内趋势，更是全球共识，掌握空间智能技术将重塑前端获客能力。</div>
+              <div class="source-link">来源：<a href="https://www.prnewswire.com/de/pressemitteilungen/nobilia-and-coohom-forge-strategic-global-partnership-to-redefine-the-future-of-kitchen-planning-with-spatial-intelligence-302887842.html" target="_blank" rel="noopener noreferrer">prnewswire.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-23 02:27</div>
+              <div class="section-title">2026优选大安区全屋定制店铺选择指南:从避坑到落地的实操路径-大安区全屋定制店铺推荐宏霞装饰材料</div>
+              <div class="section-body">全屋定制消费决策链条长，当前市场存在三大核心痛点，其中“方案与落地脱节”最为致命。门店样品惊艳但实际安装尺寸误差、风格走样，根源在于设计团队缺乏对户型的深度理解及生产端品控缺失。建立可感知、可验证的确定性交付体系，成为装企突围的关键。</div>
+              <div class="insight">💡“所见非所得”是定制家居最大痛点，企业需通过前后端数据打通与现场深度勘测，将交付确定性转化为核心竞争力。</div>
+              <div class="source-link">来源：<a href="http://www.jdz-news.com.cn/hyzx/article-tckt-7751740.html" target="_blank" rel="noopener noreferrer">jdz-news.com.cn</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-24 09:28:31</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

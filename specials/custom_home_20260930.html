@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年09月30日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年09月30日 · 星期三</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-30 08:38</div>
+              <div class="section-title">让房地产真正回到“住”上来(每周经济评论)_金台资讯</div>
+              <div class="section-body">住建部指出我国房地产市场已进入存量阶段。数据显示，二手房交易占比从<span class="hl">2020年</span>的<span class="hl">27%</span> 提升至<span class="hl">2025年</span>的<span class="hl">46%</span>，<span class="hl">今年前8个月</span>已达<span class="hl">52%</span>，正式超过新房成为住房交易主体。这标志着房地产市场需求结构发生根本性转变，存量房翻新与局部改造将成为家居消费的核心驱动力。</div>
+              <div class="insight">💡二手房占比突破50%是行业分水岭，定制家居企业必须从“新房配套”思维转向“存量焕新”思维，深耕局改与旧改服务。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7691121300751909439/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-30 09:00</div>
+              <div class="section-title">2026上海国际智家生活博览会今日盛大开幕!_家用电器杂志1980</div>
+              <div class="section-body">2026上海国际智家生活博览会盛大开幕，以“家居家装全屋五金电器设备一体，品质智能适老绿色升级”为核心主题。展会全方位展示智慧家居新场景与新技术，中国轻工业联合会等领导出席。同期举办的论坛指出，人工智能与数字经济正深刻重塑大家居产业，推动行业向数字化、智能化、绿色化高质量升级。</div>
+              <div class="insight">💡“智能适老”与“绿色升级”精准契合当前人口老龄化与环保消费双重需求，适老化定制与ENF级环保产品将是未来产品创新的主航道。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7691126458442236425/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-09-30 09:01</div>
+              <div class="section-title">四川微博房产的微博</div>
+              <div class="section-body">国家发改委专题发布会上，自然资源部表示按照“盘活存量、做优增量、提升质量”要求，摒弃大拆大建模式。通过出台一系列政策文件，允许规划灵活调整，拓宽存量处置路径，打通收储通道，把存量土地、闲置房屋、老旧楼宇用起来，更好支持服务业发展，取得了“两个更加”的初步成效。</div>
+              <div class="insight">💡政策端明确支持老旧楼宇与闲置房屋盘活，将为商业空间改造、长租公寓及存量房翻新带来巨量B端与C端定制家居需求。</div>
+              <div class="source-link">来源：<a href="https://m.weibo.cn/detail/5348772005286240" target="_blank" rel="noopener noreferrer">weibo.cn</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-29 22:28</div>
+              <div class="section-title">顾家家居召开2026年半年度业绩说明会:稳步推进家居产品业务提质增效_证券日报</div>
+              <div class="section-body">顾家家居召开2026年半年度业绩说明会，管理层详细解答经营业绩与全球化战略。数据显示，<span class="hl">2026年上半年</span>公司实现营业收入<span class="hl">98.75亿元</span>，同比增长<span class="hl">0.75%</span>；实现归属于上市公司股东的净利润<span class="hl">9.26亿元</span>。公司长期深耕客餐厅、卧室及整家定制等全场景领域，正稳步推进家居产品业务提质增效。</div>
+              <div class="insight">💡在行业整体承压下，顾家家居营收近百亿展现头部韧性，净利润微降提示企业需在规模扩张与利润管控间寻找更优解。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7690964115002524200/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-30 03:59</div>
+              <div class="section-title">详情</div>
+              <div class="section-body">皮阿诺公司数智化转型全面深化。<span class="hl">2022年</span>投入超<span class="hl">8000万元</span>资金，组建<span class="hl">60余人</span>专业团队，引入德国豪迈智能生产线，打造工业4.0“不落地”生产体系；软件上与SAP等顶尖系统合作。随着AI技术爆发，企业敏锐捕捉机遇，迅速将目光投向人工智能领域，推动数智化基建与AI技术的深度融合。</div>
+              <div class="insight">💡超8000万的重金投入彰显了头部企业死磕“数智化”的决心，AI赋能前后端一体化将是定制家居企业降本增效的核心壁垒。</div>
+              <div class="source-link">来源：<a href="http://www.360elib.com:2027/detail.aspx?NewsCode=NC1040&NewsId=69495614&OrgId=001" target="_blank" rel="noopener noreferrer">360elib.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-09-30 01:19</div>
+              <div class="section-title">股市必读:索菲亚新发布《关于完成工商登记变更并换发营业执照的公告》_证券之星</div>
+              <div class="section-body">头部定制家居品牌索菲亚（002572）发布关于完成工商登记变更并换发营业执照的公告。截至<span class="hl">2026年9月29日</span>收盘，索菲亚报收于<span class="hl">7.63元</span>，上涨<span class="hl">2.83%</span>，换手率<span class="hl">1.47%</span>，成交量<span class="hl">10.7万手</span>，成交额<span class="hl">8128.6万元</span>。当日主力资金净流入<span class="hl">846.07万元</span>，占总成交额<span class="hl">10.41%</span>。</div>
+              <div class="insight">💡工商变更与章程备案是头部企业完善公司治理的常规动作，主力资金净流入释放出资本市场对索菲亚基本面及战略调整的积极信号。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7691007970347401768/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-29 20:36</div>
+              <div class="section-title">货值约5万美元 成都崇州家具企业自主品牌首柜启运美国_封面新闻</div>
+              <div class="section-body">9月28日，满载川派家具的集装箱货车从崇州出发驶向美国洛杉矶。这是成都得一实业的美国首柜，货值约<span class="hl">5万美元</span>，包含餐椅、软床、餐桌等。此举标志着崇州家具企业在海外注册自有品牌并租用海外仓后，正式从“产品出口”迈向“品牌出海”，成为区域产业带自主外贸破局的崭新注脚。</div>
+              <div class="insight">💡从代工出口到自主品牌出海，5万美元首柜虽体量不大，但跑通了“海外仓+自有品牌”闭环，为中小家居企业出海提供了高溢价新范式。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7690935092167852587/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-30 00:00</div>
+              <div class="section-title">40HQ 整柜布艺沙发家具发往马来西亚 整柜海运双清包税全屋家私配送</div>
+              <div class="section-body">2024年第三季度，马来西亚住宅装修市场持续升温。据马来西亚国家统计局最新数据，吉隆坡及巴生谷地区新建私人住宅交付量同比增长<span class="hl">18.7%</span>，其中中高端公寓项目占比超<span class="hl">六成</span>。伴随年轻家庭对全屋家私配送需求增加，跨境海运双清包税等供应链服务正成为拓展该海外市场的重要抓手。</div>
+              <div class="insight">💡东南亚房地产市场的高增长与年轻化趋势，为中国定制家居及软体家具出海提供了天然的增量市场，中高端整家输出是差异化竞争关键。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/16477944.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-09-29 23:40</div>
+              <div class="section-title">首家长沙安居“千万间”直营形象店9月28日揭幕 设四大功能板块_观点小知</div>
+              <div class="section-body">9月28日，首家长沙安居“千万间”直营形象店正式揭幕，作为长沙市房屋全周期运营服务体系的线下核心示范窗口。该体系坚持“政府引导、国企承办、市场运营”理念，构建“线下服务+线上引流”协同服务模式。此举标志着地方国企深度入局存量房运营，为家居家装企业参与房屋全生命周期服务提供了新场景。</div>
+              <div class="insight">💡国企主导的房屋全周期运营打破了传统家装获客瓶颈，家居企业应积极拥抱此类官方平台，抢占存量房局改与焕新的流量入口。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7690982484774896147/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-30 09:00</div>
+              <div class="section-title">2026上海国际智家生活博览会第二天精彩继续!_家用电器杂志1980</div>
+              <div class="section-body">9月29日，“设计99”全球可持续发展高峰论坛在上海举办。论坛指出，当前世界、行业与市场正发生深刻变革，人工智能、数字经济正重塑大家居产业。行业正朝着数字化、智能化、绿色化方向加速升级，企业需紧跟技术浪潮，通过设计驱动与可持续发展理念，构建面向未来的核心竞争力。</div>
+              <div class="insight">💡AI与数字经济不再是概念，而是重塑产业格局的底层逻辑，家居企业必须将数字化贯穿设计、生产、营销全链路，否则将面临淘汰。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7691126873773851186/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-30 05:22</div>
+              <div class="section-title">9月30日:国企收购老破小以旧换新，试点3个月后，房东为何纷纷选择撤单_旧房_房地产市场_房子</div>
+              <div class="section-body">房地产市场正经历重要转折，“以旧换新”模式被寄予厚望。地方国企进入二手房市场收购部分旧房，推动居民购买新房。试点3个月后，虽出现部分房东撤单现象，但该模式有效解决了旧房难卖与新房去化的长期矛盾。这启示家居行业需密切关注地方存量房盘活政策，探索与国企合作的局改换新路径。</div>
+              <div class="insight">💡“以旧换新”不仅是楼市救市政策，更是家居行业的获客利器。企业需联合国企或平台，打通“收旧-换新-装修”闭环，挖掘存量红利。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1082494458_122367881/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-09-29 22:11</div>
+              <div class="section-title">品牌出海!“崇州造”家具发往美国洛杉矶_川观新闻</div>
+              <div class="section-body">继9月上旬崇州家居企业在美国成功注册海外品牌并租用海外仓后，产业带出海步伐加快。通过跨境电商与自主外贸破局，崇州家居正从低附加值的“产品出口”向高附加值的“品牌出海”转型。这一模式不仅提升了川派家具的国际影响力，也为国内其他家居产业带应对内卷、拓展全球市场提供了战略参考。</div>
+              <div class="insight">💡面对国内存量博弈，产业带抱团出海、布局海外仓与自主品牌是破局内卷的必由之路，从“卖产品”到“卖品牌”是提升利润率的唯一解。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7690959626682909238/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-09-30 09:11:35</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

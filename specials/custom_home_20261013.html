@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年10月13日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年10月13日 · 星期二</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-12 11:43</div>
+              <div class="section-title">家装产业正在调整自己的步伐走向复杂的存量市场 - 土巴兔装修网</div>
+              <div class="section-body">2024年家装行业在政策推动下集中度进一步提升。供需变化下，消费者主导的市场继续向品牌企业集中，头部品牌正迅速收割市场份额。规模以上家装企业凭借市场引领能力和品牌效应，有望在复苏中迅速崛起并承担引领行业健康发展的责任。</div>
+              <div class="insight">💡存量时代马太效应加剧，家装市场加速向头部品牌集中。中小企业需警惕被边缘化风险，应通过差异化服务或深耕细分赛道寻找生存空间。</div>
+              <div class="source-link">来源：<a href="https://www.to8to.com/yezhu/z194445.html" target="_blank" rel="noopener noreferrer">to8to.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-13 09:05</div>
+              <div class="section-title">从“住有所居”迈向“住有宜居”——内蒙古“好房子”建设牵引房地产业稳健发展-新闻中心-内蒙古新闻网</div>
+              <div class="section-body">内蒙古将推进“好房子”建设作为提升城市品质的关键抓手，依托城市更新行动推深做实各项工作。在住宅层高设计、自然采光通风、绿色低碳节能等细节精准发力，打造适配不同群体需求的高品质住宅，并开展物业服务质量提升三年行动。</div>
+              <div class="insight">💡“好房子”标准从概念走向落地，绿色低碳与适老化设计成为产品创新核心。定制家居企业需提前布局高品质、环保型产品线以迎合政策导向。</div>
+              <div class="source-link">来源：<a href="https://inews.nmgnews.com.cn/system/2026/10/13/030410929.shtml" target="_blank" rel="noopener noreferrer">inews.nmgnews.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-13 09:09</div>
+              <div class="section-title">一城改造万家生辉_金台资讯</div>
+              <div class="section-body">江西省将深化城市更新列为2026年重大改革项目，建立省城市高质量发展统筹协调机制。通过出台《关于推动城市高质量发展的实施意见》等配套细则，强化顶层设计，解决过去政策散落的问题，以制度创新绘就城市长远发展图景。</div>
+              <div class="insight">💡城市更新从碎片化向系统化制度创新转变。家居企业应密切关注各地城市更新规划，提前对接政府与房企，抢占存量房改造的政策红利。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7695953324897567232/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-11 23:22</div>
+              <div class="section-title">「重庆旧房翻新改造服务怎么样」-「重庆首齐装饰工程有限公司」 - 台州19楼(更新时间:2026-10-11 23:22:22)</div>
+              <div class="section-body">重庆首齐装饰针对10年以上住宅推出旧房局部及全屋翻新服务，并重点布局适老化改造。服务采用清单式闭口合同，明确基础工程<span class="hl">2年</span>、水电隐蔽工程<span class="hl">5年</span>质保标准，工期参考局部翻新<span class="hl">7-15天</span>，全屋翻新<span class="hl">45-90天</span>，以透明报价降低消费风险。</div>
+              <div class="insight">💡装企通过标准化工期与闭口合同破解旧改信任痛点。适老化改造成为新增长极，企业需提升适老产品研发与专业施工交付能力。</div>
+              <div class="source-link">来源：<a href="https://taizhou.19lou.com/pinpai/chanpin-426354/" target="_blank" rel="noopener noreferrer">taizhou.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-11 11:59</div>
+              <div class="section-title">2026年靠谱的全屋橱柜定制公司实力参考 - 八方资源网</div>
+              <div class="section-body">云南菲斯特家居深耕本土，集空间设计、全屋定制、旧柜焕新与收纳改造于一体。企业打造一体化自营供应链，设计、安装、售后全流程自营不外包。五金配置标配DTC等国产一线品牌，可选百隆等进口品牌，确保服务稳定与责任可追溯。</div>
+              <div class="insight">💡区域品牌通过“自营供应链+旧柜焕新”构建服务壁垒。不外包模式虽重，但能有效控制交付质量，为存量市场口碑营销提供支撑。</div>
+              <div class="source-link">来源：<a href="https://mip.b2b168.com/wvs321898432.html" target="_blank" rel="noopener noreferrer">mip.b2b168.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-11 09:18</div>
+              <div class="section-title">「塘洲镇网红家具定制厂家」-「宜佳家居」 - 台州19楼(更新时间:2026-10-11 09:18:27)</div>
+              <div class="section-body">宜佳家居针对旧房尺寸不规则、收纳不足等痛点，提供一站式全屋定制交付方案。服务覆盖从前端免费量房到后端入户安装保洁的全流程，兼顾环保、耐用与性价比。产品适配现代简约、奶油风等多种风格，满足刚需改善型家庭的旧房焕新需求。</div>
+              <div class="insight">💡一站式全案交付成为解决旧房复杂痛点的关键。定制企业需强化前后端一体化设计能力，以高颜值与高性价比抢占下沉市场旧改份额。</div>
+              <div class="source-link">来源：<a href="https://taizhou.19lou.com/pinpai/chanpin-569877/" target="_blank" rel="noopener noreferrer">taizhou.19lou.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-11 16:43</div>
+              <div class="section-title">千亿智能家居市场，再被政策推一把!_全屋_服务_产品</div>
+              <div class="section-body">政策明确对新建全装修住宅设置基本智能产品要求，鼓励光纤到房间布设。智能家居从装修后加购转变为随房交付，有望带动<span class="hl">千亿</span>规模市场的采购需求。目前部分城市已出台住房品质提升行动方案落实配套措施，推动智能产品前置化普及。</div>
+              <div class="insight">💡智能家居从“选配”走向“标配”，前置化交付打开千亿增量空间。定制家居企业应加速与智能家电、物联网企业的生态融合与套系化研发。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1086371365_99946217/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-10 16:28</div>
+              <div class="section-title">存量焕新需求持续释放 多地家装监管新政密集落地 护航旧房改造消费_装修_资金风险_施工</div>
+              <div class="section-body">国内家装市场需求结构持续迭代，旧房翻新、厨卫局部焕新及居家智能升级等存量改造需求持续升温。从国家部委到多地住建部门密集推出家装监管新政，覆盖范围从新建商品房拓展至存量房局部改造，填补旧房焕新赛道的制度空白并护航消费。</div>
+              <div class="insight">💡局改与焕新成为存量市场核心增长引擎。监管新政落地将加速行业洗牌，具备标准化交付与合规运营能力的企业将率先享受市场红利。</div>
+              <div class="source-link">来源：<a href="http://www.focus.cn/a/1085868850_116082" target="_blank" rel="noopener noreferrer">focus.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-10 10:10</div>
+              <div class="section-title">国庆家电市场，三大板块回暖明显</div>
+              <div class="section-body">国庆期间家电市场回暖，最大支撑来自“以旧换新”政策。除国家规定的<span class="hl">6类</span>1级能效产品外，四川、广东等多地将智能吸油烟机、智能洗碗机、智能清洁机器人等自主纳入补贴品类。三大板块明显回暖，政策扩容有效激发了智能厨电等改善型消费。</div>
+              <div class="insight">💡以旧换新补贴向智能厨电扩容，直接拉动家居家电一体化消费。定制企业可借势推出“柜电一体”套系促销，承接政策带来的流量红利。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/p/4019422011854725" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-10 16:08</div>
+              <div class="section-title">重磅!10 月起执行中央楼市利好，你的老房子不用再持续贬值了_大伟看楼市</div>
+              <div class="section-body">10月起执行中央楼市利好政策，刚需买家购买符合条件的小户型老二手房可享受贷款贴息。以贷款<span class="hl">100万</span>为例，原利率<span class="hl">3.4%</span> 贴息后前5年实际利率降至<span class="hl">2.4%</span>，每月月供减少约<span class="hl">800元</span>，5年合计节省利息接近<span class="hl">5万元</span>，直接降低入市门槛。</div>
+              <div class="insight">💡精准贴息大幅降低刚需购房成本，有望激活主城老破小交易。家居企业需针对小户型老房改造推出高性价比的“微改”与收纳定制套餐。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7694947661362807323/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-12 18:25</div>
+              <div class="section-title">湖北出台新政满足居民刚性和改善性住房需求</div>
+              <div class="section-body">湖北省多部门联合印发《措施》，推出<span class="hl">20条</span>务实举措满足居民刚性和改善性住房需求。政策聚焦刚需、改善、青年安居三大重点群体，从商品房消费支持、住房以旧换新、高品质住宅供给等方面发力，全面促进房地产市场平稳健康发展与品质提升。</div>
+              <div class="insight">💡20条新政精准滴灌三大核心购房群体，释放改善与青年安居需求。定制家居应针对青年群体推出高颜值、模块化快装产品，抢占增量。</div>
+              <div class="source-link">来源：<a href="https://www.mohurd.gov.cn/xinwen/dfxx/art/2026/art_a6c78853304043e9aa8217334a7025c0.html" target="_blank" rel="noopener noreferrer">mohurd.gov.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-12 00:00</div>
+              <div class="section-title">政策法规_中房网_中国房地产业协会官方网站</div>
+              <div class="section-body">中国房地产业协会汇总多项重磅政策，加快构建房地产发展新模式。包括稳步推进商品住房销售制度改革，天津印发低效用地再开发支持政策，以及金融监管总局与住建部联合印发《城市更新项目贷款管理办法（试行）》，为城市更新提供金融保障。</div>
+              <div class="insight">💡金融与土地政策双管齐下为城市更新输血。家居企业应关注城市更新贷款落地情况，积极拓展保障房、城中村改造等大宗B端集采业务。</div>
+              <div class="source-link">来源：<a href="http://m.fangchan.com/policy/index.html" target="_blank" rel="noopener noreferrer">fangchan.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-10-13 09:25:20</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

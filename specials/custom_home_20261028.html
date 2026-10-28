@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年10月28日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年10月28日 · 星期三</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-27 22:05</div>
+              <div class="section-title">家居 品牌 加码 社区 店 渠道 近身 化 转型 步入 深水 区 _ 北京 商报</div>
+              <div class="section-body">伴随城市更新加快，旧房焕新成为民生刚需，家居品牌渠道近身化转型步入深水区。圣象集团推出局改焕新专属品牌“象往家”，以社区小店模式深耕旧房轻改造赛道。目前该品牌全国已签约<span class="hl">41家</span>门店，覆盖北上广深等一二线城市，标志着头部企业正加速向社区终端下沉。</div>
+              <div class="insight">💡渠道变革信号：大店模式遇冷，社区小店成为抢占存量房局改市场的“前哨站”，近身化服务是未来核心壁垒。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7701348352281051683/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-27 01:49</div>
+              <div class="section-title">2026-2032全球全屋定制行业调研:趋势全解析</div>
+              <div class="section-body">全球全屋定制市场呈现明显区域化特征，量尺、安装等服务高度依赖本地化。中国头部企业如欧派、索菲亚等，主要依靠多品类布局、柔性制造能力、庞大的经销网络及整家战略参与全球竞争；而欧洲企业则在整体厨房及协调柜体方面具备传统优势，行业竞争格局分化显著。</div>
+              <div class="insight">💡宏观格局：中国定制家居的核心壁垒已从单一产品制造转向“柔性供应链+全品类整家+本地化服务”的综合体系较量。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d58536483.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-10-27 00:00</div>
+              <div class="section-title">陕西省第十届建材家居采购节劲爆来袭-旧换新促消费-千万补贴全城送 - 西安58同城</div>
+              <div class="section-body">陕西省举办第十届建材家居采购节，积极响应国家“以旧换新”促消费政策。本次活动主打“旧换新促消费”，全城派送<span class="hl">1000万</span>以旧换新补贴，并推出<span class="hl">10万件</span>换新爆款直冲底价，以及<span class="hl">10万份</span>换新豪礼免费送。通过真金白银的补贴与底价策略，强力拉动本地建材家居市场的存量焕新需求。</div>
+              <div class="insight">💡政策动向：地方性“以旧换新”补贴正成为激活存量市场的重要引擎，政企联动促消费、挖掘存量红利将是行业常态。</div>
+              <div class="source-link">来源：<a href="https://xa.58.com/jiancai/58047929057205x.shtml?module_name=3&pos=5&strategytype=ALG_88_base_A" target="_blank" rel="noopener noreferrer">xa.58.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-27 08:00</div>
+              <div class="section-title">尚品 配 前三 季度 亏 3.3 亿 : 那个 最 会 讲 故事 的 定制 品牌 ， 讲 不 下去 了 _ 细节 人生</div>
+              <div class="section-body">尚品宅配发布2026年三季报，业绩出现大幅滑坡。前三季度实现营收<span class="hl">18.12亿</span>元，同比下滑<span class="hl">28.95%</span>；归母净利润亏损<span class="hl">3.3亿</span>元，亏损幅度同比扩大<span class="hl">315%</span>。作为曾与欧派、索菲亚并称“欧索尚”的定制第一梯队，其软件高科技基因与商超店模式在当下存量博弈中面临严峻挑战。</div>
+              <div class="insight">💡业绩警示：传统IT基因与重资产商超模式在行业下行期承压明显，头部阵营分化加剧，战略转型与降本增效迫在眉睫。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7700817637556208170/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-26 15:04</div>
+              <div class="section-title">索菲亚(002572)股吧_索菲亚怎么样_分析讨论社区—东方财富网</div>
+              <div class="section-body">欧派家居发布公告称，拟使用自有资金进行股份回购，回购资金总额不低于<span class="hl">1亿元</span>且不超过<span class="hl">2亿元</span>元，回购股份将全部用于注销并减少注册资本。此举旨在维护公司价值及股东权益，向市场传递管理层对公司长期稳健发展的信心，也反映出头部企业在现金流充裕下的资本运作策略。</div>
+              <div class="insight">💡资本信号：头部企业通过回购注销回馈股东，彰显充沛现金流与抗风险底气，有助于稳固资本市场预期并提振行业信心。</div>
+              <div class="source-link">来源：<a href="https://mguba.eastmoney.com/mguba/list/002572,1_12" target="_blank" rel="noopener noreferrer">mguba.eastmoney.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-10-27 07:08</div>
+              <div class="section-title">2026广州定制家居展【索菲亚、尚品宅配、哲木、鲁丽、三棵树、展辰、酷家乐等共同呈现家居模式】 视频</div>
+              <div class="section-body">在2026广州定制家居展上，索菲亚正式宣布启动全国渠道流量精耕战略暨「1+N+X」绿洲计划。该战略旨在通过模式革新与产品技术破局，深度挖掘终端流量价值。面对行业流量碎片化趋势，索菲亚试图通过多渠道布局与精细化运营，重构门店获客模型，巩固其在定制家居第一梯队的领先地位。</div>
+              <div class="insight">💡战略转型：从粗放式开店转向“流量精耕”，头部品牌正通过模式创新重塑终端获客链路，以精细化运营对抗流量焦虑。</div>
+              <div class="source-link">来源：<a href="https://guangzhou.11467.com/info/39055447.htm" target="_blank" rel="noopener noreferrer">guangzhou.11467.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-28 09:10</div>
+              <div class="section-title">小伙来武汉创业做“旧房改造:一个月能接七八单，整装改造工期约三个月_九派武汉</div>
+              <div class="section-body">武汉创业者张志晏聚焦老旧小区改造小众市场，团队在徐东开店深耕。目前其客户中武昌区占比超过<span class="hl">60%</span>，汉口、汉阳也有分布。业务主要针对步梯房装修落后、防水差、适老化不到位等痛点，每月稳定接单<span class="hl">七八单</span>，整装改造工期约三个月。在大型装企难以兼顾的细分刚需市场，跑通了差异化生存模式。</div>
+              <div class="insight">💡增长赛道：老旧小区步梯房翻新与适老化改造需求旺盛，避开整装红海，深耕社区局改是中小装企实现逆势增长的破局点。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7701519855790440970/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-27 03:21</div>
+              <div class="section-title">2026年黄岛老房翻新公司哪家好?优秀服务商选择指南-小黄帽家装</div>
+              <div class="section-body">小黄帽装饰定位专注于老房翻新、局部改造的个性化服务家装公司，打破传统整装模式，采用工程师一对一立体化服务。企业面向存量房翻新核心赛道，聚焦老房宜居改造、厨卫焕新等细分需求。该模式紧密依托国家城市更新、家居以旧换新等政策导向，精准切入改善型民生刚需，展现出极强的区域市场渗透力。</div>
+              <div class="insight">💡市场空白：厨卫焕新与局部改造是存量房时代的“高频刚需”，标准化、轻量化的局改服务将迎来爆发期，成为新的利润增长极。</div>
+              <div class="source-link">来源：<a href="http://bbs.xnnews.com.cn/hyxx/article-kjxr-16315698.html" target="_blank" rel="noopener noreferrer">bbs.xnnews.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-10-28 02:01</div>
+              <div class="section-title">10月宁波全屋整装选哪家强不花冤枉钱?_柜体_业主_工艺</div>
+              <div class="section-body">宁波全屋整装市场呈现明显分层：第三方门店加价高、施工班组工艺差，而扎根本地的自有标准化车间源头整装工厂正快速崛起。这类工厂自主完成木作生产、设计、安装全流程，去除了中间商差价，解决了风格不统一与售后推诿等痛点。这种“前店后厂”的源头直营模式，正成为追求性价比与落地效果的业主的新选择。</div>
+              <div class="insight">💡差异化方向：去中间化与“源头工厂直营”正迎合消费降级下的质价比需求，区域型源头工厂具备极强竞争力，将加速洗牌。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1093586795_122944198/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-27 08:54</div>
+              <div class="section-title">索菲亚定制是几线品牌?-全屋定制衣柜网</div>
+              <div class="section-body">家居产业变革加速，整装市场不再是定制行业的专属游戏。最新整装竞争力TOP5排行榜显示，贝壳、尚品宅配、欧派、索菲亚、东易日盛上榜。产业链上下游玩家如房产中介、家装公司、定制企业正积极向彼此领域渗透，各自边界逐渐模糊，共享整装蛋糕，行业进入全链路资源整合的新阶段。</div>
+              <div class="insight">💡行业信号：整装赛道已进入跨界肉搏期，单一品类优势不再，构建“设计+施工+供应链”的全链路闭环是未来生存的关键。</div>
+              <div class="source-link">来源：<a href="https://m.chinayigui.com/baike/187.html" target="_blank" rel="noopener noreferrer">chinayigui.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-27 08:03</div>
+              <div class="section-title">2026年正规的做毛坯房全屋定制可以改设计的服务商行业现状与正规商家选择指南 - 八方资源网</div>
+              <div class="section-body">尚品宅配在南昌红谷滩区打造直营整装体验馆，依托集团业务线提供从毛坯到拎包入住的一站式服务。该馆深度整合硬装施工、全屋定制、软装搭配三大板块，配备集团统一培训的设计师团队。业主在馆内即可完成水电改造、墙面处理到家具配饰的全部选择，标志着头部品牌正从“卖产品”向“卖生活方式”的整体交付转型。</div>
+              <div class="insight">💡转型方向：一站式整装体验馆成为流量截留利器，硬装与软装的深度融合是提升客单价、保障落地效果的核心转型方向。</div>
+              <div class="source-link">来源：<a href="https://mip.b2b168.com/wvs323423187.html" target="_blank" rel="noopener noreferrer">mip.b2b168.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-10-27 10:58</div>
+              <div class="section-title">欧派集团官方的微博</div>
+              <div class="section-body">拥有330平大平层的博主分享装修经验：硬装自己主导，但全屋定制和宅配软装提前做功课并交由欧派统筹。其最惊喜的是欧派的「宅配一体化设计」，如将宝格丽紫岩板元素与法式留白完美融合。这表明消费者越来越看重硬装与全屋定制、软装的前置统筹与风格统一，一体化设计能力成为打动高端客户的关键。</div>
+              <div class="insight">💡战略建议：高端客户对“所见即所得”的要求日益严苛，提升“硬装+定制+软装”的前置一体化设计能力是获取高溢价的核心。</div>
+              <div class="source-link">来源：<a href="https://m.weibo.cn/detail/5358585879201322" target="_blank" rel="noopener noreferrer">weibo.cn</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-10-28 09:20:32</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

@@ -1,273 +1,243 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>行业快报 - 2026年11月04日</title>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
-        background-color: #f3f4f6;
-        padding: 20px;
-        line-height: 1.6;
-    }
-
-    .container {
-        max-width: 900px;
-        margin: 0 auto;
-    }
-
-    .header {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        color: white;
-        padding: 40px 30px;
-        border-radius: 16px;
-        text-align: center;
-        margin-bottom: 30px;
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-    }
-
-    .header h1 {
-        font-size: 32px;
-        margin-bottom: 10px;
-    }
-
-    .header .date {
-        font-size: 16px;
-        opacity: 0.9;
-    }
-
-    .header .stats {
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-        margin-top: 20px;
-        flex-wrap: wrap;
-    }
-
-    .stat-item {
-        text-align: center;
-    }
-
-    .stat-number {
-        font-size: 28px;
-        font-weight: bold;
-    }
-
-    .stat-label {
-        font-size: 14px;
-        opacity: 0.9;
-    }
-
-    .category-section {
-        margin-bottom: 40px;
-    }
-
-    .category-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 20px;
-        padding: 15px 20px;
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .category-icon {
-        font-size: 28px;
-        margin-right: 15px;
-    }
-
-    .category-title {
-        font-size: 22px;
-        font-weight: 600;
-        color: #1f2937;
-    }
-
-    .news-card {
-        background: white;
-        border-radius: 12px;
-        padding: 25px;
-        margin-bottom: 20px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .news-card:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-    }
-
-    .news-header {
-        display: flex;
-        align-items: flex-start;
-        margin-bottom: 15px;
-    }
-
-    .news-number {
-        background: #2563eb;
-        color: white;
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        font-size: 16px;
-        margin-right: 15px;
-        flex-shrink: 0;
-    }
-
-    .news-title {
-        font-size: 18px;
-        font-weight: 600;
-        color: #2563eb;
-        flex: 1;
-        line-height: 1.4;
-    }
-
-    .news-source {
-        font-size: 13px;
-        color: #9ca3af;
-        margin-bottom: 15px;
-        display: flex;
-        align-items: center;
-        gap: 15px;
-        flex-wrap: wrap;
-    }
-
-    .news-content {
-        color: #4b5563;
-        font-size: 15px;
-        line-height: 1.8;
-        margin-bottom: 15px;
-    }
-
-    .news-content p {
-        margin-bottom: 12px;
-    }
-
-    .insight-box {
-        background: #fff7ed;
-        border-left: 4px solid #f97316;
-        padding: 15px;
-        border-radius: 8px;
-        margin-bottom: 15px;
-    }
-
-    .insight-title {
-        font-size: 14px;
-        font-weight: 600;
-        color: #f97316;
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-    }
-
-    .insight-content {
-        font-size: 14px;
-        color: #6b7280;
-        line-height: 1.6;
-    }
-
-    .news-link {
-        display: inline-flex;
-        align-items: center;
-        color: #2563eb;
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        padding: 8px 16px;
-        background: #eff6ff;
-        border-radius: 8px;
-        transition: background 0.2s;
-    }
-
-    .news-link:hover {
-        background: #dbeafe;
-    }
-
-    .news-link::after {
-        content: "→";
-        margin-left: 6px;
-    }
-
-    .footer {
-        background: white;
-        padding: 30px;
-        border-radius: 12px;
-        text-align: center;
-        color: #6b7280;
-        font-size: 14px;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    }
-
-    .footer .brand {
-        font-size: 16px;
-        font-weight: 600;
-        color: #1f2937;
-        margin-bottom: 10px;
-    }
-
-    .tag {
-        display: inline-block;
-        padding: 4px 12px;
-        border-radius: 12px;
-        font-size: 12px;
-        font-weight: 500;
-    }
-
-    .tag-policy {
-        background: #dbeafe;
-        color: #1e40af;
-    }
-
-    .tag-data {
-        background: #dcfce7;
-        color: #166534;
-    }
-
-    .tag-trend {
-        background: #fef3c7;
-        color: #92400e;
-    }
-
-    .tag-company {
-        background: #e9d5ff;
-        color: #6b21a8;
-    }
-
-    @media (max-width: 640px) {
-        .header h1 {
-            font-size: 24px;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>行业快报 - 2026年11月05日</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-
-        .category-title {
-            font-size: 18px;
-        }
-
-        .news-title {
-            font-size: 16px;
-        }
-
         body {
-            padding: 10px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
         }
-    }
-</style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 32px rgba(102, 126, 234, 0.3);
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        .header .date {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+        }
+        .stat-label {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        .category-section {
+            margin-bottom: 30px;
+        }
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding: 16px 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .category-icon {
+            font-size: 28px;
+        }
+        .category-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: #1a1a1a;
+        }
+        .news-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        }
+        .news-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .news-number {
+            width: 32px;
+            height: 32px;
+            background: #2563eb;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2563eb;
+            line-height: 1.4;
+            flex: 1;
+        }
+        .news-source {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            font-size: 13px;
+            color: #9ca3af;
+            flex-wrap: wrap;
+        }
+        .tag {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+        .tag-policy {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+        .tag-data {
+            background: #dcfce7;
+            color: #166534;
+        }
+        .tag-trend {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        .tag-company {
+            background: #e9d5ff;
+            color: #6b21a8;
+        }
+        .news-content {
+            font-size: 15px;
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 16px;
+        }
+        .news-content p {
+            margin-bottom: 8px;
+        }
+        .news-content p:last-child {
+            margin-bottom: 0;
+        }
+        .insight-box {
+            background: #fff7ed;
+            border-left: 4px solid #f97316;
+            padding: 14px 16px;
+            border-radius: 8px;
+            margin-bottom: 16px;
+        }
+        .insight-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #9a3412;
+            margin-bottom: 6px;
+        }
+        .insight-content {
+            font-size: 14px;
+            color: #7c2d12;
+            line-height: 1.6;
+        }
+        .news-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: #2563eb;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            padding: 8px 16px;
+            background: #eff6ff;
+            border-radius: 8px;
+            transition: background 0.2s;
+        }
+        .news-link:hover {
+            background: #dbeafe;
+        }
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #9ca3af;
+            font-size: 14px;
+        }
+        .footer .brand {
+            font-size: 16px;
+            font-weight: 600;
+            color: #6b7280;
+            margin-bottom: 8px;
+        }
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+            .header {
+                padding: 30px 20px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .stats {
+                gap: 20px;
+            }
+            .stat-number {
+                font-size: 22px;
+            }
+            .category-title {
+                font-size: 18px;
+            }
+            .news-title {
+                font-size: 16px;
+            }
+            .news-card {
+                padding: 16px;
+            }
+        }
+    </style>
 </head>
 <body>
 <div class="container">
     <div class="header">
         <h1>📰 行业快报</h1>
-        <div class="date">2026年11月04日 星期三</div>
+        <div class="date">2026年11月05日 星期四</div>
         <div class="stats">
             <div class="stat-item">
                 <div class="stat-number">24</div>
@@ -294,28 +264,49 @@
         <div class="news-card">
             <div class="news-header">
                 <div class="news-number">1</div>
-                <div class="news-title">FDC研讨会联袂FBC博览会：聚氨酯复材成"第五代低碳节能窗"新力量</div>
+                <div class="news-title">门窗行业加速洗牌：低价内卷之外，售后"责任断链"正在消耗谁的信任？</div>
             </div>
             <div class="news-source">
-                <span>📰 证券日报</span>
+                <span>📰 扬子晚报</span>
                 <span>📅 2026-11-02</span>
                 <span class="tag tag-trend">行业趋势</span>
             </div>
             <div class="news-content">
-                <p>2026FDC高级门窗幕墙研讨会与FBC中国国际门窗幕墙博览会在北京举行。本届FDC首次与万华化学深度合作，研讨重心聚焦建筑新材料创新方向，聚氨酯复合材料被业内称为继木、钢、塑、断桥铝之后的"第五代低碳节能窗"。</p>
-                <p>展会现场，聚川新材、上海克络蒂、恩贝斯等产业链伙伴集中展示玻璃护栏-窗纱一体幕墙窗、聚氨酯立弧窗、平推窗等最新产品与系统方案，聚氨酯门窗产业链正从技术研发走向规模化工程应用。</p>
+                <p>中装协首届建筑门窗企业家沙龙判断行业深度调整：上市企业营收同比下降10.06%，净利润下降26.24%；2025年规模以下门窗厂注销1.2万家，同比增加37%。</p>
+                <p>铝锭价格从1.8万元/吨上涨至2.4万元/吨，成本压力加剧。行业探索"售后一体化"与全链路自控模式，YKK AP等企业率先推动从"卖产品"向"卖服务"转型。</p>
             </div>
             <div class="insight-box">
                 <div class="insight-title">💡 分析点评</div>
-                <div class="insight-content">在"双碳"目标与建筑节能标准升级背景下，聚氨酯复材以低导热、高强度、耐候性突破传统型材性能局限，门窗行业的材料迭代窗口已经打开，提前布局新材料供应链的企业将占得先机。</div>
+                <div class="insight-content">价格竞争已耗尽行业利润空间，售后责任体系重建是品质竞争的下一个战场。消费者需要的不再是低价产品，而是全生命周期的服务保障。</div>
             </div>
-            <a href="http://m.toutiao.com/group/7703565419507892745/" target="_blank" class="news-link">阅读原文</a>
+            <a href="http://m.toutiao.com/group/7703583423960482304/" target="_blank" class="news-link">阅读原文</a>
         </div>
 
         <div class="news-card">
             <div class="news-header">
                 <div class="news-number">2</div>
-                <div class="news-title">森鹰门窗斩获"好房子"推荐品牌、绿色工厂双荣誉，边书平获终身成就奖</div>
+                <div class="news-title">2026年顶墙门窗行业年会12月开平举办，聚焦产业链生态合作</div>
+            </div>
+            <div class="news-source">
+                <span>📰 中国建筑装饰装修材料协会</span>
+                <span>📅 2026-11-04</span>
+                <span class="tag tag-policy">行业活动</span>
+            </div>
+            <div class="news-content">
+                <p>中国建筑装饰装修材料协会将于12月10-11日在广东开平举办"2026年顶墙门窗行业年会"，邀请产业链各环节负责人、骨干企业代表参会，聚焦产业链资源整合与跨界合作。</p>
+                <p>同期举办智能门锁、智慧门窗等专题论坛，王力、德盾、金凯德等企业将展示AI智能安防、智慧门控等前沿技术应用。</p>
+            </div>
+            <div class="insight-box">
+                <div class="insight-title">💡 分析点评</div>
+                <div class="insight-content">顶墙门窗行业正从单品竞争转向生态合作，年会成为产业链资源整合与跨界合作的重要平台，智能化、集成化成为行业新方向。</div>
+            </div>
+            <a href="https://www.dwcwb.com/news/74275.html" target="_blank" class="news-link">阅读原文</a>
+        </div>
+
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-number">3</div>
+                <div class="news-title">森鹰获"2026年度'好房子'适配门窗推荐品牌"等双奖</div>
             </div>
             <div class="news-source">
                 <span>📰 中视金建联</span>
@@ -331,27 +322,6 @@
                 <div class="insight-content">"好房子"标准正成为门窗行业的分水岭——头部企业凭节能技术积累进入推荐目录，品质与绿色制造双维评价体系的落地，将加速行业集中度提升。</div>
             </div>
             <a href="http://m.toutiao.com/group/7703490171563426314/" target="_blank" class="news-link">阅读原文</a>
-        </div>
-
-        <div class="news-card">
-            <div class="news-header">
-                <div class="news-number">3</div>
-                <div class="news-title">国安居智家广场落地深圳八卦岭：2.5万㎡设智控门窗馆等六大主题体验馆</div>
-            </div>
-            <div class="news-source">
-                <span>📰 深圳晚报</span>
-                <span>📅 2026-11-03</span>
-                <span class="tag tag-company">企业动态</span>
-            </div>
-            <div class="news-content">
-                <p>航天央企背景的国安居在福田八卦岭布局智家广场项目，建筑面积近25000平方米，设置智控门窗馆、智尊定制馆、智尚卫浴馆、智享家具馆、智能家电馆、全屋智能馆六大主题体验馆，围绕家庭真实使用场景规划布局。</p>
-                <p>商场融入AI虚拟设计、智能场景交互、全屋整装等应用，打通建材、家具、家电、软装、整装全产业链。招商意向登记自2026年11月9日起实施，预计2027年8月中旬开业。</p>
-            </div>
-            <div class="insight-box">
-                <div class="insight-title">💡 分析点评</div>
-                <div class="insight-content">智能家居产业年均增速25%、2026年市场规模预计突破9000亿元的背景下，传统家居卖场正跳出品类划分模式转向场景化布局，"场景体验+全产业链"成为卖场转型的新范式。</div>
-            </div>
-            <a href="http://m.toutiao.com/group/7703855139886481960/" target="_blank" class="news-link">阅读原文</a>
         </div>
     </div>
 
@@ -549,22 +519,22 @@
         <div class="news-card">
             <div class="news-header">
                 <div class="news-number">3</div>
-                <div class="news-title">广东印发扩大消费实施方案：发展智能家居消费，加快新一代智能家居终端</div>
+                <div class="news-title">国家互联互通标准将落地，美的全屋智能朝向A2A进化</div>
             </div>
             <div class="news-source">
-                <span>📰 财联社</span>
-                <span>📅 2026-11-03</span>
+                <span>📰 南方+</span>
+                <span>📅 2026-11-04</span>
                 <span class="tag tag-policy">政策标准</span>
             </div>
             <div class="news-content">
-                <p>广东省发展改革委印发《广东省扩大消费实施方案》，明确提出：深入实施消费品以旧换新；发展智能家居消费，加快发展新一代智能家居终端；加快发展"人工智能+消费"，推动人工智能手机和电脑、智能穿戴、智能机器人等高端化发展。</p>
-                <p>方案同时提出支持新出让土地的商品住房项目优先实行现房销售，加快5G-A移动通信网络规模商用、推进万兆光网部署应用，为智能家居终端普及提供网络基础设施支撑。</p>
+                <p>5项互联互通国标草案9月底完成、10月家电试点测试、预计2027年6月完成测试公示；美的"家电家居一体化"、与奇瑞icar实现A2A对接；推出2999元全屋智能套餐，覆盖19万服务工程师。</p>
+                <p>国家强制性互联互通标准的推进，标志着智能家居行业从"品牌割据"走向"互联互通"，消费者将不再受限于单一品牌生态。</p>
             </div>
             <div class="insight-box">
                 <div class="insight-title">💡 分析点评</div>
-                <div class="insight-content">广东作为家居制造与消费双重大省，将智能家居纳入扩消费方案并配套5G-A与万兆光网基建，政策组合拳将为智能家居终端渗透提供需求与网络的双重支撑。</div>
+                <div class="insight-content">互联互通国家标准的落地将打破品牌间壁垒，推动全屋智能从"单品智能"进入"系统智能"时代，跨界融合（家电+家居+汽车）成为新趋势。</div>
             </div>
-            <a href="https://m.weibo.cn/detail/5361189073717436" target="_blank" class="news-link">阅读原文</a>
+            <a href="http://m.toutiao.com/group/7704256529263755812/" target="_blank" class="news-link">阅读原文</a>
         </div>
     </div>
 
@@ -833,22 +803,22 @@
         <div class="news-card">
             <div class="news-header">
                 <div class="news-number">3</div>
-                <div class="news-title">抚州依托比亚迪产业园形成镁合金产业生态：单车用镁量有望从10公斤提至50公斤</div>
+                <div class="news-title">"卖矿石的小县城"要建世界镁都：青阳镁合金产值上半年超9亿元、增长66%</div>
             </div>
             <div class="news-source">
-                <span>📰 上海有色网</span>
-                <span>📅 2026-11-02</span>
-                <span class="tag tag-company">企业动态</span>
+                <span>📰 金台资讯</span>
+                <span>📅 2026-11-04</span>
+                <span class="tag tag-data">业绩数据</span>
             </div>
             <div class="news-content">
-                <p>据江西日报报道，抚州依托比亚迪抚州产业园终端需求牵引，在镁合金赛道形成初步产业生态：安镁新材、莱韦美特等近20家产业链企业相继集聚，国家镁合金材料工程技术研究中心江西产业创新中心、比亚迪（抚州）新材料创新中心落地运行。</p>
-                <p>目前比亚迪单车镁合金用量约10公斤，行业预判未来有望提升至50公斤。抚州实施差异化布局：高新区主攻新能源汽车、两轮电动车、人形机器人零部件；临川区聚焦高强镁合金、3C电子、低空经济，并推动电驱壳体、轮毂等零部件规模化示范应用。</p>
+                <p>安徽青阳县依托白云石资源（储量超50亿吨、含镁量22%），引入宝钢金属、宝武镁业、青阳建投三方合资建设年产30万吨镁基轻合金项目，总投资148亿元。全面达产后将建成全球最大镁合金生产基地，年营收超百亿元。</p>
+                <p>青阳创新"镁水直供"短流程模式：熔融镁液无需冷却铸锭，直接输送至隔壁压铸车间，单吨综合成本可下降700元。今年上半年镁合金产值超9亿元，带动全产业链产值超25亿元，同比增长66%，全年产值将超50亿元。</p>
             </div>
             <div class="insight-box">
                 <div class="insight-title">💡 分析点评</div>
-                <div class="insight-content">"链主企业+产业生态"模式正在镁合金领域复制——比亚迪的终端需求牵引让抚州快速打通"科研—中试—应用"全链条，单车用镁量5倍提升预期为整个产业链打开了明确的成长空间。</div>
+                <div class="insight-content">青阳样本展示了资源型县城产业升级的完整路径：从"卖矿石"到"卖材料"再到"卖零部件"，"镁水直供"模式突破行业成本瓶颈，为镁合金规模化应用打开空间。</div>
             </div>
-            <a href="https://news.smm.cn/l/94/pid/106" target="_blank" class="news-link">阅读原文</a>
+            <a href="http://m.toutiao.com/group/7704121781145092671/" target="_blank" class="news-link">阅读原文</a>
         </div>
     </div>
 

@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年11月06日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年11月06日 · 星期五</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-05 19:27</div>
+              <div class="section-title">我国轻工行业数字化研发设计工具普及率超86%</div>
+              <div class="section-body">中国轻工业联合会数据显示，轻工行业数字化研发设计工具普及率达<span class="hl">86.2%</span>，经营管理数字化普及率达<span class="hl">82.3%</span>，累计建成<span class="hl">167家</span>轻工5G工厂。大模型、智能体等新技术正重塑生产方式与消费场景，推动垂直大模型与关键智能装备创新。</div>
+              <div class="insight">💡数字化与AI已成为轻工业转型的核心引擎，家居企业需加速拥抱大模型与智能装备，以数智化驱动全链路降本增效。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/newsflashes/4056777454834569" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-06 09:16</div>
+              <div class="section-title">海尔智家与信通院达成战略合作_三湘都市报</div>
+              <div class="section-body">海尔智家承建的家居家电方向国家人工智能应用中试基地在青岛启动，旨在打造全球引领的新一代智慧家电中试基地。同日，海尔智家与中国信通院签署战略合作，为该基地注入首批国家级技术与标准支撑，破解AI落地难题。</div>
+              <div class="insight">💡国家级AI中试基地的落地，标志着家居家电行业正从单点智能迈向全场景智慧，产学研协同将加速前沿技术商业化。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7704860992265617935/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-05 16:46</div>
+              <div class="section-title">AI 重塑定制家居生产链路:晨丰科技 AI 拆单破解 CAD 时代效率困局_行业_设计_WebCAD</div>
+              <div class="section-body">随着轻高定与异形非标订单占比走高，传统CAD设计与人工拆单模式导致数据割裂。晨丰科技推出AI拆单方案，重塑定制家居生产链路，有效破解CAD时代效率困局，助力中小工厂应对多元化、复杂化的市场需求瓶颈。</div>
+              <div class="insight">💡AI拆单直击非标定制痛点，打通设计与生产数据壁垒，是中小定制企业突破产能瓶颈、实现柔性智造的关键转型方向。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1097613212_122790831/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-06 00:48</div>
+              <div class="section-title">2026广州定制家居展【索菲亚、尚品宅配、哲木、鲁丽、三棵树、展辰、酷家乐等共同呈现家居模式】 视频</div>
+              <div class="section-body">索菲亚重磅发布全国渠道流量精耕战略暨「<span class="hl">1+N+X</span>」绿洲计划。该模式旨在打破传统渠道边界，通过“1核引领+N维渗透+X级裂变”的立体化运营体系，将传统经销商转型为城市运营商，构建多方共赢的利益共同体。</div>
+              <div class="insight">💡「1+N+X」战略标志着头部品牌从粗放扩张转向精细化流量运营，渠道下沉与多维裂变将成为定制家居存量博弈的破局点。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d39055447.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-06 07:44</div>
+              <div class="section-title">研究-今日家居FurnitureToday</div>
+              <div class="section-body">匠心家居披露2025年经营数据，全年实现营收<span class="hl">33.79亿元</span>，同比大幅增长<span class="hl">32.60%</span>；归母净利润达<span class="hl">8.57亿元</span>。在泛家居行业整体承压背景下，其凭借从代工到品牌的出海战略，展现出强劲的增长韧性与盈利能力。</div>
+              <div class="insight">💡在行业承压期实现营收利润双高增，印证了“品牌出海”与高附加值产品战略的正确性，为家居企业全球化布局提供标杆。</div>
+              <div class="source-link">来源：<a href="https://www.furnituretoday.cn/research/" target="_blank" rel="noopener noreferrer">furnituretoday.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-05 17:44</div>
+              <div class="section-title">家居 品牌 扎堆 布局 社区 小店 : 存量 焕新 背景 下 的 渠道 逻辑 重构 _ 财经 网</div>
+              <div class="section-body">存量房焕新驱动下，头部家居品牌密集落地社区型小店。三棵树“马上住”焕新社区店全国门店突破<span class="hl">6000家</span>，覆盖超<span class="hl">300城</span>；宜家在北京数月内接连开出两家千余平方米小型社区店，传统大卖场模式正加速向贴近消费者的社区场景重构。</div>
+              <div class="insight">💡社区小店成为抢占存量焕新流量的前沿阵地，头部品牌正通过“小步快跑”的轻量化渠道下沉，重构离消费者更近的服务触点。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7704620912884056614/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-06 00:00</div>
+              <div class="section-title">40HQ 整柜布艺沙发家具发往马来西亚 整柜海运双清包税全屋家私配送</div>
+              <div class="section-body">2024年第三季度马来西亚住宅装修市场持续升温。数据显示，吉隆坡及巴生谷地区新建私人住宅交付量同比增长<span class="hl">18.7%</span>，其中中高端公寓项目占比超<span class="hl">六成</span>。伴随年轻家庭与外籍人士回流，全屋定制化需求迎来显著增长窗口期。</div>
+              <div class="insight">💡东南亚中高端住宅交付量激增，为定制家居出海提供了高净值客群基础，主打高品质与个性化整家方案的企业将率先受益。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/16477944.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-06 08:16</div>
+              <div class="section-title">一个 opc 创客 团队 的 出海 记 _ 南方 日报</div>
+              <div class="section-body">泛家居企业敬城国际创新推出opc（一人公司）创客模式，结合平台化服务与AI数智化，实现“一人一电脑做跨国生意”。今年该公司销售额激增近<span class="hl">3倍</span>，员工突破<span class="hl">2300人</span>，跑出一批成形创客团队，业务覆盖北美、欧洲、非洲等市场。</div>
+              <div class="insight">💡opc创客模式结合AI数智化，极大降低了出海门槛与运营成本，为中小家居企业拓展海外市场提供了轻量化、高灵活的新范式。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7704845645969900082/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-06 08:20</div>
+              <div class="section-title">从“发货出海”到“海外建厂”:泉州制造换打法了_泉州商报</div>
+              <div class="section-body">泉州制造出海模式升级，从单纯“发货出海”转向“海外建厂”。企业纷纷奔赴国际展会，并在越南、哈萨克斯坦、乌干达、孟加拉国等地加紧建设生产基地。就近设厂、本地化配套与贴身服务，正成为产业带企业拓展国际市场的新图景。</div>
+              <div class="insight">💡从产品出海到产能出海，海外建厂能有效规避贸易壁垒并缩短供应链，是泛家居企业深度全球化、提升本地化交付能力的必由之路。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7704846375812416034/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-06 08:28</div>
+              <div class="section-title">义乌5毛钱的指甲钳，为什么在这里翻了50倍？</div>
+              <div class="section-body">针对制造企业出海，专家建议应先找到一小群真实客户验证需求与售后可控性，再决定是否扩大投入，避免盲目囤货。同时，企业需转变思维，将传统的工程和制造能力，转化为更完整、更具附加值的终端交付服务，以提升海外市场竞争力。</div>
+              <div class="insight">💡出海切忌盲目铺货，小步快跑验证需求是核心；同时，从“卖制造”向“卖完整交付”转型，是提升出海溢价与客户粘性的关键。</div>
+              <div class="source-link">来源：<a href="https://36kr.com/p/4056903806817416" target="_blank" rel="noopener noreferrer">36kr.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-05 20:28</div>
+              <div class="section-title">济宁装修避坑，全屋定制板材怎么选，ENF级和E0级到底差在哪_报告_甲醛_检测</div>
+              <div class="section-body">新国标明确人造板甲醛释放量分为E1、E0、ENF三个等级，其中ENF级（≤<span class="hl">0.025mg/m³</span>）为目前顶级标准。在全屋定制消费中，环保已成为不可妥协的底线，消费者对无醛添加板材、正规授权及环保检测报告的关注度达到前所未有的高度。</div>
+              <div class="insight">💡ENF级环保已从营销卖点变为行业准入门槛，企业需建立透明可溯的环保体系，以极致健康标准构筑品牌信任护城河。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1097695178_122965585/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-05 19:54</div>
+              <div class="section-title">今日女报的微博</div>
+              <div class="section-body">湘西民族职业技术学院团队为拥有两千多年历史的土家织锦装上“专属云脑”，解决纹样转化难、量产受限等痛点，在巾帼创新创业大赛中荣获一等奖。该项目通过数智化创新，让传统非遗技艺突破瓶颈，成功探索出融入现代家居生活的新路径。</div>
+              <div class="insight">💡非遗文化与现代家居的结合需借助数智化破局，将传统文化符号转化为可量产的现代家居产品，是打造差异化高定品牌的新思路。</div>
+              <div class="source-link">来源：<a href="https://m.weibo.cn/detail/5361982360259215" target="_blank" rel="noopener noreferrer">weibo.cn</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-11-06 09:25:46</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

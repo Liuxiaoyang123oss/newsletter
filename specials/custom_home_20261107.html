@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年11月07日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年11月07日 · 星期六</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-06 19:25</div>
+              <div class="section-title">广东 三 部门 联合 推出 42 条 举措 支撑 “ 好 房子 ” 建设 _ 南方 网</div>
+              <div class="section-body">广东三部门联合推出<span class="hl">42条</span>举措支撑“好房子”建设，发挥全屋智能产业链优势。目标到<span class="hl">2026年</span>底，培育<span class="hl">30款</span>以上全屋智能优质产品，深入推进广深试点，全省累计建设<span class="hl">60个</span>以上全屋智能项目，打造全球领先的产业集群。</div>
+              <div class="insight">💡政策端正强力驱动全屋智能落地，从单品智能向整家智能演进，为定制家居企业融入智能生态、拓展数字家庭场景提供了明确的政策红利与标准化方向。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7705018067646038591/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-07 08:15</div>
+              <div class="section-title">「全屋定制哪家好哪家好」 - 「全友家私有限公司」黔西南品牌库 (2026-11-07 08:15:55)</div>
+              <div class="section-body">全屋定制市场2023年规模约<span class="hl">4700亿元</span>，价格区间多在<span class="hl">800-2200元/㎡</span>，交付周期<span class="hl">45-75天</span>。目前数字化设计普及率达<span class="hl">65%</span>，<span class="hl">ENF级</span>板材应用比例约<span class="hl">38%</span>，预计<span class="hl">2025年</span>整家定制占比将达<span class="hl">25%</span>，行业正向环保化与整家化加速集中。</div>
+              <div class="insight">💡ENF级板材渗透率近四成且整家定制预期占比攀升，表明消费者环保意识觉醒与一站式需求爆发，倒逼供应链升级与全案设计能力成为核心壁垒。</div>
+              <div class="source-link">来源：<a href="http://www.ldqxn.com/zixun/brand-61243/" target="_blank" rel="noopener noreferrer">ldqxn.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-06 19:33</div>
+              <div class="section-title">“ ai 经 彩 ” 赋能 “ 地板 之乡 ” 丨 横林 镇 绿色 家居 产业 求解 数智 突围 _ 九派 观 天下</div>
+              <div class="section-body">横林镇绿色家居产业求解数智突围，以华一等企业为标杆探索AI实践。企业将AI核心定位于解放重复低效劳动，从“能问一问”转向“做成事”，让智能体处理拍照、文本等指令，将省出的人力投向质量、设备与研发等高频核心场景。</div>
+              <div class="insight">💡AI在家居制造业的应用正褪去概念外衣，转向务实的降本增效。聚焦高频脱敏场景的智能体落地，将成为中小制造企业突破产能瓶颈、实现数智化转型的关键路径。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7705020058665288207/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-07 09:04</div>
+              <div class="section-title">CBD Fair 广州 | 2026年家居出海微报告及三大破局路径|cbd|卫浴|大家居|家具|家居出海|广州_手机网易网</div>
+              <div class="section-body">9月家具及零件出口额同比大增<span class="hl">16.1%</span>。前三季度头部品牌出海势头强劲：索菲亚海外营收同比增长<span class="hl">91.49%</span>至<span class="hl">1.10亿元</span>，志邦与金牌海外业务分别增长<span class="hl">15.56%</span>和<span class="hl">12.70%</span>；上半年顾家家居海外营收更首次反超境内收入，出海成为核心增长引擎。</div>
+              <div class="insight">💡内卷加剧下，出海已从“可选项”变为头部品牌的“必选项”。索菲亚等定制企业海外业绩爆发，印证了国内定制家居的供应链与模式优势正加速向全球溢出。</div>
+              <div class="source-link">来源：<a href="http://m.163.com/dy/article/LB4CU9BI05527SZE.html" target="_blank" rel="noopener noreferrer">163.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-07 08:17</div>
+              <div class="section-title">喜临门家具_喜临门家具怎么样|建材网</div>
+              <div class="section-body">好莱客携手喜临门推出多款创新寝具产品，深化跨品类融合；同时，欧派、尚品宅配、兔宝宝、曲美、喜临门、东鹏等<span class="hl">24家</span>家居头部企业陆续发布<span class="hl">2023年</span>业绩预报，全面披露年度经营成果，反映出头部阵营在存量博弈下的业绩分化与战略调整。</div>
+              <div class="insight">💡头部品牌通过跨界联名拓展产品矩阵，同时业绩预报折射出行业洗牌加速。强者恒强效应凸显，缺乏核心差异化的企业将面临更大的生存压力。</div>
+              <div class="source-link">来源：<a href="https://m.chinabm.cn/browse/t75109/" target="_blank" rel="noopener noreferrer">chinabm.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-06 21:09</div>
+              <div class="section-title">进博 专访 | 宜家 中国 高级 销售 总监 刘雯 : 住房 局部 改造 需求 升级 ， “ 轻 定制 ” 撬动 存量 市场 新 增长 _ 每日 经济 新闻</div>
+              <div class="section-body">宜家中国高级销售总监刘雯透露，住房局部改造需求显著升级，两年间消费者需求比例从<span class="hl">53%</span>跃升至<span class="hl">70%</span>。她指出，住房市场正从新房转向存量房，继卧室之后，厨房已成为旧房改造的主战场，宜家正通过“轻定制”模式撬动存量市场新增长。</div>
+              <div class="insight">💡存量房时代全面到来，局部改造与“轻定制”成为破局利器。厨房等高频生活空间的适老化与功能升级，将为定制家居企业打开第二增长曲线。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7705044902261834282/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-06 15:52</div>
+              <div class="section-title">不 临海 亦 向海 ， 西部 内陆 小城 凭 何 在 广交会 上 拿下 3000 万元 海外 意向 订单 ? 丨 城市 研究 社 _ 川 观 新闻</div>
+              <div class="section-body">第140届广交会上，四川崇州<span class="hl">7家</span>家居建材企业累计拿下超<span class="hl">3000万元</span>海外意向订单。客户版图成功从传统欧美市场延伸至中东、中亚乃至北非等新兴市场。同时，崇州企业携木雕、枇杷茶等特色产品亮相伦敦世界旅游交易会，探索文化出海新路径。</div>
+              <div class="insight">💡新兴市场（中东、中亚、北非）正成为家居出海的蓝海。结合本土文化特色与高性价比智造，区域产业带抱团出海是规避欧美贸易壁垒、实现差异化竞争的有效策略。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7704963153259528767/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-07 09:06</div>
+              <div class="section-title">湘潭高端木作哪家好?涵蒂全屋定制家具门墙柜顶一体化应用场景解析 - 临安19楼(更新时间:2026-11-07 09:06:19)</div>
+              <div class="section-body">高端住宅木作定制正加速向“一体化”集中。以涵蒂等源头工厂为例，主打原木与板式双赛道，核心特色为门墙柜顶一体化同色配套。该模式精准切中别墅、大平层及改善型住宅业主对木作质感、环保等级和整家风格统一性的高要求，提供全案智造服务。</div>
+              <div class="insight">💡高净值人群对“所见即所得”的全案落地要求极高。门墙柜顶一体化不仅是产品形态的升级，更是高定品牌建立设计壁垒、提升客单价与用户粘性的核心抓手。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-529273/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-07 08:15</div>
+              <div class="section-title">「重庆精装房全屋定制附近装修公司」-「重庆吴妹妹改造设计」 - 台州19楼(更新时间:2026-11-07 08:15:57)</div>
+              <div class="section-body">重庆精装房全屋定制市场细分出标准柜体定制与局部改造等类型。针对精装交付质量尚可但预算有限的业主，标准柜体定制参考价多在<span class="hl">600-1000元/㎡</span>；而针对旧房翻新或精装房优化升级，自有工人直营模式成为保障交付品质与解决收纳痛点的核心卖点。</div>
+              <div class="insight">💡精装房微改与局部优化是存量市场的隐形金矿。通过标准化报价与自有产业工人保障交付，能有效解决精装房“千篇一律”与“收纳不足”的痛点，切入高频刚需。</div>
+              <div class="source-link">来源：<a href="https://taizhou.19lou.com/pinpai/chanpin-389486/" target="_blank" rel="noopener noreferrer">taizhou.19lou.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-07 08:15</div>
+              <div class="section-title">「郑州家具行业专属AI营销平台服务商」-「河南加巨品牌管理有限公司」 - 台州19楼(更新时间:2026-11-07 08:15:11)</div>
+              <div class="section-body">郑州推出家具行业专属AI营销平台，面向经销商与工厂提供“AI营销工具+品牌策划+供应链集采”服务。该模式通过AI数字化工具赋能前端获客，结合驻店陪跑与选品对接，旨在解决传统家居门店流量枯竭与供应链低效痛点，实现全链路降本增效。</div>
+              <div class="insight">💡AI不仅是生产端的工具，更是营销端的破局点。经销商需积极拥抱AI数字化工具重塑获客链路，同时依托供应链集采提升议价能力，从单一销售向服务商转型。</div>
+              <div class="source-link">来源：<a href="https://taizhou.19lou.com/pinpai/chanpin-635947/" target="_blank" rel="noopener noreferrer">taizhou.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-07 09:04</div>
+              <div class="section-title">「靖边正规的全屋定制装修哪家好」-「东辰整装」 - 临安19楼(更新时间:2026-11-07 09:04:12)</div>
+              <div class="section-body">“全案整装”模式正成为高端私宅服务的主流。由一家服务商统筹全案设计、硬装施工、全屋定制木作与配套主材，面向大平层、别墅等客户。其核心启示在于通过一体化交付实现“设计落地零偏差、品质交付零投诉”，彻底解决传统装修中设计与施工脱节的顽疾。</div>
+              <div class="insight">💡从“卖产品”到“卖生活方式”，全案整装考验的是企业的系统统筹与交付能力。打通设计、施工与供应链的壁垒，实现所见即所得，是定制企业向整装大家居跨越的必经之路。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-1312223/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-07 08:15</div>
+              <div class="section-title">杭州本地全屋定制整体方案定做公司哪家好-【杭州慕宸慕勒品牌管理有限公司】 - 临安19楼(更新时间:2026-11-07 08:15:55)</div>
+              <div class="section-body">杭州慕宸慕勒等品牌主打门墙柜一体化系统高定，依托德国豪迈设备与<span class="hl">12条</span>柔性产线打造工业4.0智能工厂。通过引入ENF级与F4星双重环保基材及大豆生物胶，提供定制+成品+软装一站式全案解决方案，以硬核智造实力支撑高端全案设计的完美落地。</div>
+              <div class="insight">💡高定品牌的底气源于后端智造实力。柔性产线与工业4.0智能工厂是支撑“门墙柜一体化”复杂工艺与极致环保的基石，前端设计创新必须与后端智造升级同频共振。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-1071988/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-11-07 09:17:47</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

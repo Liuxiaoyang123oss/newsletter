@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年11月20日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年11月20日 · 星期五</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-20 00:12</div>
+              <div class="section-title">2026-2032全球全屋定制行业调研:趋势全解析</div>
+              <div class="section-body">据调研统计，2025年全球全屋定制收入规模约<span class="hl">621.2亿元</span>，至2032年将接近<span class="hl">986.2亿元</span>，CAGR为<span class="hl">6.7%</span>。中国作为成熟市场，旧房翻新成核心增量，行业正从单一柜类向柜墙门家具协同及整装交付演进。</div>
+              <div class="insight">💡全屋定制迈入存量博弈时代，旧房翻新与整家交付成为驱动行业增长的两大核心引擎，企业需重构全链路交付能力。</div>
+              <div class="source-link">来源：<a href="https://m.11467.com/product/d58536483.htm" target="_blank" rel="noopener noreferrer">11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-20 00:00</div>
+              <div class="section-title">布艺沙发床垫家私出口新加坡专线 全屋家具分批次双清全境配送</div>
+              <div class="section-body">新加坡建屋发展局发布《组屋家居适配指引》修订版，首次将非标尺寸软体家具的通关合规性、仓储暂存时限与末端配送标准纳入规范。此举填补了跨境物流结构性空白，对出口企业的包装防护及履约精度提出更高要求。</div>
+              <div class="insight">💡海外政策与标准趋严正重塑出海门槛，从单纯卖产品转向合规化、标准化的本地履约能力，是家居企业出海的必修课。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/17414852.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-20 09:19</div>
+              <div class="section-title">·跨境园区出海品类增至7类 出口货值突破7000万元_泉州网</div>
+              <div class="section-body">泉州交发跨境贸易生态园出口货值累计突破<span class="hl">7000万元</span>，助力七大品类打通出海通道，市场覆盖俄罗斯、伊朗及东南亚等多国。园区通过集装汽运专线与生态化服务，为中小家居企业抱团出海提供了基础设施支撑。</div>
+              <div class="insight">💡跨境园区模式正成为家居产业带出海的新基建，通过整合物流与通关资源，有效降低了中小企业的全球化试错成本。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7710057155637903887/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-19 22:34</div>
+              <div class="section-title">家居 建材 出海 现 路径 分化 规模 增长 背后 盈利 难题 待解 _ 北京 商报</div>
+              <div class="section-body">金牌家居前三季度海外业务营收达<span class="hl">2.51亿元</span>，同比增长<span class="hl">12.7%</span>。品牌依托“国内+泰国”双生产基地的规模化制造，结合美国达拉斯、马来西亚卫星工厂的敏捷交付，构建起“双路径”出海战略，有效对冲单一市场风险。</div>
+              <div class="insight">💡头部品牌出海已从单纯的产品出口升级为“产能+服务”的全球化布局，卫星工厂模式成为破解海外交付痛点的关键。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7709891031558324778/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-19 12:40</div>
+              <div class="section-title">兔 宝宝 以 国奖 技术 托举 “ 好 房子 ” 建设 ， 持续 创新 驱动 产业 绿色 升级 _ 中国 质量 新闻</div>
+              <div class="section-body">兔宝宝凭借“无醛及功能化木质新材料制造和应用关键技术”荣获<span class="hl">国家科技进步奖二等奖</span>。该技术融入植物基因，从源头定义健康底线，不仅突破了传统环保板材的技术瓶颈，更持续以底层创新驱动整个家居产业的绿色升级。</div>
+              <div class="insight">💡环保不再是营销噱头而是技术壁垒，头部企业通过国家级科研背书抢占“好房子”材料制高点，将加速行业低端产能出清。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7709737840334111295/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-20 07:46</div>
+              <div class="section-title">“ 朱炳仁 · 铜 ” 首秀 河内 ， 越南 消费者 近 距离 感受 中国 非遗 _ 钱江 晚报</div>
+              <div class="section-body">非遗铜雕品牌“朱炳仁·铜”首秀越南homelife国际家居礼品展。这是该品牌继新加坡首店开业后，在东南亚市场的又一重要开拓，标志着中国高端家居艺术品牌正从文化“殿堂”走向海外日常消费场景，深化艺术出海历程。</div>
+              <div class="insight">💡中国家居品牌出海正从“制造输出”向“文化与生活方式输出”跃迁，高附加值艺术家居将成为破局海外高端市场的新利器。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7710033154433679891/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-19 00:00</div>
+              <div class="section-title">佛山乐从 40HQ 家具柜出口新加坡 双清含税到门上门装卸一站式物流</div>
+              <div class="section-body">佛山乐从作为核心产业带，出口导向型工厂占比达<span class="hl">68%</span>。2024年一季度家具出口额同比增长<span class="hl">12.7%</span>，其中新加坡市场增速高达<span class="hl">23.4%</span>。当地针对东南亚工程单分批次、多地址派送的跨境专线需求旺盛，催生物流新空白。</div>
+              <div class="insight">💡东南亚B端工程单与高增速新兴市场叠加，催生了对精细化跨境供应链的庞大需求，专业化家居出海物流是待挖掘的金矿。</div>
+              <div class="source-link">来源：<a href="https://guangzhou0590735.11467.com/m/news/17414731.asp" target="_blank" rel="noopener noreferrer">guangzhou0590735.11467.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-19 13:24</div>
+              <div class="section-title">老外 从 “ 海上 ” 来 ， 莞企 往 “ 海外 ” 去 _ 东莞 发布</div>
+              <div class="section-body">东莞欧极家/卡缤美学家居2025年出海发货量同比大增<span class="hl">130%</span>，货柜源源不断运往印度、沙特、约旦、美国等国。企业成功实现从100%海外代工到国内外双循环的转身，中东及南亚高净值人群对美学家居的需求迎来爆发。</div>
+              <div class="insight">💡中东及南亚等新兴高净值市场的审美觉醒，为具备原创设计能力的中国家居品牌提供了巨大的差异化增量空间。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7709749023376261666/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-19 00:00</div>
+              <div class="section-title">Whole House Custom Design Market - Global Forecast 2026-2032</div>
+              <div class="section-body">全球全屋定制设计市场预计将增长<span class="hl">285亿美元</span>，CAGR高达<span class="hl">7.48%</span>。数据显示，单纯制造环节的利润正被压缩，而涵盖空间规划、个性化设计在内的高附加值服务，正成为引领全球全屋定制市场扩张的核心增长赛道。</div>
+              <div class="insight">💡设计服务独立化与高附加值化趋势明显，企业需从“产品制造商”向“空间解决方案提供商”转型以攫取产业链前端利润。</div>
+              <div class="source-link">来源：<a href="https://www.giiresearch.com/report/ires2189083-whole-house-custom-design-market-global-forecast.html" target="_blank" rel="noopener noreferrer">giiresearch.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-19 10:52</div>
+              <div class="section-title">老 品类 闯出 新航路 浙江 外贸 “ 老三样 ” 掘金 apec 市场 _ 潮 新闻</div>
+              <div class="section-body">浙江外贸“老三样”加速修炼内功，家具等行业广泛应用AI绘画、IP联名等新玩法。设计师输入关键词即可生成数十款附带生产参数的差异化方案，大幅缩短从创意到打样的周期，助力中小企业快速响应全球快时尚化潮流。</div>
+              <div class="insight">💡AI工具已从概念走向生产力的实质性转化，深度融合AI设计研发是家居企业应对个性化需求爆发、实现降本增效的必由之路。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7709709981624369705/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-19 00:00</div>
+              <div class="section-title">Whole House Customization Service Market - Global Forecast 2026-2032</div>
+              <div class="section-body">全球全屋定制服务市场预计增长<span class="hl">135亿美元</span>，CAGR为<span class="hl">6.56%</span>。报告指出，设计生产一体化正重塑成本结构，而渠道触达与末端安装能力直接决定最终转化率，服务化转型已成为不可逆转的全球性行业信号。</div>
+              <div class="insight">💡“产品+服务”的双轮驱动是未来决胜关键，补齐末端安装与售后短板，构建全生命周期服务闭环，是提升用户粘性的核心。</div>
+              <div class="source-link">来源：<a href="https://www.giiresearch.com/report/ires2189084-whole-house-customization-service-market-global.html" target="_blank" rel="noopener noreferrer">giiresearch.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-19 07:02</div>
+              <div class="section-title">「徐汇轻高定全屋定制口碑推荐」-「青砚里全屋定制」 - 台州19楼(更新时间:2026-11-19 07:02:09)</div>
+              <div class="section-body">上海徐汇区110㎡三居室轻高定项目，通过“本地源头工厂直供+清单化透明报价+自有安装团队”模式，精准切中宝妈家庭对品质与踏实服务的需求。在存量房翻新背景下，这种去中间化、重落地的区域服务模式备受青睐。</div>
+              <div class="insight">💡存量博弈下，区域品牌突围不靠盲目扩张，而靠极致透明的报价体系与确定性的交付体验，信任壁垒是本地化生存的根本。</div>
+              <div class="source-link">来源：<a href="https://taizhou.19lou.com/pinpai/chanpin-1060986/" target="_blank" rel="noopener noreferrer">taizhou.19lou.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-11-20 09:21:30</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>

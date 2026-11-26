@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>定制家居行业日报 | 2026年11月16日</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: #f5f6fa;
+    color: #2d3748;
+    line-height: 1.7;
+  }
+  .header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 52px 24px 44px;
+    text-align: center;
+  }
+  .header h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
+  .header .date {
+    font-size: 1rem;
+    opacity: 0.92;
+    font-weight: 400;
+  }
+  .header .subtitle {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-top: 8px;
+  }
+  .container {
+    max-width: 960px;
+    margin: -24px auto 48px;
+    padding: 0 20px;
+  }
+  .section-header {
+    margin: 32px 0 16px;
+    padding: 16px 24px;
+    background: linear-gradient(135deg, #667eea22, #764ba222);
+    border-radius: 12px;
+    border-left: 4px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-header-emoji {
+    font-size: 1.4rem;
+  }
+  .section-header-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #4c51bf;
+  }
+  .section-header-desc {
+    font-size: 0.85rem;
+    color: #718096;
+    margin-left: auto;
+  }
+  .news-section {
+    background: white;
+    border-radius: 16px;
+    padding: 28px 32px 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    position: relative;
+    overflow: hidden;
+  }
+  .section-number {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+  .section-category {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #764ba2;
+    background: #f0edff;
+    padding: 4px 14px;
+    border-radius: 20px;
+    vertical-align: middle;
+  }
+  .section-meta {
+    font-size: 0.85rem;
+    color: #a0aec0;
+    margin-top: 14px;
+    margin-bottom: 6px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #1a202c;
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+  .section-body {
+    font-size: 0.95rem;
+    color: #4a5568;
+    line-height: 1.8;
+    margin-bottom: 14px;
+  }
+  .hl {
+    background: #fef3c7;
+    padding: 1px 4px;
+    border-radius: 3px;
+    font-weight: 600;
+    color: #92400e;
+  }
+  .insight {
+    background: #f8f9ff;
+    border-left: 4px solid #667eea;
+    padding: 12px 16px;
+    margin: 14px 0;
+    font-size: 0.9rem;
+    color: #4c51bf;
+    line-height: 1.7;
+    border-radius: 0 8px 8px 0;
+    position: relative;
+    padding-left: 38px;
+  }
+  .insight::before {
+    content: "💡";
+    position: absolute;
+    left: 12px;
+    top: 10px;
+    font-size: 1rem;
+  }
+  .source-link {
+    font-size: 0.8rem;
+    color: #a0aec0;
+    padding-top: 10px;
+    border-top: 1px solid #f0f0f0;
+  }
+  .source-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .source-link a:hover {
+    text-decoration: underline;
+  }
+  .empty-tip {
+    color: #a0aec0;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .footer {
+    text-align: center;
+    padding: 28px 20px 48px;
+    color: #a0aec0;
+    font-size: 0.85rem;
+  }
+  .footer a { color: #667eea; text-decoration: none; }
+  @media (max-width: 640px) {
+    .header { padding: 40px 16px 36px; }
+    .header h1 { font-size: 1.5rem; }
+    .container { padding: 0 12px; }
+    .news-section { padding: 20px 18px 18px; }
+    .section-number { width: 28px; height: 28px; font-size: 0.8rem; line-height: 28px; }
+    .section-category { font-size: 0.8rem; padding: 3px 12px; }
+    .section-title { font-size: 1.05rem; }
+    .section-body { font-size: 0.9rem; }
+    .insight { font-size: 0.85rem; padding-left: 34px; }
+    .insight::before { left: 10px; top: 9px; font-size: 0.9rem; }
+    .section-header { flex-wrap: wrap; gap: 6px; }
+    .section-header-desc { margin-left: 0; width: 100%; }
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>🏠 定制家居行业日报</h1>
+    <div class="date">2026年11月16日 · 星期一</div>
+    <div class="subtitle">全屋定制 · 全案设计 · 轻高定 · 存量旧改 · 环保板材 · 整装 · AI数字化 · 出海</div>
+  </div>
+  <div class="container">
+
+        <div class="section-header">
+          <span class="section-header-emoji">📊</span>
+          <span class="section-header-title">行业核心趋势</span>
+          <span class="section-header-desc">需求/产品/渠道/政策维度的行业大势</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-14 00:00</div>
+              <div class="section-title">苏州ENF级无醛板材源头厂家如何选?叶氏设计全案软装的全屋环保落地解析 - 咸宁网</div>
+              <div class="section-body">行业调研显示，<span class="hl">超过68%</span> 的装修业主在选购板材时将环保性能列为首要考量因素。随着《人造板及其制品甲醛释放量分级》标准深入实施，ENF级（甲醛释放量≤<span class="hl">0.025mg/m³</span>）无醛板材凭借远优于E0级的指标，已逐步成为中高端家装与全屋定制市场的核心选材方向。</div>
+              <div class="insight">💡环保已从“加分项”变为“必选项”，ENF级正成为中高端市场的入场券，倒逼供应链全面升级无醛添加技术。</div>
+              <div class="source-link">来源：<a href="http://www.xnnews.com.cn/kejiao/kjqy/202611/t20261114_9173338.shtml" target="_blank" rel="noopener noreferrer">xnnews.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-15 00:00</div>
+              <div class="section-title">Quality particleboard e0 9mm for Construction Projects - Alibaba.com</div>
+              <div class="section-body">国际建材采购平台数据显示，E0及ENF级环保板材出海需求旺盛。规格为<span class="hl">1220x2440mm</span>的三聚氰胺贴面刨花板，外贸批发单价约在<span class="hl">$11.40-$15</span>之间，MOQ低至<span class="hl">1 piece</span>，表明中国定制家居供应链的环保标准与柔性交付能力正加速接轨国际市场。</div>
+              <div class="insight">💡国内环保标准内卷催生的供应链优势，正转化为出海竞争力，高性价比环保板材成为外贸新增长极。</div>
+              <div class="source-link">来源：<a href="https://www.alibaba.com/showroom/particleboard-e0-9mm.html" target="_blank" rel="noopener noreferrer">alibaba.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">1</span>
+              <span class="section-category">行业核心趋势</span>
+              <div class="section-meta">📅 2026-11-16 08:36</div>
+              <div class="section-title">徐汇ENF级环保板材哪家落地好-【青砚里实业有限公司】 - 临安19楼(更新时间:2026-11-16 08:36:57)</div>
+              <div class="section-body">针对高端全屋定制市场，ENF级环保板材的交付标准正全面升级。头部落地服务商已全线标配豪迈激光封边与PUR无缝封边工艺，适配极简、轻奢、法式及大宅精装整装等风格，确保柜体、护墙、隐形门等异形结构在环保达标基础上的极致封边与美观度。</div>
+              <div class="insight">💡“好板材”需配“好工艺”，激光与PUR封边技术正从高端选配走向行业标配，成为兑现ENF级环保与美学价值的关键。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-1413160/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🏢</span>
+          <span class="section-header-title">主流品牌关键动态</span>
+          <span class="section-header-desc">欧派、索菲亚、尚品宅配、我乐、好莱客、金牌等头部品牌</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-15 09:33</div>
+              <div class="section-title">2026年11月全友板材ENF板耐用性深度解析:从基材工艺到全屋场景的客观观察-全友家私 - 义乌企业电话网</div>
+              <div class="section-body">全友家私发布ENF板耐用性深度解析，指出2026年行业关注点正从单一环保向“环保+物理性能”迁移。数据显示，柜体类产品耐用性投诉中，<span class="hl">约四成</span>涉及变形、封边开裂与受潮膨胀问题。全友强调选用ENF板只是基础门槛，压制工艺与结构设计才是决定长期耐用性的核心。</div>
+              <div class="insight">💡头部品牌正引导消费者理性看待环保指标，行业竞争焦点从“拼甲醛数据”向“拼综合物理性能与耐用性”升维。</div>
+              <div class="source-link">来源：<a href="http://www.yiwu.com.cn/zixun/Article-EIIkkH-1620586.html" target="_blank" rel="noopener noreferrer">yiwu.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-15 05:09</div>
+              <div class="section-title">「家具环保等级怎么选」 - 「全友家私有限公司」义乌网企讯 (2026-11-16 06:45:56)</div>
+              <div class="section-body">全友家私发布家具环保等级选购指南，清晰界定现行国标价格体系：E1级板材价格区间为<span class="hl">80-120元/张</span>，E0级为<span class="hl">120-180元/张</span>，而最高环保等级ENF级（≤<span class="hl">0.025mg/m³</span>）价格达<span class="hl">180-260元/张</span>。通过透明化数据，帮助消费者在1m³气候箱法检测标准下做出合理预算。</div>
+              <div class="insight">💡全友主动透明化环保等级与价格体系，有助于打破信息差，巩固其大众市场领导地位，同时拉升ENF级产品溢价。</div>
+              <div class="source-link">来源：<a href="http://www.yiwu.com.cn/qixun/brand-54344/" target="_blank" rel="noopener noreferrer">yiwu.com.cn</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">2</span>
+              <span class="section-category">主流品牌关键动态</span>
+              <div class="section-meta">📅 2026-11-14 07:01</div>
+              <div class="section-title">11月全国全屋定制生态板靠谱厂家清单直接抄作业_板材_产品_标准</div>
+              <div class="section-body">华南头部板材企业皇冠木业公布其全国交付体系布局：依托三大智能化基地，已落地<span class="hl">300+</span> 大型智慧仓储配送中心、<span class="hl">500+</span> 高端全屋定制体验展厅及<span class="hl">1800+</span> 品牌授权专卖门店。其综合产能与交付实力稳居华南第一梯队，深度整合全球优质原木与国际高端饰面纸资源。</div>
+              <div class="insight">💡“超级仓储+密集展厅”的重资产渠道模式，正成为区域头部品牌构建交付护城河、下沉抢占市场份额的核心战略。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1101361417_122779478/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">💎</span>
+          <span class="section-header-title">核心机会点</span>
+          <span class="section-header-desc">市场空白、增长赛道、差异化方向</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-15 19:53</div>
+              <div class="section-title">辽宁ENF级板材生产商(巴菲克香杉木)鸿之业装饰材料应用场景解析 - 临安19楼(更新时间:2026-11-15 19:53:11)</div>
+              <div class="section-body">针对地下室、浴室柜、卫生间隔断等潮湿场景痛点，巴菲克推出全香杉木ENF级板材。该产品采用MDI无醛添加胶，防潮等级达<span class="hl">P10级</span>，抗白蚁等级达<span class="hl">10级</span>，表层覆以抗紫外线<span class="hl">6级</span>的进口油墨纸，为特殊空间的全屋定制提供了高稳定性的差异化基材解决方案。</div>
+              <div class="insight">💡避开客厅/卧室红海，深挖厨卫、地下室等“防潮防虫”痛点场景，是中小品牌实现差异化突围的蓝海赛道。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-1077685/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-13 15:17</div>
+              <div class="section-title">采暖 季 到来 ， 儿童 房 板材 怎么 选 ? 高温 环境 下 ， 环保 与 稳定性 都 要 扛 得住 _ 日照 网</div>
+              <div class="section-body">针对采暖季儿童房高温环境下的板材选择，行业专家指出需超越单一的<span class="hl">1m³</span> 气候箱法标准。实际应用中，必须综合考量空间装载量、封闭工艺、温度变化及十年使用周期内的挥发物叠加效应，这为母婴及易敏感体质人群的健康居住产品提供了更精细化的研发方向。</div>
+              <div class="insight">💡从“单品环保”向“空间叠加环保”认知升级，精准切中母婴家庭焦虑，是高端儿童房定制的高溢价突破口。</div>
+              <div class="source-link">来源：<a href="http://m.toutiao.com/group/7707551671026598440/" target="_blank" rel="noopener noreferrer">toutiao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">3</span>
+              <span class="section-category">核心机会点</span>
+              <div class="section-meta">📅 2026-11-14 17:10</div>
+              <div class="section-title">「南桥ENF级环保板材品牌推荐」-「青砚里实业有限公司」 - 临安19楼(更新时间:2026-11-14 17:10:01)</div>
+              <div class="section-body">面向大宅精装整装市场，青砚里实业推出全线标配ENF级环保板材的定制方案。产品覆盖<span class="hl">18mm</span>柜体、<span class="hl">25mm</span>加固层板及<span class="hl">9mm</span>背板，提供极简、轻奢、法式等多元风格，并通过豪迈激光封边工艺，满足高端大宅对柜体、护墙、隐形门一体化交付的严苛要求。</div>
+              <div class="insight">💡大宅整装对“门墙柜一体化”及极致收口工艺的要求，正驱动板材商与定制企业深度融合，催生高客单价增长赛道。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-272215/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+        <div class="section-header">
+          <span class="section-header-emoji">🧭</span>
+          <span class="section-header-title">发展启示</span>
+          <span class="section-header-desc">战略建议、转型方向、值得关注的信号</span>
+        </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-16 09:24</div>
+              <div class="section-title">ENF级定制清单-淘宝逛一逛</div>
+              <div class="section-body">淘宝ENF级定制清单显示，消费者正积极利用政策红利。通过精选ENF级基材并叠加国家以旧换新补贴政策，同样一门到顶的衣柜项目能为消费者节省约<span class="hl">8000元</span>。同时，智能密码锁、儿童房防撞边等适老化与儿童友好型配置也正成为标准套餐的一部分。</div>
+              <div class="insight">💡企业应敏锐捕捉“国补+环保”的组合营销契机，将政策补贴转化为终端促单利器，加速高环保产品的市场渗透。</div>
+              <div class="source-link">来源：<a href="https://guangtao.taobao.com/topic-200077241.html" target="_blank" rel="noopener noreferrer">guangtao.taobao.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-15 14:12</div>
+              <div class="section-title">桂林ENF级环保板材装修公司哪家好-【子固家家居】 - 临安19楼(更新时间:2026-11-15 14:12:37)</div>
+              <div class="section-body">子固家家居推出“门墙柜一体化”ENF级环保板材定制系列。该系列依托自有工厂直供与激光封边核心工艺，实现从单一柜体向全屋空间一体化交付的转型。产品全国发货，甲醛释放量远优于国标E0级，为装企与经销商提供了高附加值的整家定制解决方案。</div>
+              <div class="insight">💡“门墙柜一体化”不仅是产品线的延伸，更是交付能力的重构，企业需通过前后端一体化打通来提升客单价与空间利用率。</div>
+              <div class="source-link">来源：<a href="https://linan.19lou.com/pinpai/chanpin-674098/" target="_blank" rel="noopener noreferrer">linan.19lou.com</a></div>
+            </div>
+
+
+            <div class="news-section">
+              <span class="section-number">4</span>
+              <span class="section-category">发展启示</span>
+              <div class="section-meta">📅 2026-11-14 00:21</div>
+              <div class="section-title">沈阳家庭家装选择全屋定制环保性能参考_板材_标准_挥发物</div>
+              <div class="section-body">针对全屋定制环保性能，行业提示需建立系统性考量维度：不仅要看基材等级，还需严格把控涂装材料的环保标准，并规范生产工艺流程。只有从基材、涂装到生产工艺三个核心维度全面升级，才能真正保障母婴及敏感人群的居住健康，避免“伪环保”陷阱。</div>
+              <div class="insight">💡环保竞争已进入“全链路”时代，单一板材环保已不足以支撑品牌溢价，构建“基材+涂装+工艺”的系统性环保壁垒是必经之路。</div>
+              <div class="source-link">来源：<a href="https://m.sohu.com/a/1101271165_120629082/" target="_blank" rel="noopener noreferrer">sohu.com</a></div>
+            </div>
+
+  </div>
+  <div class="footer">
+    <p>由 AI 自动生成 · 更新于 2026-11-16 09:27:28</p>
+    <p style="margin-top:4px;">新闻来自互联网搜索结果，仅供参考</p>
+  </div>
+</body>
+</html>
